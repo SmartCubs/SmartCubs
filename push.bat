@@ -3,7 +3,7 @@
 REM Check Git status
 git status
 
-REM Add changes
+REM Add changes 
 git add .
 
 REM Prompt for commit message
