@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scene's/character/bobyCH.tscn" type="PackedScene" id=1]
+
+[node name="tutorial" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="boby" parent="." instance=ExtResource( 1 )]
+position = Vector2( 496, 136 )
+scale = Vector2( 1.92, 2.2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+
+[node name="button" type="Node" parent="."]
+
+[node name="Button" type="Button" parent="button"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 64.0
+margin_top = 152.0
+margin_right = 192.0
+margin_bottom = 280.0
+rect_min_size = Vector2( 48, 30 )
+expand_icon = true
+
+[node name="Button2" type="Button" parent="button"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 208.0
+margin_top = 152.0
+margin_right = 336.0
+margin_bottom = 280.0
+rect_min_size = Vector2( 48, 30 )
+expand_icon = true
+
+[node name="Button3" type="Button" parent="button"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 944.0
+margin_top = 152.0
+margin_right = 1072.0
+margin_bottom = 280.0
+rect_min_size = Vector2( 48, 30 )
+expand_icon = true
+
+[node name="Button4" type="Button" parent="button"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 1088.0
+margin_top = 152.0
+margin_right = 1216.0
+margin_bottom = 280.0
+rect_min_size = Vector2( 48, 30 )
+expand_icon = true
