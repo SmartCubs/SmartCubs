@@ -2,7 +2,7 @@ extends Control
 
 
 onready var animation_player = $AnimationPlayer
-onready var color_rect = $ColorRect
+onready var color_rect = $panel/playTransition
 
 
 func _ready():
