@@ -3,7 +3,7 @@ extends Control
 
 onready var animation_player = $AnimationPlayer
 onready var color_rect = $panel/playTransition
-onready var option_panel = $"panel/option panel"
+onready var option_panel = $panel/optionMenu
 
 
 func _ready():
