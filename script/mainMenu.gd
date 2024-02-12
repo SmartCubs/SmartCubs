@@ -3,6 +3,7 @@ extends Control
 
 onready var animation_player = $AnimationPlayer
 onready var color_rect = $panel/playTransition
+onready var option_panel = $"panel/option panel"
 
 
 func _ready():
@@ -20,4 +21,5 @@ func Start_level():
 
 #change to parameter scene
 func _on_Button_button_up():
-	pass
+	option_panel.visible = true
+	animation_player.play("option")
