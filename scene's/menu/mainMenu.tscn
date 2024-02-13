@@ -57,7 +57,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 2.07053, 0.901251 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 0.501961 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/2/type = "method"
 tracks/2/path = NodePath(".")
@@ -83,7 +83,7 @@ script = ExtResource( 2 )
 
 [node name="playTransition" type="ColorRect" parent="panel"]
 visible = false
-modulate = Color( 1, 1, 1, 0.431914 )
+modulate = Color( 1, 1, 1, 0.501961 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -92,7 +92,6 @@ margin_left = -13.0
 margin_top = -11.0
 margin_right = 11.0
 margin_bottom = 13.0
-rect_scale = Vector2( 34.464, 34.464 )
 rect_pivot_offset = Vector2( 12, 12 )
 mouse_filter = 2
 color = Color( 0.129412, 0.341176, 0.627451, 1 )
@@ -128,6 +127,8 @@ margin_left = -96.0
 margin_top = -88.0
 margin_right = -20.0
 margin_bottom = -18.0
+focus_mode = 0
+enabled_focus_mode = 0
 icon = ExtResource( 3 )
 flat = true
 
