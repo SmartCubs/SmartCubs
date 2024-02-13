@@ -1,0 +1,36 @@
+[gd_scene format=2]
+
+[node name="optionMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="option panel" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 640, 360 )
+color = Color( 0.964706, 0.745098, 0.32549, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 144.0
+margin_top = 104.0
+margin_right = -88.0
+margin_bottom = -120.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 1048.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "Email: "
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -80.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = 80.0
+focus_mode = 0
+enabled_focus_mode = 0
+text = "X"
