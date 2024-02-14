@@ -7,6 +7,8 @@ onready var option_panel = $panel/optionMenu
 onready var btnCloseOption = option_panel.get_node("Button")
 
 func _ready():
+	option_panel.visible = false
+	color_rect.visible = false
 	btnCloseOption.connect("button_up",self,"_on_close_btn_click")
 	
 
@@ -32,6 +34,3 @@ func _on_Button_button_up():
 	option_panel.visible = true
 	animation_player.play("option")
 	
-
-
-
