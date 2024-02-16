@@ -116,11 +116,11 @@ mouse_filter = 2
 color = Color( 0.129412, 0.341176, 0.627451, 1 )
 
 [node name="optionMenu" parent="panel" instance=ExtResource( 4 )]
-margin_left = -7.2486
-margin_top = 645.126
-margin_right = -7.24866
-margin_bottom = 645.127
-rect_scale = Vector2( 0.320443, 0.320443 )
+margin_left = -7.75759
+margin_top = 690.425
+margin_right = -7.75757
+margin_bottom = 690.427
+rect_scale = Vector2( 0.272726, 0.272726 )
 rect_pivot_offset = Vector2( 640, 360 )
 
 [node name="playBTN" type="Button" parent="."]
@@ -145,15 +145,16 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -96.0
-margin_top = -88.0
-margin_right = -20.0
-margin_bottom = -18.0
-rect_pivot_offset = Vector2( 38, 35 )
+margin_left = -112.0
+margin_top = -112.0
+margin_right = -22.0
+margin_bottom = -22.0
+rect_pivot_offset = Vector2( 45, 45 )
 focus_mode = 0
 enabled_focus_mode = 0
 icon = ExtResource( 3 )
 flat = true
+expand_icon = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/option = SubResource( 4 )
