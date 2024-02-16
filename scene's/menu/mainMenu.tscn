@@ -34,7 +34,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0.25, 0.25 ), Vector2( 1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Button:rect_rotation")
+tracks/2/path = NodePath("Button/optBtn:rect_rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -92,11 +92,44 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="background-image" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 5 )
 expand = true
+
+[node name="Button" type="Node" parent="."]
+
+[node name="playBTN" type="Button" parent="Button"]
+anchor_left = 0.4375
+anchor_top = 0.393056
+anchor_right = 0.5625
+anchor_bottom = 0.606944
+margin_bottom = 0.000640869
+rect_pivot_offset = Vector2( 80, 77 )
+focus_mode = 0
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+icon = ExtResource( 1 )
+flat = true
+clip_text = true
+icon_align = 1
+
+[node name="optBtn" type="Button" parent="Button"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -112.0
+margin_top = -112.0
+margin_right = -22.0
+margin_bottom = -22.0
+rect_pivot_offset = Vector2( 45, 45 )
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 3 )
+flat = true
+expand_icon = true
 
 [node name="panel" type="Node" parent="."]
 
@@ -123,43 +156,10 @@ margin_bottom = 690.427
 rect_scale = Vector2( 0.272726, 0.272726 )
 rect_pivot_offset = Vector2( 640, 360 )
 
-[node name="playBTN" type="Button" parent="."]
-anchor_left = 0.4375
-anchor_top = 0.393056
-anchor_right = 0.5625
-anchor_bottom = 0.606944
-rect_pivot_offset = Vector2( 80, 77 )
-focus_mode = 0
-shortcut_in_tooltip = false
-enabled_focus_mode = 0
-icon = ExtResource( 1 )
-flat = true
-clip_text = true
-icon_align = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Button" type="Button" parent="."]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -112.0
-margin_top = -112.0
-margin_right = -22.0
-margin_bottom = -22.0
-rect_pivot_offset = Vector2( 45, 45 )
-focus_mode = 0
-enabled_focus_mode = 0
-icon = ExtResource( 3 )
-flat = true
-expand_icon = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/option = SubResource( 4 )
 anims/start = SubResource( 2 )
 
-[connection signal="button_down" from="playBTN" to="." method="_on_playBTN_button_down"]
-[connection signal="button_up" from="playBTN" to="." method="_on_playBTN_button_up"]
-[connection signal="button_up" from="Button" to="." method="_on_Button_button_up"]
+[connection signal="button_down" from="Button/playBTN" to="." method="_on_playBTN_button_down"]
+[connection signal="button_up" from="Button/playBTN" to="." method="_on_playBTN_button_up"]
+[connection signal="button_up" from="Button/optBtn" to="." method="_on_Button_button_up"]
