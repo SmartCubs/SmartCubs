@@ -1,0 +1,31 @@
+[gd_scene format=2]
+
+[node name="control_menu_UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -176.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = 86.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="pause" type="Button" parent="VBoxContainer"]
+margin_right = 70.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 70, 70 )
+mouse_default_cursor_shape = 2
+
+[node name="mainMenu" type="Button" parent="VBoxContainer"]
+margin_left = 90.0
+margin_right = 160.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 70, 70 )
+mouse_default_cursor_shape = 2
