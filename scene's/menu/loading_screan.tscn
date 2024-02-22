@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://asset's/mainMenu/gear.png" type="Texture" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "loading"
+
+[node name="loading_screan" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/loading = SubResource( 1 )
+
+[node name="gears" type="Node" parent="."]
+
+[node name="gear1" type="TextureRect" parent="gears"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = -64.0
+margin_right = 64.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 64, 64 )
+texture = ExtResource( 1 )
