@@ -6,6 +6,33 @@
 [ext_resource path="res://scene's/menu/optionMenu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://asset's/mainMenu/background_img.png" type="Texture" id=5]
 
+[sub_resource type="Animation" id=5]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/path = NodePath("panel/optionMenu:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -8, 712 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("panel/optionMenu:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.25, 0.25 ) ]
+}
+
 [sub_resource type="Animation" id=4]
 resource_name = "option"
 length = 0.25
@@ -44,47 +71,6 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 25.0 ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "start"
-tracks/0/type = "value"
-tracks/0/path = NodePath("panel/playTransition:rect_scale")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 90, 90 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("panel/playTransition:modulate")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 2.07053, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0.501961 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/2/type = "method"
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0.5 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "Start_level"
-} ]
 }
 
 [node name="mainMenu" type="Control"]
@@ -133,32 +119,17 @@ expand_icon = true
 
 [node name="panel" type="Node" parent="."]
 
-[node name="playTransition" type="ColorRect" parent="panel"]
-visible = false
-modulate = Color( 1, 1, 1, 0.501961 )
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -13.0
-margin_top = -11.0
-margin_right = 11.0
-margin_bottom = 13.0
-rect_pivot_offset = Vector2( 12, 12 )
-mouse_filter = 2
-color = Color( 0.129412, 0.341176, 0.627451, 1 )
-
 [node name="optionMenu" parent="panel" instance=ExtResource( 4 )]
-margin_left = -7.75759
-margin_top = 690.425
-margin_right = -7.75757
-margin_bottom = 690.427
-rect_scale = Vector2( 0.272726, 0.272726 )
+margin_left = -8.0
+margin_top = 712.0
+margin_right = -8.0
+margin_bottom = 712.002
+rect_scale = Vector2( 0.25, 0.25 )
 rect_pivot_offset = Vector2( 640, 360 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 5 )
 anims/option = SubResource( 4 )
-anims/start = SubResource( 2 )
 
 [connection signal="button_down" from="Button/playBTN" to="." method="_on_playBTN_button_down"]
 [connection signal="button_up" from="Button/playBTN" to="." method="_on_playBTN_button_up"]

@@ -14,6 +14,10 @@ config/name="SmartCubs"
 run/main_scene="res://scene's/menu/mainMenu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+SceanTransition="*res://scene's/menu/scean_trans/scean_transition.tscn"
+
 [display]
 
 window/size/width=1280
