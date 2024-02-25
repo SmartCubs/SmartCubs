@@ -146,8 +146,8 @@ expand_icon = true
 [node name="optionMenu" parent="panel" instance=ExtResource( 4 )]
 margin_left = -8.0
 margin_top = 712.0
-margin_right = -8.0
-margin_bottom = 712.0
+margin_right = 1272.0
+margin_bottom = 1432.0
 rect_scale = Vector2( 0.25, 0.25 )
 rect_pivot_offset = Vector2( 640, 360 )
 
