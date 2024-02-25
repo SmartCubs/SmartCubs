@@ -6,7 +6,6 @@ var pressed = false
 var curent_line: Line2D
 
 func _input(event: InputEvent) -> void:
-	var mouse_position = get_local_mouse_position()
 	if event is InputEventMouseButton:
 		pressed = event.pressed
 
