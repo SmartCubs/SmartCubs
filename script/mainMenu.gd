@@ -17,7 +17,7 @@ func _on_close_btn_click():
 #play btn event
 func _on_playBTN_button_up():
 	playBtn.rect_scale = Vector2(1,1)
-	SceanTransition.change_scene("res://scene\'s/levels/letter/level1.tscn","up")
+	SceanTransition.change_scene("res://scene\'s/levels/letter/level1.tscn","d")
 
 func _on_playBTN_button_down():
 	playBtn.rect_scale = lerp(Vector2(1,1) ,Vector2(0.9,0.9),0.25)
