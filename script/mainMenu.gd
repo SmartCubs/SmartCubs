@@ -6,25 +6,44 @@ onready var option_panel = $panel/optionMenu
 onready var btnCloseOption = option_panel.get_node("Button")
 onready var playBtn = $Button/playBTN
 
-func _ready():
+func _ready() -> void:
 	option_panel.visible = false
 	btnCloseOption.connect("button_up",self,"_on_close_btn_click")
+	#play idel animation after the load of the page
+	animation_player.play("Idel")
 	
 
-func _on_close_btn_click():
-	animation_player.play_backwards("option")
 
-#play btn event
-func _on_playBTN_button_up():
+#play btn {:
+
+
+
+#########event button up for changing the scean##############
+func _on_playBTN_button_up() -> void:
 	playBtn.rect_scale = Vector2(1,1)
 	SceanTransition.change_scene("res://scene\'s/levels/letter/level1.tscn","d")
+	animation_player.stop(true)
 
+
+########event button down for playing a litel animation ############
 func _on_playBTN_button_down():
 	playBtn.rect_scale = lerp(Vector2(1,1) ,Vector2(0.9,0.9),0.25)
 
+#}
+
+
+
 #option btn event
-	#change to parameter scene
-func _on_Button_button_up():
+##########change to parameter scene####################
+func _on_Button_button_up() -> void:
 	option_panel.visible = true
+	OS.set_screen_orientation(OS.SCREEN_ORIENTATION_SENSOR)
 	animation_player.play("option")
-	
+	SceanTransition.audio_pause()
+##########change to main menu sceane (exit option) ##############
+func _on_close_btn_click() ->void:
+	animation_player.play_backwards("option")
+	yield($AnimationPlayer,"animation_finished")
+	OS.set_screen_orientation(OS.SCREEN_ORIENTATION_LANDSCAPE)
+	animation_player.play("Idel")
+	SceanTransition.audio_pause(false)
