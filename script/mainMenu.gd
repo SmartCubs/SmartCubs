@@ -37,7 +37,7 @@ func _on_playBTN_button_down():
 ##########change to parameter scene####################
 func _on_Button_button_up() -> void:
 	option_panel.visible = true
-	OS.set_screen_orientation(OS.SCREEN_ORIENTATION_SENSOR)
+	OS.set_screen_orientation(OS.SCREEN_ORIENTATION_SENSOR_PORTRAIT)
 	animation_player.play("option")
 	SceanTransition.audio_pause()
 ##########change to main menu sceane (exit option) ##############
