@@ -37,7 +37,7 @@ func _on_playBTN_button_down():
 ##########change to parameter scene####################
 func _on_Button_button_up() -> void:
 	option_panel.visible = true
-	OS.set_screen_orientation(OS.SCREEN_ORIENTATION_SENSOR_PORTRAIT)
+	OS.set_screen_orientation(OS.SCREEN_ORIENTATION_SENSOR_LANDSCAPE)
 	animation_player.play("option")
 	SceanTransition.audio_pause()
 ##########change to main menu sceane (exit option) ##############
@@ -47,3 +47,8 @@ func _on_close_btn_click() ->void:
 	OS.set_screen_orientation(OS.SCREEN_ORIENTATION_LANDSCAPE)
 	animation_player.play("Idel")
 	SceanTransition.audio_pause(false)
+
+
+
+
+
