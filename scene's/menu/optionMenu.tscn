@@ -39,11 +39,13 @@ margin_bottom = -26.0
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer"]
 margin_right = 843.0
 margin_bottom = 45.0
+custom_constants/separation = 2
 
 [node name="Email" type="Label" parent="Control/VBoxContainer/HBoxContainer"]
 margin_top = 5.0
-margin_right = 339.0
+margin_right = 341.0
 margin_bottom = 40.0
+rect_min_size = Vector2( 200, 0 )
 size_flags_horizontal = 3
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Email:  "
@@ -54,7 +56,53 @@ margin_right = 843.0
 margin_bottom = 45.0
 rect_min_size = Vector2( 500, 0 )
 rect_pivot_offset = Vector2( 250, 23 )
+custom_constants/minimum_spaces = 10
 caret_blink = true
+
+[node name="child_succ" type="GridContainer" parent="Control/VBoxContainer"]
+margin_top = 49.0
+margin_right = 843.0
+margin_bottom = 591.0
+custom_constants/vseparation = 30
+custom_constants/hseparation = 30
+columns = 3
+
+[node name="Panel" type="Panel" parent="Control/VBoxContainer/child_succ"]
+margin_right = 256.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 256, 256 )
+
+[node name="Panel2" type="Panel" parent="Control/VBoxContainer/child_succ"]
+margin_left = 286.0
+margin_right = 542.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 256, 256 )
+
+[node name="Panel3" type="Panel" parent="Control/VBoxContainer/child_succ"]
+margin_left = 572.0
+margin_right = 828.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 256, 256 )
+
+[node name="Panel4" type="Panel" parent="Control/VBoxContainer/child_succ"]
+margin_top = 286.0
+margin_right = 256.0
+margin_bottom = 542.0
+rect_min_size = Vector2( 256, 256 )
+
+[node name="Panel5" type="Panel" parent="Control/VBoxContainer/child_succ"]
+margin_left = 286.0
+margin_top = 286.0
+margin_right = 542.0
+margin_bottom = 542.0
+rect_min_size = Vector2( 256, 256 )
+
+[node name="Panel6" type="Panel" parent="Control/VBoxContainer/child_succ"]
+margin_left = 572.0
+margin_top = 286.0
+margin_right = 828.0
+margin_bottom = 542.0
+rect_min_size = Vector2( 256, 256 )
 
 [node name="Button" type="Button" parent="."]
 anchor_left = 1.0
@@ -67,11 +115,3 @@ focus_mode = 0
 enabled_focus_mode = 0
 icon = ExtResource( 1 )
 flat = true
-
-[node name="child_sucess" type="GridContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 240.0
-margin_top = 184.0
-margin_right = -192.0
-margin_bottom = -24.0

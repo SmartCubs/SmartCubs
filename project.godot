@@ -11,12 +11,12 @@ config_version=4
 [application]
 
 config/name="SmartCubs"
-run/main_scene="res://scene's/menu/mainMenu.tscn"
+run/main_scene="res://scene's/menu/level_selector_screen/level_selector.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-SceanTransition="*res://scene's/menu/scean_trans/scean_transition.tscn"
+SceanTransition="*res://scene's/scean_trans/scean_transition.tscn"
 
 [display]
 
