@@ -27,6 +27,10 @@ window/size/test_height=360
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
+[global]
+
+anti=false
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
@@ -41,5 +45,6 @@ quality/intended_usage/framebuffer_allocation=0
 quality/intended_usage/framebuffer_allocation.mobile=0
 quality/shadows/filter_mode.mobile=1
 quality/filters/anisotropic_filter_level=5
+quality/filters/use_nearest_mipmap_filter=true
 quality/filters/msaa=3
 environment/default_environment="res://default_env.tres"

@@ -2,7 +2,7 @@ extends Control
 
 
 onready var animation_player = $AnimationPlayer
-onready var option_panel = $panel/optionMenu
+onready var option_panel = $optionMenu
 onready var btnCloseOption = option_panel.get_node("Button")
 onready var playBtn = $Button/playBTN
 
