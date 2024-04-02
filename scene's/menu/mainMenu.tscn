@@ -1,12 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://asset's/mainMenu/play btn.png" type="Texture" id=1]
 [ext_resource path="res://script/mainMenu.gd" type="Script" id=2]
 [ext_resource path="res://asset's/mainMenu/option.png" type="Texture" id=3]
 [ext_resource path="res://scene's/menu/optionMenu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://asset's/mainMenu/background_img.png" type="Texture" id=5]
-[ext_resource path="res://asset's/mainMenu/Smart.png" type="Texture" id=6]
-[ext_resource path="res://asset's/img/wheel.png" type="Texture" id=7]
+[ext_resource path="res://asset's/img/character's/dog_gesture.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=6]
 resource_name = "Idel"
@@ -191,31 +190,14 @@ icon = ExtResource( 3 )
 flat = true
 expand_icon = true
 
-[node name="Wheel" type="Sprite" parent="."]
-position = Vector2( 128, 72 )
-rotation = 0.785398
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 7 )
-
-[node name="Wheel2" type="Sprite" parent="."]
-position = Vector2( 1280, 16 )
-rotation = -0.385718
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 7 )
-
-[node name="Wheel3" type="Sprite" parent="."]
-position = Vector2( 64, 680 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 7 )
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Idel = SubResource( 6 )
 anims/RESET = SubResource( 5 )
 anims/option = SubResource( 4 )
 
-[node name="Smart" type="Sprite" parent="."]
-position = Vector2( 650, 151 )
-scale = Vector2( 0.73218, 0.698777 )
+[node name="DogGesture" type="Sprite" parent="."]
+position = Vector2( 352, 384 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 6 )
 
 [node name="optionMenu" parent="." instance=ExtResource( 4 )]
