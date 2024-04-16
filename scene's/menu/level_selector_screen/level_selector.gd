@@ -1,5 +1,11 @@
 extends Control
 
+
+#TODO: make the logic for the level selector
+
+const levels = ['level1','level2','level3']
+var curent_level = 0;
+
 #TODO: make some desgin for the level selector 
 
 #variables
@@ -20,8 +26,7 @@ func _input(event):
 			is_dragging = true
 		else:
 			is_dragging = false
-	if is_dragging:
-		
+	if is_dragging && event is InputEventMouseMotion:
 		level.rect_position.x = lerp(level.rect_position.x, event.position.x - level.rect_size.x/2 ,.25 )
 
 
@@ -44,9 +49,13 @@ func _on_level_pressed():
 
 
 
-func _on_left_border_area_entered(area):
-	pass # Replace with function body.
 
 
-func _on_right_border_area_entered(area):
+func _on_left_border_body_entered(body):
+	print(body.name)
+	if body.name == 'level':
+		print("is in")
+
+
+func _on_right_border_body_entered(body):
 	pass # Replace with function body.
