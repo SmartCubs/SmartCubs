@@ -31,4 +31,6 @@ expand_icon = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
+[connection signal="button_down" from="level" to="." method="_on_level_button_down"]
+[connection signal="button_up" from="level" to="." method="_on_level_button_up"]
 [connection signal="pressed" from="level" to="." method="_on_level_pressed"]
