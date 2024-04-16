@@ -1,5 +1,36 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://script/rythme.gd" type="Script" id=1]
+[ext_resource path="res://scene's/levels/letter/draw space.tscn" type="PackedScene" id=2]
 
 [node name="rythme" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="ViewportContainer" type="ViewportContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -125.0
+margin_top = -3.0
+margin_right = 143.0
+margin_bottom = 265.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Viewport" type="Viewport" parent="ViewportContainer"]
+size = Vector2( 268, 268 )
+handle_input_locally = false
+msaa = 3
+fxaa = true
+hdr = false
+usage = 0
+render_target_update_mode = 3
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="draw space" parent="ViewportContainer/Viewport" instance=ExtResource( 2 )]
