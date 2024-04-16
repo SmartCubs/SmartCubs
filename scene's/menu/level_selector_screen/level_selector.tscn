@@ -1,11 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scene's/menu/control_menu_UI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scene's/menu/level_selector_screen/level_selector.gd" type="Script" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 44.5, 370.5 )
 
 [node name="level_selector" type="Control"]
 anchor_right = 1.0
@@ -34,18 +31,4 @@ expand_icon = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
-[node name="left border" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="left border"]
-position = Vector2( 34.5, 360.5 )
-shape = SubResource( 1 )
-
-[node name="right border" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="right border"]
-position = Vector2( 1239, 363 )
-shape = SubResource( 1 )
-
 [connection signal="pressed" from="level" to="." method="_on_level_pressed"]
-[connection signal="body_entered" from="left border" to="." method="_on_left_border_body_entered"]
-[connection signal="body_entered" from="right border" to="." method="_on_right_border_body_entered"]

@@ -42,20 +42,14 @@ func _process(delta):
 #TODO: we can know if its for playing or changing level with comparing the original position of the btn and its last position
 func _on_level_pressed():
 	if !( (init_position.x - level.rect_position.x) < -4 or (init_position.x - level.rect_position.x) > 4 ):
-		print("test")
+		print("clicked")
+	elif (init_position.x - level.rect_position.x) < -4:
+		print("right")
+	else:
+		print("left")
 
 
 
 
 
 
-
-
-func _on_left_border_body_entered(body):
-	print(body.name)
-	if body.name == 'level':
-		print("is in")
-
-
-func _on_right_border_body_entered(body):
-	pass # Replace with function body.
