@@ -42,7 +42,7 @@ func _input(event):
 		level.rect_position.x = lerp(level.rect_position.x, event.position.x - level.rect_size.x/2 ,acceleration )
 
 
-func _process(delta):
+func _process(_delta):
 	if init_position != level.rect_position && is_dragging == false:
 		level.rect_position.x = lerp(level.rect_position,init_position,acceleration).x
 	
@@ -50,21 +50,24 @@ func _process(delta):
 
 
 
-
-#FIXME: need to know when the player is cliking the button to play or to change level
-#TODO: we can know if its for playing or changing level with comparing the original position of the btn and its last position
+#we  know if its clicking for playing or changing level
+## when we  compar the original position of the btn and its last position
 func _on_level_pressed():
 	var drag_distance = init_position.x - level.rect_position.x
-	if abs(drag_distance) < 4:
+	if drag_distance == 0:
 		print("clicked")
-	elif drag_distance < -4:
-		print("right")
+	elif drag_distance < 0:
+		curent_level = (curent_level-1) % 3
+		print("right: curent level: ",abs(curent_level))
+		
 	else:
-		print("left")
+		curent_level = (curent_level+1) % 3
+		print("left: curent level: ",abs(curent_level))
 
 
-
-
+#TODO: ajouter la fonction pour choisir du niveux (changer l'image, le lien du button ... )
+func _level_selector():
+	pass
 
 
 func _on_level_button_down():
