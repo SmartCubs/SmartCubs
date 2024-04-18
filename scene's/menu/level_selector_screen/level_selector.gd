@@ -15,12 +15,12 @@ var itsIn = false
 var is_dragging = false
 var changing_level = false
 var its_animation = false
-var init_position:Vector2
+
 var clicked_position:Vector2
 var go_to = 0.0
 
-
-onready var level = $level
+onready var init_position:Vector2 =Vector2.ZERO
+onready var level = $Button/level
 onready var right_position = $right_position.position
 onready var left_position = $left_position.position
 
@@ -33,6 +33,8 @@ func _screen_drag(mouse_position:Vector2) -> bool:
 
 func _ready():
 	init_position = level.rect_position
+	$right_position.position.x = get_viewport_rect().size.x + 120
+	right_position = $right_position.position
 
 func _input(event):
 	if event is InputEventScreenTouch:
@@ -105,3 +107,12 @@ func _on_level_button_down():
 
 func _on_level_button_up():
 	itsIn = false
+
+
+func _on_level_selector_resized():
+	if level != null:
+		init_position.x = get_viewport_rect().size.x/2 - level.rect_position.x/2
+		$left_position.position = init_position
+		print(get_viewport_rect().size.x/2 - level.rect_position.x/2)
+	$right_position.position.x = get_viewport_rect().size.x + 120
+	right_position = $right_position.position
