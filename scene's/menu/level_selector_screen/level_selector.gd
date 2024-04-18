@@ -111,8 +111,11 @@ func _on_level_button_up():
 
 func _on_level_selector_resized():
 	if level != null:
-		init_position.x = get_viewport_rect().size.x/2 - level.rect_position.x/2
-		$left_position.position = init_position
-		print(get_viewport_rect().size.x/2 - level.rect_position.x/2)
+		var viewport_size = get_viewport_rect().size
+		# Calculate center position
+		var center_position = (viewport_size - level.rect_size) / 2
+		# Set object's position
+		init_position = center_position
+		print(init_position)
 	$right_position.position.x = get_viewport_rect().size.x + 120
 	right_position = $right_position.position
