@@ -38,12 +38,12 @@ func _ready():
 
 func _input(event):
 	if event is InputEventScreenTouch:
-		if event.is_pressed() :
+		if event.is_pressed():
 			is_dragging = true
 			clicked_position = get_global_mouse_position()
 		else:
 			is_dragging = false
-	if is_dragging && _screen_drag(clicked_position) && itsIn == true :
+	if is_dragging && _screen_drag(clicked_position) && itsIn == true  :
 		acceleration = .5
 		level.rect_position.x = lerp(level.rect_position.x, event.position.x - level.rect_size.x/2 ,acceleration )
 
@@ -64,6 +64,8 @@ func _process(_delta):
 		elif go_to == right_position.x:
 			level.rect_position.x = left_position.x
 			its_animation = false
+	##line 2d test
+	$Button/level/Line2D.points[0] = level.rect_position
 
 
 
@@ -78,15 +80,32 @@ func _on_level_pressed():
 		print("clicked")
 		_level_selector()
 	elif drag_distance < 0:
-		curent_level = (curent_level-1) % 3
-		print("right: curent level: ",abs(curent_level))
-		go_to = right_position.x
-		its_animation = true
+		_go_right()
 	else:
-		curent_level = (curent_level+1) % 3
-		print("left: curent level: ",abs(curent_level))
-		go_to = left_position.x
-		its_animation = true
+		_go_left()
+
+########################logic for waping #####################################
+####left
+func _go_left():
+	curent_level = (curent_level+1) % 3
+	print("left: curent level: ",abs(curent_level))
+	go_to = left_position.x
+	its_animation = true
+######right
+func _go_right():
+	curent_level = (curent_level-1) % 3
+	print("right: curent level: ",abs(curent_level))
+	go_to = right_position.x
+	its_animation = true
+
+#################logic for navigation btn ##############################
+####right 
+func _on_go_right_btn_pressed():
+	_go_right()
+
+####left
+func _on_go_left_btn_pressed():
+	_go_left()
 
 
 
@@ -94,7 +113,8 @@ func _on_level_pressed():
 func _level_selector():
 	match int(abs(curent_level)):
 		0:
-			pass
+			SceanTransition.change_scene("res://scene\'s/levels/letter/level1.tscn","d")
+			SceanTransition.audio_pause()
 		1:
 			pass
 		2:
@@ -105,8 +125,10 @@ func _on_level_button_down():
 	itsIn = true
 
 
+
 func _on_level_button_up():
 	itsIn = false
+
 
 
 func _on_level_selector_resized():
@@ -114,8 +136,10 @@ func _on_level_selector_resized():
 		var viewport_size = get_viewport_rect().size
 		# Calculate center position
 		var center_position = (viewport_size - level.rect_size) / 2
-		# Set object's position
+		# Set THE position
 		init_position = center_position
 		print(init_position)
 	$right_position.position.x = get_viewport_rect().size.x + 120
 	right_position = $right_position.position
+
+

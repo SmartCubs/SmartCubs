@@ -1,0 +1,13 @@
+[remap]
+
+importer="giwayume.godotsvg"
+type="Resource"
+path="res://.import/play btn.svg-3575e0fab53daa55438e17ebde3345fc.gdsvg"
+
+[deps]
+
+source_file="res://asset's/mainMenu/play btn.svg"
+dest_files=[ "res://.import/play btn.svg-3575e0fab53daa55438e17ebde3345fc.gdsvg" ]
+
+[params]
+
