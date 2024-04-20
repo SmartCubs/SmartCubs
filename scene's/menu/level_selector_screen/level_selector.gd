@@ -1,9 +1,20 @@
 extends Control
 
 
+
+########preload variables##################
+const alphabet_lvl = preload("res://asset\'s/level_selector/alphabet_level.png")
+const number_lvl = preload("res://asset\'s/level_selector/number_level.png")
+const drawing_lvl = preload("res://asset\'s/level_selector/drawing_level.png")
+
+
 #TODO: make the logic for the level selector
 
-const levels = ['level1','level2','level3']
+const levels = {
+	'level1': "res://scene\'s/levels/letter/level1.tscn",
+	'level2': {},
+	'level3': {}
+}
 #when using curent level always us it with absolute value cauz it can get negatives values
 var curent_level = 0;
 
@@ -13,11 +24,11 @@ var curent_level = 0;
 var acceleration = .5
 var itsIn = false
 var is_dragging = false
-var changing_level = false
+
 var its_animation = false
 
 var clicked_position:Vector2
-var go_to = 0.0
+var go_to:float = 0
 
 onready var init_position:Vector2 =Vector2.ZERO
 onready var level = $Button/level
@@ -32,6 +43,7 @@ func _screen_drag(mouse_position:Vector2) -> bool:
 	return false
 
 func _ready():
+	_change_images()
 	init_position = level.rect_position
 	$right_position.position.x = get_viewport_rect().size.x + 120
 	right_position = $right_position.position
@@ -39,7 +51,6 @@ func _ready():
 func _input(event):
 	if event is InputEventScreenTouch:
 		if event.is_pressed():
-			is_dragging = true
 			clicked_position = get_global_mouse_position()
 		else:
 			is_dragging = false
@@ -55,15 +66,18 @@ func _process(_delta):
 			level.rect_position.x = init_position.x
 	#TODO: make the animation for swap left and right
 	#animation left	#animation right
+	
 	if its_animation == true:
 		level.rect_position.x = lerp(level.rect_position.x,go_to,acceleration)
 		yield(get_tree().create_timer(.2), "timeout")
-		if go_to == left_position.x:
+		
+		if is_equal_approx(go_to , left_position.x):
 			level.rect_position.x = right_position.x
 			its_animation = false
 		elif go_to == right_position.x:
 			level.rect_position.x = left_position.x
 			its_animation = false
+	#TODO: make the dash effect for the go left and right
 	##line 2d test
 	$Button/level/Line2D.points[0] = level.rect_position
 
@@ -84,24 +98,29 @@ func _on_level_pressed():
 	else:
 		_go_left()
 
-########################logic for waping #####################################
+########################logic for swaping #####################################
 ####left
 func _go_left():
 	curent_level = (curent_level+1) % 3
+	_change_images()
 	print("left: curent level: ",abs(curent_level))
 	go_to = left_position.x
 	its_animation = true
 ######right
 func _go_right():
 	curent_level = (curent_level-1) % 3
+	_change_images()
 	print("right: curent level: ",abs(curent_level))
 	go_to = right_position.x
 	its_animation = true
+
+
 
 #################logic for navigation btn ##############################
 ####right 
 func _on_go_right_btn_pressed():
 	_go_right()
+	
 
 ####left
 func _on_go_left_btn_pressed():
@@ -110,23 +129,36 @@ func _on_go_left_btn_pressed():
 
 
 #TODO: ajouter la fonction pour choisir du niveux (changer l'image, le lien du button ... )
+func _change_images():
+	match int(abs(curent_level)):
+		0:
+			level._set_img(alphabet_lvl)
+		1:
+			level._set_img(number_lvl)
+		2:
+			level._set_img(drawing_lvl)
+
 func _level_selector():
 	match int(abs(curent_level)):
 		0:
-			SceanTransition.change_scene("res://scene\'s/levels/letter/level1.tscn","d")
+			SceanTransition.change_scene(levels["level1"],"d")
 			SceanTransition.audio_pause()
 		1:
 			pass
+			#SceanTransition.change_scene(levels["level2"],"d")
 		2:
 			pass
+			#SceanTransition.change_scene(levels["level3"],"d")
 
 
 func _on_level_button_down():
+	is_dragging = true
 	itsIn = true
 
 
 
 func _on_level_button_up():
+	is_dragging = false
 	itsIn = false
 
 
