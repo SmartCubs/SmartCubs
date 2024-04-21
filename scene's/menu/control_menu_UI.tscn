@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scene's/menu/control_menu_UI.gd" type="Script" id=1]
+[ext_resource path="res://asset's/icons/house.png" type="Texture" id=2]
 
 [node name="control_menu_UI" type="Control"]
 anchor_right = 1.0
@@ -25,6 +26,7 @@ margin_right = 70.0
 margin_bottom = 70.0
 rect_min_size = Vector2( 70, 70 )
 mouse_default_cursor_shape = 2
+expand_icon = true
 
 [node name="btn2" type="Button" parent="VBoxContainer"]
 margin_left = 90.0
@@ -32,6 +34,8 @@ margin_right = 160.0
 margin_bottom = 70.0
 rect_min_size = Vector2( 70, 70 )
 mouse_default_cursor_shape = 2
+icon = ExtResource( 2 )
+expand_icon = true
 
 [connection signal="button_up" from="VBoxContainer/btn1" to="." method="_on_pause_button_up"]
 [connection signal="button_up" from="VBoxContainer/btn2" to="." method="_on_mainMenu_button_up"]
