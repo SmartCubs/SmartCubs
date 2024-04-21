@@ -21,7 +21,7 @@ var curent_level = 0;
 #TODO: make some desgin for the level selector 
 
 #variables
-var acceleration = .5
+var acceleration = .1
 var itsIn = false
 var is_dragging = false
 
@@ -61,15 +61,17 @@ func _input(event):
 
 func _process(_delta):
 	if init_position != level.rect_position && is_dragging == false && its_animation == false:
-		level.rect_position.x = lerp(level.rect_position,init_position,acceleration).x
+		level.rect_position.x =  lerp(level.rect_position,init_position,acceleration).x
+
 		if( abs(level.rect_position.x - init_position.x) <.5 ):
 			level.rect_position.x = init_position.x
+
 	#TODO: make the animation for swap left and right
 	#animation left	#animation right
 	
 	if its_animation == true:
 		level.rect_position.x = lerp(level.rect_position.x,go_to,acceleration)
-		yield(get_tree().create_timer(.2), "timeout")
+		yield(get_tree().create_timer(.3), "timeout")
 		
 		if is_equal_approx(go_to , left_position.x):
 			level.rect_position.x = right_position.x
@@ -88,7 +90,7 @@ func _process(_delta):
 #we  know if its clicking for playing or changing level
 ## when we  compar the original position of the btn and its last position
 func _on_level_pressed():
-	acceleration = .25
+	acceleration = .1
 	var drag_distance = init_position.x - level.rect_position.x
 	if abs(drag_distance) < 50:
 		print("clicked")
