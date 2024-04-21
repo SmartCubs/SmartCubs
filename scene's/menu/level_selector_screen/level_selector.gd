@@ -30,10 +30,13 @@ var its_animation = false
 var clicked_position:Vector2
 var go_to:float = 0
 
+####onready var
 onready var init_position:Vector2 =Vector2.ZERO
 onready var level = $Button/level
 onready var right_position = $right_position.position
 onready var left_position = $left_position.position
+onready var trail = get_node("Button/Trail")
+
 
 #functions 
 	##function to detect screen drag
@@ -57,6 +60,8 @@ func _input(event):
 	if is_dragging && _screen_drag(clicked_position) && itsIn == true  :
 		acceleration = .5
 		level.rect_position.x = lerp(level.rect_position.x, event.position.x - level.rect_size.x/2 ,acceleration )
+		trail.visible = true
+
 
 
 func _process(_delta):
@@ -65,6 +70,7 @@ func _process(_delta):
 
 		if( abs(level.rect_position.x - init_position.x) <.5 ):
 			level.rect_position.x = init_position.x
+			
 
 	#TODO: make the animation for swap left and right
 	#animation left	#animation right
@@ -75,13 +81,17 @@ func _process(_delta):
 		
 		if is_equal_approx(go_to , left_position.x):
 			level.rect_position.x = right_position.x
+			
+			trail.visible = false
+			
 			its_animation = false
-		elif go_to == right_position.x:
+		elif is_equal_approx(go_to ,right_position.x):
 			level.rect_position.x = left_position.x
+			
+			trail.visible = false
+			
 			its_animation = false
-	#TODO: make the dash effect for the go left and right
-	##line 2d test
-	$Button/level/Line2D.points[0] = level.rect_position
+
 
 
 
@@ -107,6 +117,7 @@ func _go_left():
 	_change_images()
 	print("left: curent level: ",abs(curent_level))
 	go_to = left_position.x
+	trail.visible = true
 	its_animation = true
 ######right
 func _go_right():
@@ -114,6 +125,7 @@ func _go_right():
 	_change_images()
 	print("right: curent level: ",abs(curent_level))
 	go_to = right_position.x
+	trail.visible = true
 	its_animation = true
 
 

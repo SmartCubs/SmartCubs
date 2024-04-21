@@ -31,6 +31,3 @@ func change_scene(target: String, type:String = "up" ) ->void:
 		yield($AnimationPlayer,"animation_finished")
 		get_tree().change_scene(target)
 		$AnimationPlayer.play("continue up")
-
-
-
