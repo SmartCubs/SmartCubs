@@ -12,8 +12,8 @@ const drawing_lvl = preload("res://asset\'s/level_selector/drawing_level.png")
 
 const levels = {
 	'level1': "res://scene\'s/levels/letter/level1.tscn",
-	'level2': {},
-	'level3': {}
+	'level2': "",
+	'level3': "res://scene\'s/levels/drawing_world/drawing_world.tscn"
 }
 #when using curent level always us it with absolute value cauz it can get negatives values
 var curent_level = 0;
@@ -164,10 +164,10 @@ func _level_selector()->void:
 			SceanTransition.audio_pause()
 		1:
 			pass
-			#SceanTransition.change_scene(levels["level2"],"d")
+			SceanTransition.change_scene(levels["level2"],"d")
 		2:
-			pass
-			#SceanTransition.change_scene(levels["level3"],"d")
+			
+			SceanTransition.change_scene(levels["level3"],"d")
 
 
 func _on_level_button_down():
