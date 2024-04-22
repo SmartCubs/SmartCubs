@@ -4,7 +4,7 @@
 
 [sub_resource type="Curve" id=1]
 min_value = 0.02
-_data = [ Vector2( 0, 0.915828 ), 0.0, -0.258937, 0, 0, Vector2( 1, 0.02 ), -1.64975, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 1 ), 0.0, -0.258937, 0, 0, Vector2( 1, 0.02 ), -1.64975, 0.0, 0, 0 ]
 
 [sub_resource type="Gradient" id=2]
 interpolation_mode = 2
@@ -14,11 +14,9 @@ colors = PoolColorArray( 0.643137, 0.215686, 0.215686, 1, 0.743949, 0.43273, 0.1
 [node name="Trail" type="Line2D"]
 show_behind_parent = true
 points = PoolVector2Array( 11.3803, 10.2083 )
-width = 30.0
+width = 230.0
 width_curve = SubResource( 1 )
 gradient = SubResource( 2 )
-joint_mode = 2
 round_precision = 15
 antialiased = true
 script = ExtResource( 1 )
-MAX_LENGHT = 50

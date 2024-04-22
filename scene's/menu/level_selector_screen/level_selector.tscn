@@ -55,7 +55,6 @@ script = ExtResource( 6 )
 [node name="Trail" parent="Button" instance=ExtResource( 7 )]
 width = 300.0
 script = ExtResource( 8 )
-MAX_LENGHT = 20
 
 [node name="go_right_btn" type="Button" parent="Button"]
 modulate = Color( 1, 1, 1, 0.980392 )

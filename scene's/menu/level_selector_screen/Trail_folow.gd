@@ -10,7 +10,7 @@ onready var level = get_node("%level")
 
 
 func _ready()->void:
-	width = level.get_rect().size.y
+	width = level.get_rect().size.y/2
 
 
 func _get_position()->Vector2:

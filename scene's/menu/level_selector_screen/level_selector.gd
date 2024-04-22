@@ -20,15 +20,16 @@ var curent_level = 0;
 
 #TODO: make some desgin for the level selector 
 
+
 #variables
 var acceleration = .1
 var itsIn = false
 var is_dragging = false
-
 var its_animation = false
-
 var clicked_position:Vector2
 var go_to:float = 0
+
+
 
 ####onready var
 onready var init_position:Vector2 =Vector2.ZERO
@@ -38,6 +39,8 @@ onready var left_position = $left_position.position
 onready var trail = get_node("Button/Trail")
 
 
+
+
 #functions 
 	##function to detect screen drag
 func _screen_drag(mouse_position:Vector2) -> bool:
@@ -45,11 +48,16 @@ func _screen_drag(mouse_position:Vector2) -> bool:
 		return true
 	return false
 
+
+
+
 func _ready():
 	_change_images()
 	init_position = level.rect_position
 	$right_position.position.x = get_viewport_rect().size.x + 120
 	right_position = $right_position.position
+
+
 
 func _input(event)->void:
 	if event is InputEventScreenTouch:
@@ -184,5 +192,3 @@ func _on_level_selector_resized():
 		print(init_position)
 	$right_position.position.x = get_viewport_rect().size.x + 120
 	right_position = $right_position.position
-
-
