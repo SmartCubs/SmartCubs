@@ -51,7 +51,7 @@ func _ready():
 	$right_position.position.x = get_viewport_rect().size.x + 120
 	right_position = $right_position.position
 
-func _input(event):
+func _input(event)->void:
 	if event is InputEventScreenTouch:
 		if event.is_pressed():
 			clicked_position = get_global_mouse_position()
@@ -64,10 +64,9 @@ func _input(event):
 
 
 
-func _process(_delta):
+func _process(_delta)->void:
 	if init_position != level.rect_position && is_dragging == false && its_animation == false:
 		level.rect_position.x =  lerp(level.rect_position,init_position,acceleration).x
-
 		if( abs(level.rect_position.x - init_position.x) <.5 ):
 			level.rect_position.x = init_position.x
 			
@@ -78,19 +77,14 @@ func _process(_delta):
 	if its_animation == true:
 		level.rect_position.x = lerp(level.rect_position.x,go_to,acceleration)
 		yield(get_tree().create_timer(.3), "timeout")
-		
+		trail._clear_all_points()
 		if is_equal_approx(go_to , left_position.x):
 			level.rect_position.x = right_position.x
-			
-			trail.visible = false
-			
 			its_animation = false
 		elif is_equal_approx(go_to ,right_position.x):
 			level.rect_position.x = left_position.x
-			
-			trail.visible = false
-			
 			its_animation = false
+
 
 
 
@@ -99,7 +93,7 @@ func _process(_delta):
 
 #we  know if its clicking for playing or changing level
 ## when we  compar the original position of the btn and its last position
-func _on_level_pressed():
+func _on_level_pressed()->void:
 	acceleration = .1
 	var drag_distance = init_position.x - level.rect_position.x
 	if abs(drag_distance) < 50:
@@ -112,7 +106,7 @@ func _on_level_pressed():
 
 ########################logic for swaping #####################################
 ####left
-func _go_left():
+func _go_left()->void:
 	curent_level = (curent_level+1) % 3
 	_change_images()
 	print("left: curent level: ",abs(curent_level))
@@ -143,7 +137,9 @@ func _on_go_left_btn_pressed():
 
 
 #TODO: ajouter la fonction pour choisir du niveux (changer l'image, le lien du button ... )
-func _change_images():
+
+########################changer limage du level selector#############################
+func _change_images()->void:
 	match int(abs(curent_level)):
 		0:
 			level._set_img(alphabet_lvl)
@@ -152,7 +148,8 @@ func _change_images():
 		2:
 			level._set_img(drawing_lvl)
 
-func _level_selector():
+#########################matching each btn with its path ###########################
+func _level_selector()->void:
 	match int(abs(curent_level)):
 		0:
 			SceanTransition.change_scene(levels["level1"],"d")

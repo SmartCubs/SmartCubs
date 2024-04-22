@@ -21,3 +21,4 @@ joint_mode = 2
 round_precision = 15
 antialiased = true
 script = ExtResource( 1 )
+MAX_LENGHT = 50

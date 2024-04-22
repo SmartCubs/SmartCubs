@@ -1,6 +1,8 @@
 extends Line2D
 class_name Trails
 
+
+########### variables ##################
 var queue: Array
 export var MAX_LENGHT:int = 20
 
@@ -10,6 +12,7 @@ export var MAX_LENGHT:int = 20
 
 
 func _process(_delta):
+	
 	var pos = _get_position()
 	
 	########### we are using a fifo type array so the element at the end of the queue will 
@@ -22,6 +25,10 @@ func _process(_delta):
 	clear_points()
 	for point in queue:
 		add_point(point)
+
+func _clear_all_points() -> void:
+	while queue.size() > 0:
+		queue.pop_back()
 
 
 #######we can take the position of others node by overwriding this function
