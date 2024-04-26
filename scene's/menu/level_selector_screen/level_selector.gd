@@ -51,11 +51,29 @@ func _screen_drag(mouse_position:Vector2) -> bool:
 
 
 
+
+
+
+
+
+
 func _ready():
 	_change_images()
 	init_position = level.rect_position
 	$right_position.position.x = get_viewport_rect().size.x + 120
 	right_position = $right_position.position
+	
+	
+##################################testing text to speach#########################
+#	var text = "Text to speech is a really neat thing."
+#	var speed = 0.9
+#	yield($TextToSpeech.say("fuck", TextToSpeechEngine.VOICE_AWB, speed), "completed")
+#	yield($TextToSpeech.say("you", TextToSpeechEngine.VOICE_AHW, speed), "completed")
+#	yield($TextToSpeech.say("ahhhhhhhhh", TextToSpeechEngine.VOICE_FEM, speed), "completed")
+#	yield($TextToSpeech.say(text, TextToSpeechEngine.VOICE_AEW, speed), "completed")
+#	yield($TextToSpeech.say(text, TextToSpeechEngine.VOICE_SLT, speed), "completed")
+#	yield($TextToSpeech.say(text, TextToSpeechEngine.VOICE_EEY, speed), "completed")
+#	yield($TextToSpeech.say(text, TextToSpeechEngine.VOICE_CLB, speed), "completed")
 
 
 

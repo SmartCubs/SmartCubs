@@ -9,12 +9,42 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "AudioStreamPlayer",
+"class": "TextToSpeech",
+"language": "GDScript",
+"path": "res://addons/texttospeech/TextToSpeech.gd"
+}, {
+"base": "AudioStreamPlayer2D",
+"class": "TextToSpeech2D",
+"language": "GDScript",
+"path": "res://addons/texttospeech/TextToSpeech2D.gd"
+}, {
+"base": "AudioStreamPlayer3D",
+"class": "TextToSpeech3D",
+"language": "GDScript",
+"path": "res://addons/texttospeech/TextToSpeech3D.gd"
+}, {
+"base": "Control",
+"class": "Toast",
+"language": "GDScript",
+"path": "res://addons/toast/toast_script.gd"
+}, {
+"base": "Resource",
+"class": "ToastStyle",
+"language": "GDScript",
+"path": "res://addons/toast/style_resource/toast_style.gd"
+}, {
 "base": "Line2D",
 "class": "Trails",
 "language": "GDScript",
 "path": "res://scene's/effect/Trail.gd"
 } ]
 _global_script_class_icons={
+"TextToSpeech": "",
+"TextToSpeech2D": "",
+"TextToSpeech3D": "",
+"Toast": "",
+"ToastStyle": "",
 "Trails": ""
 }
 
@@ -27,6 +57,7 @@ config/icon="res://icon.png"
 [autoload]
 
 SceanTransition="*res://scene's/scean_trans/scean_transition.tscn"
+TextToSpeechEngine="*res://addons/texttospeech/TextToSpeechEngine.gd"
 
 [display]
 
@@ -34,12 +65,16 @@ window/size/width=1280
 window/size/height=720
 window/size/test_width=640
 window/size/test_height=360
-window/stretch/mode="viewport"
+window/stretch/mode="2d"
 window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/MaxSizeContainer/plugin.cfg", "res://addons/Todo_Manager/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/MaxSizeContainer/plugin.cfg", "res://addons/Todo_Manager/plugin.cfg", "res://addons/texttospeech/plugin.cfg", "res://addons/toast/plugin.cfg" )
+
+[gdnative]
+
+singletons=[ "res://pythonscript.gdnlib" ]
 
 [global]
 
@@ -79,5 +114,6 @@ quality/intended_usage/framebuffer_allocation.mobile=0
 2d/snapping/use_gpu_pixel_snap=true
 quality/shadows/filter_mode.mobile=1
 quality/filters/use_nearest_mipmap_filter=true
+environment/default_clear_color=Color( 0.184314, 0.533333, 0.815686, 1 )
 quality/filters/msaa=3
 environment/default_environment="res://default_env.tres"

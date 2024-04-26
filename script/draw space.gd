@@ -4,6 +4,10 @@ onready var lines := $Node2D/lines
 
 var pressed = false
 var curent_line: Line2D
+var img:Image
+var byte_array
+onready var viewport:Viewport = get_parent()
+var image
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -19,4 +23,12 @@ func _input(event: InputEvent) -> void:
 	# Drawing lines
 	if event is InputEventMouseMotion && pressed:
 		curent_line.add_point(event.position - rect_position)
-	
+	#TODO: change the way that saving images is working
+	if event is InputEventKey:
+		
+		#saving images as png
+		# Capture Image
+		image = viewport.get_texture().get_data()
+		image.flip_y()
+		var image_path = "res://captured_image.png"
+		image.save_png(image_path)
