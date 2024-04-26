@@ -181,10 +181,8 @@ func _level_selector()->void:
 			SceanTransition.change_scene(levels["level1"],"d")
 			SceanTransition.audio_pause()
 		1:
-			pass
 			SceanTransition.change_scene(levels["level2"],"d")
 		2:
-			
 			SceanTransition.change_scene(levels["level3"],"d")
 
 

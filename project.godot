@@ -74,7 +74,7 @@ enabled=PoolStringArray( "res://addons/MaxSizeContainer/plugin.cfg", "res://addo
 
 [gdnative]
 
-singletons=[ "res://pythonscript.gdnlib" ]
+singletons=[  ]
 
 [global]
 
