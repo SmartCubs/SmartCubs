@@ -54,8 +54,7 @@ func _input(event: InputEvent) -> void:
 func _on_request_completed(result, response_code, _headers, body):
 	if response_code == 200:
 		var json_data = JSON.parse(body.get_string_from_utf8())
-		 # Now you can access the data in the JSON format
-		# For example, if the response is a JSON object with a key "message":
+
 		var message = json_data.result["key"]
 		print("Received message from server:", message)
 	else:
