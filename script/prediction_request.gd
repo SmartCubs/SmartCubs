@@ -48,18 +48,12 @@ func _input(event: InputEvent) -> void:
 		image = get_node("%Viewport").get_texture().get_data()
 		image.flip_y()
 		
+		image.convert(Image.FORMAT_L8)
 		
+		image.resize(28,28,Image.INTERPOLATE_CUBIC)
 		
-		# Get image dimensions
-		var width = 28
-		var height = 28
-
-		# Initialize a matrix to store the pixel values
-		var matrix = []
-
-		
-	
-		var input_data = matrix
+		var input_data =  image.get_data()
+		print(input_data)
 		
 			# Send data to server for prediction
 		var headers = ["Content-Type: application/json"]
