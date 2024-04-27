@@ -9,42 +9,16 @@ func _check_connexion():
 	pass
 	
 
-func _ready():
-	
-	#TODO: send the data by converting the image to mat
-	# Data to send for prediction
-	var input_data = [[0.1, 0.2, 0.3],[1,2,3,4],[1,2,3,4],[1,2,3,4]]  # Provide your input data here
-	
-	# Send data to server for prediction
-	var headers = ["Content-Type: application/json"]
-	var body = {'input': input_data}
-	
-	# Convert body to JSON format
-	var body_json = JSON.print(body)
-	
-	# Send POST request
-	var error = $HTTPRequest.request(SERVER_URL, headers, false, HTTPClient.METHOD_POST, body_json)
-	
-	print(error)
-	if error != OK:
-		var toast = Toast.new("An error occurred in the HTTP request.", Toast.LENGTH_LONG)
-		get_node("/root").add_child(toast)
-		toast.show()
-		yield(toast,"done")
-		push_error("An error occurred in the HTTP request.")
-		SceanTransition.change_scene("res://scene's/menu/level_selector_screen/level_selector.tscn")
-		return 
-
-
 
 var image
 func _input(event: InputEvent) -> void:
-
+	
 	if event is InputEventKey and event.is_action_pressed("ui_down"):
 
 		
 		
 		# Capture Image
+		#TODO: send the data by converting the image to mat
 		image = get_node("%Viewport").get_texture().get_data()
 		image.flip_y()
 		
@@ -52,9 +26,11 @@ func _input(event: InputEvent) -> void:
 		
 		image.resize(28,28,Image.INTERPOLATE_CUBIC)
 		
-		var input_data =  image.get_data()
-		print(input_data)
+		image.save_png("res://test.png")
 		
+		
+		var input_data =  Array( image.get_data())
+
 			# Send data to server for prediction
 		var headers = ["Content-Type: application/json"]
 		var body = {'input': input_data}
