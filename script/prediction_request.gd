@@ -4,7 +4,7 @@ extends Node
 
 # URL of the server
 const SERVER_URL = "http://192.168.1.10:5000/predict"
-
+#const SERVER_URL = "http://192.168.43.199:5000/predict"
 func _check_connexion():
 	pass
 	
@@ -24,6 +24,8 @@ func _input(event: InputEvent) -> void:
 		
 		image.convert(Image.FORMAT_L8)
 		
+		
+
 		image.resize(28,28,Image.INTERPOLATE_CUBIC)
 		
 		image.save_png("res://test.png")

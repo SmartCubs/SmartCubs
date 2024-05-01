@@ -40,6 +40,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
+[node name="Sprite" type="Sprite" parent="Button"]
+modulate = Color( 0, 0.670588, 1, 1 )
+position = Vector2( 636, 356 )
+scale = Vector2( 9, 9 )
+z_index = -1
+texture = ExtResource( 3 )
+
 [node name="level" type="Button" parent="Button"]
 unique_name_in_owner = true
 anchor_left = 0.5
