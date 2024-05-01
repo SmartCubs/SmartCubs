@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scene's/effect/Trail.gd" type="Script" id=1]
+[ext_resource path="res://asset's/letters/Block_A.png" type="Texture" id=2]
 
 [sub_resource type="Curve" id=1]
 min_value = 0.02
@@ -17,6 +18,9 @@ points = PoolVector2Array( 11.3803, 10.2083 )
 width = 230.0
 width_curve = SubResource( 1 )
 gradient = SubResource( 2 )
-round_precision = 15
+texture = ExtResource( 2 )
+texture_mode = 2
+joint_mode = 1
+sharp_limit = 20.0
 antialiased = true
 script = ExtResource( 1 )
