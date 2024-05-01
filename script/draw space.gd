@@ -12,7 +12,7 @@ var image
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		pressed = event.pressed
-
+		
 		# Making line
 		if pressed:
 			curent_line = Line2D.new()
@@ -23,12 +23,19 @@ func _input(event: InputEvent) -> void:
 	# Drawing lines
 	if event is InputEventMouseMotion && pressed:
 		curent_line.add_point(event.position - rect_position)
-	#TODO: change the way that saving images is working
-	if event is InputEventKey:
-		
-		#saving images as png
-		# Capture Image
-		image = viewport.get_texture().get_data()
-		image.flip_y()
-		var image_path = "res://captured_image.png"
-		image.save_png(image_path)
+
+
+
+
+func _clear_all():
+	for i in lines.get_children():
+		lines.remove_child(i)
+
+
+func _save():
+	#saving images as png
+	# Capture Image
+	image = viewport.get_texture().get_data()
+	image.flip_y()
+	var image_path = "res://captured_image.png"
+	image.save_png(image_path)

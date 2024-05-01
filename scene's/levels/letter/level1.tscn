@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scene's/menu/control_menu_UI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scene's/levels/letter/draw space.tscn" type="PackedScene" id=2]
@@ -6,10 +6,13 @@
 [ext_resource path="res://scene's/character/character.tscn" type="PackedScene" id=4]
 [ext_resource path="res://asset's/BG/BG2_Landscape.png" type="Texture" id=5]
 [ext_resource path="res://asset's/letters/Block_A.png" type="Texture" id=6]
+[ext_resource path="res://asset's/icons/Close.png" type="Texture" id=7]
+[ext_resource path="res://script/world_level_script.gd" type="Script" id=8]
 
 [node name="level1" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 8 )
 
 [node name="BG" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -60,6 +63,7 @@ usage = 0
 render_target_update_mode = 3
 
 [node name="draw space" parent="ViewportContainer/Viewport" instance=ExtResource( 2 )]
+unique_name_in_owner = true
 rect_min_size = Vector2( 320, 320 )
 
 [node name="request_sender" type="Node" parent="."]
@@ -80,14 +84,20 @@ position = Vector2( 0, -150 )
 curent_pos = 1
 speach = [ "hello", "in this world u need to draw the shapes that we gives u", "good luck u son of bitch" ]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="delet" type="TextureButton" parent="."]
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -309.0
-margin_top = 121.0
-margin_right = -213.0
-margin_bottom = 222.0
+anchor_bottom = 1.0
+margin_left = -324.0
+margin_top = -163.0
+margin_right = -196.0
+margin_bottom = -35.0
+rect_min_size = Vector2( 128, 128 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 7 )
+expand = true
 
 [connection signal="request_completed" from="request_sender/HTTPRequest" to="request_sender" method="_on_request_completed"]
+[connection signal="pressed" from="delet" to="." method="_on_delet_pressed"]
