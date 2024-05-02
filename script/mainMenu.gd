@@ -14,6 +14,13 @@ func _ready() -> void:
 	
 
 
+
+func _notification(what):
+	if what == NOTIFICATION_WM_GO_BACK_REQUEST:
+		
+		get_tree().quit()
+
+
 #play btn {:
 
 

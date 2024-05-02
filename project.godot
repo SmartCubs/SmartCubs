@@ -53,11 +53,13 @@ _global_script_class_icons={
 config/name="SmartCubs"
 run/main_scene="res://scene's/menu/level_selector_screen/level_selector.tscn"
 config/icon="res://icon.png"
+config/quit_on_go_back=false
 
 [autoload]
 
 SceanTransition="*res://scene's/scean_trans/scean_transition.tscn"
 TextToSpeechEngine="*res://addons/texttospeech/TextToSpeechEngine.gd"
+LetterMapping="*res://script/letter_mapping.gd"
 
 [display]
 

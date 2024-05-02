@@ -53,7 +53,9 @@ func _screen_drag(mouse_position:Vector2) -> bool:
 
 
 
-
+func _notification(what):
+	if what == NOTIFICATION_WM_GO_BACK_REQUEST:
+		SceanTransition.change_scene("res://scene's/menu/mainMenu.tscn")
 
 
 
