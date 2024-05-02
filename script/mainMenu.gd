@@ -5,6 +5,7 @@ onready var animation_player = $AnimationPlayer
 onready var option_panel = $optionMenu
 onready var btnCloseOption = option_panel.get_node("Button")
 onready var playBtn = $Button/playBTN
+onready var light = $Button/playBTN/Light2D
 
 func _ready() -> void:
 	option_panel.visible = false

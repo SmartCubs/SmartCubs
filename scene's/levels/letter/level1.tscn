@@ -99,5 +99,7 @@ enabled_focus_mode = 0
 texture_normal = ExtResource( 7 )
 expand = true
 
+[connection signal="send_img" from="ViewportContainer/Viewport/draw space" to="request_sender" method="_on_draw_space_send_img"]
+[connection signal="verify" from="request_sender" to="." method="_on_request_sender_verify"]
 [connection signal="request_completed" from="request_sender/HTTPRequest" to="request_sender" method="_on_request_completed"]
 [connection signal="pressed" from="delet" to="." method="_on_delet_pressed"]

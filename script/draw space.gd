@@ -1,13 +1,17 @@
 extends Control
 
 onready var lines := $Node2D/lines
+onready var viewport:Viewport = get_parent()
 
 var pressed = false
 var curent_line: Line2D
-var img:Image
-var byte_array
-onready var viewport:Viewport = get_parent()
-var image
+var image:Image
+var old_child
+
+signal send_img
+
+func _ready():
+	old_child = lines.get_point_count()
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -19,7 +23,10 @@ func _input(event: InputEvent) -> void:
 			curent_line.default_color = lines.default_color
 			curent_line.width = lines.width
 			lines.add_child(curent_line)
-
+		if not event.is_pressed() :
+			emit_signal("send_img")
+			old_child = lines.get_point_count()
+			print("mouse up")
 	# Drawing lines
 	if event is InputEventMouseMotion && pressed:
 		curent_line.add_point(event.position - rect_position)

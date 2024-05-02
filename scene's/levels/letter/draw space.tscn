@@ -21,5 +21,3 @@ width = 20.0
 default_color = Color( 0, 0, 0, 1 )
 joint_mode = 1
 antialiased = true
-
-[connection signal="mouse_entered" from="." to="." method="_on_draw_space_mouse_entered"]
