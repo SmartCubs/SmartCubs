@@ -9,7 +9,8 @@ var menu_music = preload("res://asset\'s/audio/main-menu.mp3")
 
 func _ready():
 	audio_stream.stream = menu_music
-	audio_stream.play(.5)
+	#audio_stream.play(.5)
+	
 	print("loaded")
 
 

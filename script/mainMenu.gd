@@ -5,6 +5,7 @@ onready var animation_player = $AnimationPlayer
 onready var option_panel = $optionMenu
 onready var btnCloseOption = option_panel.get_node("Button")
 onready var playBtn = $Button/playBTN
+onready var light = $Button/playBTN/Light2D
 
 func _ready() -> void:
 	option_panel.visible = false
@@ -12,6 +13,13 @@ func _ready() -> void:
 	#play idel animation after the load of the page
 	animation_player.play("Idel")
 	
+
+
+
+func _notification(what):
+	if what == NOTIFICATION_WM_GO_BACK_REQUEST:
+		
+		get_tree().quit()
 
 
 #play btn {:

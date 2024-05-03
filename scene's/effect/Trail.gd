@@ -6,10 +6,22 @@ class_name Trails
 var queue: Array
 export var MAX_LENGHT:int = 20
 
-#TODO: make the dash effect for loking goood :)
+
 ##line 2d test
 
+#####################          easter egg   :)        ############################
+var yanis = [
+	preload("res://asset\'s/letters/Block_Y.png"),
+	preload("res://asset\'s/letters/Block_A.png"),
+	preload("res://asset\'s/letters/Block_n.png"),
+	preload("res://asset\'s/letters/Block_I.png"),
+	preload("res://asset\'s/letters/Block_S.png")
+]
 
+func _ready():
+	randomize()
+	var index = int(rand_range(0,4))
+	texture = yanis[index]
 
 func _process(_delta):
 	
