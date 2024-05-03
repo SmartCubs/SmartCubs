@@ -4,7 +4,7 @@
 [ext_resource path="res://script/mainMenu.gd" type="Script" id=2]
 [ext_resource path="res://asset's/mainMenu/option.png" type="Texture" id=3]
 [ext_resource path="res://scene's/menu/optionMenu.tscn" type="PackedScene" id=4]
-[ext_resource path="res://asset's/BG/BG3_claud.png" type="Texture" id=5]
+[ext_resource path="res://asset's/BG/BG3_claud_with_blur.png" type="Texture" id=5]
 [ext_resource path="res://asset's/light 2d.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=6]

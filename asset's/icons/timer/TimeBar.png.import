@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shadow.png-623504030c82a2063292a130accc199f.stex"
+path="res://.import/TimeBar.png-da9717296c43bad20541417f1c1bf782.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset's/level_selector/shadow.png"
-dest_files=[ "res://.import/shadow.png-623504030c82a2063292a130accc199f.stex" ]
+source_file="res://asset's/icons/timer/TimeBar.png"
+dest_files=[ "res://.import/TimeBar.png-da9717296c43bad20541417f1c1bf782.stex" ]
 
 [params]
 
