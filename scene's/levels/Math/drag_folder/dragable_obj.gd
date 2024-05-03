@@ -31,13 +31,9 @@ func _input(event):
 
 func _process(_delta:float):
 	if is_draging:
-		
-		set_global_position( lerp(get_global_rect().position , get_global_mouse_position() - rect_size/2  , acceleration ))
 		mouse_filter = MOUSE_FILTER_IGNORE
-		if Input.is_action_just_released("LMB"):
-			is_draging = false
-			animation = true
-			mouse_filter = MOUSE_FILTER_STOP
+		set_global_position( lerp(get_global_rect().position , get_global_mouse_position() - rect_size/2  , acceleration ))
+
 	elif animation:
 		rect_position = (lerp(rect_position  , init_position, acceleration))
 		if Vector2(rect_position).is_equal_approx(init_position):
