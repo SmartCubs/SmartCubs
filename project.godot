@@ -9,12 +9,24 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "TextureRect",
+"class": "Drag_to",
+"language": "GDScript",
+"path": "res://scene's/levels/Math/drag_folder/drag_to.gd"
+}, {
+"base": "TextureButton",
+"class": "Dragable_obj",
+"language": "GDScript",
+"path": "res://scene's/levels/Math/drag_folder/dragable_obj.gd"
+}, {
 "base": "Line2D",
 "class": "Trails",
 "language": "GDScript",
 "path": "res://scene's/effect/Trail.gd"
 } ]
 _global_script_class_icons={
+"Drag_to": "",
+"Dragable_obj": "",
 "Trails": ""
 }
 
@@ -26,7 +38,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-SceanTransition="*res://scene's/scean_trans/scean_transition.tscn"
+SceanTransition="res://scene's/scean_trans/scean_transition.tscn"
 
 [display]
 
@@ -39,7 +51,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/MaxSizeContainer/plugin.cfg", "res://addons/Todo_Manager/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/Todo_Manager/plugin.cfg" )
 
 [global]
 

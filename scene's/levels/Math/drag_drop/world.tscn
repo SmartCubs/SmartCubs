@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://drag_to.tscn" type="PackedScene" id=1]
+[ext_resource path="res://drag_object.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Block_1.png" type="Texture" id=3]
+
+[node name="world" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="drag_to" parent="." instance=ExtResource( 1 )]
+margin_left = 707.0
+margin_top = 174.0
+margin_right = 771.0
+margin_bottom = 238.0
+test = 1
+
+[node name="drag_to4" parent="." instance=ExtResource( 1 )]
+margin_left = 499.0
+margin_top = 119.0
+margin_right = 563.0
+margin_bottom = 183.0
+test = 2
+
+[node name="drag_to2" parent="." instance=ExtResource( 1 )]
+margin_left = 238.0
+margin_top = 244.0
+margin_right = 302.0
+margin_bottom = 308.0
+test = 3
+
+[node name="drag_to3" parent="." instance=ExtResource( 1 )]
+margin_left = 523.0
+margin_top = 272.0
+margin_right = 587.0
+margin_bottom = 336.0
+test = 4
+
+[node name="drag_object3" parent="." instance=ExtResource( 2 )]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 374.0
+margin_top = 451.0
+margin_right = 438.0
+margin_bottom = 515.0
+
+[node name="drag_object4" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0, 0.992157, 0.156863, 1 )
+margin_left = 523.0
+margin_top = 448.0
+margin_right = 587.0
+margin_bottom = 512.0
+
+[node name="drag_object5" parent="." instance=ExtResource( 2 )]
+modulate = Color( 1, 0, 0.937255, 1 )
+margin_left = 684.0
+margin_top = 448.0
+margin_right = 748.0
+margin_bottom = 512.0
+rect_scale = Vector2( 0.29, 0.29 )
+texture_normal = ExtResource( 3 )
+
+[node name="drag_object6" parent="." instance=ExtResource( 2 )]
+margin_left = 828.0
+margin_top = 395.0
+margin_right = 892.0
+margin_bottom = 459.0
