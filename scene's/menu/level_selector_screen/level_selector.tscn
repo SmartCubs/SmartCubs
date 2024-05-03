@@ -16,8 +16,14 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="control_menu_UI" parent="." instance=ExtResource( 1 )]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Button" type="Control" parent="."]
 anchor_right = 1.0
@@ -60,10 +66,16 @@ margin_right = 230.0
 margin_bottom = 230.0
 expand_icon = true
 script = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Trail" parent="Button" instance=ExtResource( 7 )]
 width = 300.0
 script = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="go_right_btn" type="Button" parent="Button"]
 modulate = Color( 1, 1, 1, 0.980392 )
@@ -118,13 +130,16 @@ position = Vector2( 1021.13, 473 )
 scale = Vector2( 0.303387, 0.293056 )
 
 [node name="background" type="CanvasLayer" parent="."]
-layer = -7
+layer = -3
 
 [node name="background_img" type="TextureRect" parent="background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 11 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [connection signal="resized" from="." to="." method="_on_level_selector_resized"]
 [connection signal="button_down" from="Button/level" to="." method="_on_level_button_down"]

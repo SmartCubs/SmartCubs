@@ -15,7 +15,8 @@ func _ready():
 			yield($TextToSpeech2D.say(text, TextToSpeechEngine.VOICE_AEW, 1), "completed")
 
 
-
+func _set_pose(pose:int ):
+	curent_pos = pose
 
 func _process(_delta):
 	if curent_pos != frame:

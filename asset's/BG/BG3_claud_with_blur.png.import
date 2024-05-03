@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shadow.png-623504030c82a2063292a130accc199f.stex"
+path="res://.import/BG3_claud_with_blur.png-4b653670d9ac30c24cde0a5c7f3c8fa2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset's/level_selector/shadow.png"
-dest_files=[ "res://.import/shadow.png-623504030c82a2063292a130accc199f.stex" ]
+source_file="res://asset's/BG/BG3_claud_with_blur.png"
+dest_files=[ "res://.import/BG3_claud_with_blur.png-4b653670d9ac30c24cde0a5c7f3c8fa2.stex" ]
 
 [params]
 
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0
