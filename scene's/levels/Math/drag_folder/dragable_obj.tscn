@@ -9,3 +9,5 @@ margin_bottom = 40.0
 mouse_filter = 1
 texture_normal = ExtResource( 1 )
 script = ExtResource( 2 )
+
+[connection signal="button_up" from="." to="." method="_on_drag_obj_button_up"]

@@ -34,3 +34,7 @@ func _process(_delta:float):
 		set_global_position(lerp(get_global_rect().position  , init_position, acceleration))
 		if Vector2(rect_position).is_equal_approx(init_position):
 			animation = false
+
+
+func _on_drag_obj_button_up():
+	is_draging = false
