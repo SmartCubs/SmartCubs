@@ -26,6 +26,7 @@ func _input(event):
 		if not touch.pressed:
 			is_draging = false
 			animation = true
+			mouse_filter = MOUSE_FILTER_STOP
 
 
 func _process(_delta:float):
