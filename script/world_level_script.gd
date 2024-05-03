@@ -3,12 +3,13 @@ extends Control
 onready var draw_space = get_node("%draw space")
 onready var letter_holder = $letter_holder
 onready var character = get_node("Control/character")
+onready var timer_ui = $timer_UI
 
 var letter_to_draw:int
 
 func _ready():
 	_select_letter()
-	
+	timer_ui._start_timer()
 
 
 func _notification(what):
