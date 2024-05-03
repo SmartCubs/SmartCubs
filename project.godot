@@ -90,7 +90,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/MaxSizeContainer/plugin.cfg", "res://addons/Todo_Manager/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/MaxSizeContainer/plugin.cfg", "res://addons/Todo_Manager/plugin.cfg", "res://addons/texttospeech/plugin.cfg", "res://addons/toast/plugin.cfg" )
 
 [gdnative]
 

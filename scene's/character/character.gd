@@ -1,3 +1,4 @@
+tool
 extends AnimatedSprite
 
 var all_pos = {
@@ -10,6 +11,8 @@ export (int,"show","idel","happy")var curent_pos = 0
 export (Array,String)var speach
 
 func _ready():
+	if not Engine.editor_hint:
+		print("test")
 #	if !speach.empty():
 #		for text in speach:
 #			yield($TextToSpeech2D.say(text, TextToSpeechEngine.VOICE_AEW, 1), "completed")
