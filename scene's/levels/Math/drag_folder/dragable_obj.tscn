@@ -6,8 +6,8 @@
 [node name="drag_obj" type="TextureButton"]
 margin_right = 40.0
 margin_bottom = 40.0
+focus_mode = 0
 mouse_filter = 1
+enabled_focus_mode = 0
 texture_normal = ExtResource( 1 )
 script = ExtResource( 2 )
-
-[connection signal="button_up" from="." to="." method="_on_drag_obj_button_up"]

@@ -20,6 +20,13 @@ func get_drag_data(_position:Vector2):
 	
 	return self
 
+func _input(event):
+	if event is InputEventScreenTouch:
+		var touch = event as InputEventScreenTouch
+		if not touch.pressed:
+			is_draging = false
+			animation = true
+
 
 func _process(_delta:float):
 	if is_draging:
@@ -36,8 +43,4 @@ func _process(_delta:float):
 			animation = false
 
 
-func _on_drag_obj_button_up():
-	is_draging = false
-	animation = true
-	mouse_filter = MOUSE_FILTER_STOP
-	print("test")
+
