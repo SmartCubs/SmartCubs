@@ -10,7 +10,7 @@ var can_drop
 
 func _ready():
 	
-	init_position = rect_position
+	init_position = get_global_rect().position
 
 
 
@@ -23,13 +23,14 @@ func get_drag_data(_position:Vector2):
 
 func _process(_delta:float):
 	if is_draging:
-		rect_position = lerp(rect_position , get_global_mouse_position() - rect_min_size/2 - get_parent().rect_position , acceleration )
+		
+		set_global_position( lerp(get_global_rect().position , get_global_mouse_position() - rect_size/2  , acceleration ))
 		mouse_filter = MOUSE_FILTER_IGNORE
 		if Input.is_action_just_released("LMB"):
 			is_draging = false
 			animation = true
 			mouse_filter = MOUSE_FILTER_STOP
 	elif animation:
-		rect_position = lerp(rect_position , init_position, acceleration)
+		set_global_position(lerp(get_global_rect().position  , init_position, acceleration))
 		if Vector2(rect_position).is_equal_approx(init_position):
 			animation = false
