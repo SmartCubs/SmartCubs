@@ -35,3 +35,7 @@ func _on_request_sender_verify(letter_drawed:int):
 		character._set_pose(0)
 		
 	
+
+##game over
+func _on_timer_UI_time_out():
+	pass

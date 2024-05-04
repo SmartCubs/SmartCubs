@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scene's/menu/control_menu_UI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scene's/levels/letter/draw space.tscn" type="PackedScene" id=2]
@@ -6,15 +6,19 @@
 [ext_resource path="res://scene's/character/character.tscn" type="PackedScene" id=4]
 [ext_resource path="res://asset's/BG/BG2_Landscape.png" type="Texture" id=5]
 [ext_resource path="res://asset's/letters/Block_A.png" type="Texture" id=6]
-[ext_resource path="res://asset's/icons/Close.png" type="Texture" id=7]
+[ext_resource path="res://asset's/icons/Icon_Trash.png" type="Texture" id=7]
 [ext_resource path="res://script/world_level_script.gd" type="Script" id=8]
 [ext_resource path="res://asset's/level_selector/shadow.png" type="Texture" id=9]
 [ext_resource path="res://scene's/timer/timer_UI.tscn" type="PackedScene" id=10]
+[ext_resource path="res://script/btn.gd" type="Script" id=11]
 
 [node name="level1" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="BG" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -34,6 +38,9 @@ margin_right = -198.0
 margin_bottom = 279.0
 texture = ExtResource( 6 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="control_menu_UI" parent="." instance=ExtResource( 1 )]
 __meta__ = {
@@ -118,23 +125,25 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -356.0
-margin_top = -156.0
-margin_right = -228.0
-margin_bottom = -28.0
-rect_min_size = Vector2( 128, 128 )
+margin_left = -319.0
+margin_top = -137.0
+margin_right = -226.0
+margin_bottom = -24.0
+rect_min_size = Vector2( 93, 113 )
 focus_mode = 0
 enabled_focus_mode = 0
 texture_normal = ExtResource( 7 )
 expand = true
+script = ExtResource( 11 )
 
 [node name="timer_UI" parent="." instance=ExtResource( 10 )]
-margin_left = 437.0
-margin_top = 243.0
-margin_right = 2036.0
-margin_bottom = 532.0
+margin_left = 442.0
+margin_top = 258.0
+margin_right = 1994.0
+margin_bottom = 466.0
 
 [connection signal="send_img" from="writing_container/ViewportContainer/Viewport/draw space" to="request_sender" method="_on_draw_space_send_img"]
 [connection signal="verify" from="request_sender" to="." method="_on_request_sender_verify"]
 [connection signal="request_completed" from="request_sender/HTTPRequest" to="request_sender" method="_on_request_completed"]
 [connection signal="pressed" from="delet" to="." method="_on_delet_pressed"]
+[connection signal="time_out" from="timer_UI" to="." method="_on_timer_UI_time_out"]

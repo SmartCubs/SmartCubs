@@ -3,8 +3,10 @@ extends HBoxContainer
 
 
 var time_left = 0
+var start:bool = false
 
-onready var timer = get_node("Timer")
+signal time_out
+
 onready var texture_progress = $CenterContainer/TextureProgress
 
 
@@ -14,6 +16,7 @@ export (float, .01,1.0)var speed_rate = .01
 
 func _ready():
 	_set_time(max_time)
+	
 
 
 func _process(_delta):
@@ -21,16 +24,15 @@ func _process(_delta):
 
 	###############time left####################
 	time_left -= speed_rate
-	print(timer.time_left)
+	print(time_left)
+	if time_left <= 0:
+		emit_signal("time_out")
 
 func _start_timer():
-	timer.start()
+	start = true
 
-func _stop_timer():
-	timer.stop()
 
 func _set_time(time:float):
-	timer.wait_time = time
 	time_left = time
 
 func _add_time(add:float):
