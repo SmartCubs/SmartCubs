@@ -106,6 +106,7 @@ margin_top = -95.0
 
 [node name="character" parent="Control" instance=ExtResource( 4 )]
 position = Vector2( 0, -150 )
+frame = 1
 __meta__ = {
 "_edit_lock_": true
 }

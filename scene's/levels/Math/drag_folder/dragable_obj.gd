@@ -38,3 +38,6 @@ func _process(_delta:float):
 		rect_position = (lerp(rect_position  , init_position, acceleration))
 		if Vector2(rect_position).is_equal_approx(init_position):
 			animation = false
+
+
+

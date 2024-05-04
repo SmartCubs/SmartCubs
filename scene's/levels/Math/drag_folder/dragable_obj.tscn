@@ -1,9 +1,19 @@
 [gd_scene load_steps=2 format=2]
 
+<<<<<<< HEAD
+=======
+[ext_resource path="res://icon.png" type="Texture" id=1]
+>>>>>>> ab9310fc02e153458b182537da626783339f0928
 [ext_resource path="res://scene's/levels/Math/drag_folder/dragable_obj.gd" type="Script" id=2]
 
 [node name="drag_obj" type="TextureButton"]
 margin_right = 40.0
 margin_bottom = 40.0
+focus_mode = 0
 mouse_filter = 1
+<<<<<<< HEAD
+=======
+enabled_focus_mode = 0
+texture_normal = ExtResource( 1 )
+>>>>>>> ab9310fc02e153458b182537da626783339f0928
 script = ExtResource( 2 )
