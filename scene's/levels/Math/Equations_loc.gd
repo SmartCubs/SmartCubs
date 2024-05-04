@@ -27,35 +27,37 @@ func _ready():
 	var text_C = [$drag_C,$drag_C2,$drag_C3]
 	var text_op = [$op_v,$op_v2,$op_v3]
 	var k=0
+	#########test
 	
 	for i in range(fill.size()):
 		if i%4==0:
 			if fill[i]==-1:
-				var inst = empty.instance()
-				
-				inst.set_global_position(text_A[k].rect_position)
-				print("inst pos",inst.rect_position)
-				inst.rect_min_size=text_A[k].rect_size
-				print("text_k position",text_A[k].rect_position)
-				add_child(inst)
+				var inst:Drag_to = empty.instance()
+				inst.set_global_position(text_A[k].get_global_rect().position)
+				inst.rect_size = text_A[k].rect_size
+				print(inst.rect_position)
+				get_tree().get_root().call_deferred("add_child", inst)
 			else:
 				text_A[k].texture=numb[fill[i]]
 		elif i%4==1:
 			text_op[k].texture=oper[fill[i]]
 		elif i%4==2:
 			if fill[i]==-1:
-				var inst = empty.instance()
-				inst.set_global_position(text_B[k].rect_position)
-				inst.rect_size=text_B[k].rect_size
-				add_child(inst)
+				var inst:Drag_to = empty.instance()
+				inst.set_global_position(text_B[k].get_global_rect().position)
+				inst.rect_size = text_B[k].rect_size
+				print(inst.rect_position)
+				get_tree().get_root().call_deferred("add_child", inst)
 			else:
 				text_B[k].texture=numb[fill[i]]
 		elif i%4==3:
 			if fill[i]==-1:
-				var inst = empty.instance()
-				inst.set_global_position(text_C[k].rect_position)
-				inst.rect_size=text_C[k].rect_size
-				add_child(inst)
+				var inst:Drag_to = empty.instance()
+				inst.set_global_position(text_C[k].get_global_rect().position)
+				inst.rect_size = text_C[k].rect_size
+				print(inst.rect_position)
+				get_tree().get_root().call_deferred("add_child", inst)
+				
 			else:
 				text_C[k].texture=numb[fill[i]]
 			k=k+1

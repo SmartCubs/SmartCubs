@@ -22,7 +22,7 @@ func get_drag_data(_position:Vector2):
 func _input(event):
 	if event is InputEventScreenTouch:
 		var touch = event as InputEventScreenTouch
-		if not touch.pressed:
+		if not touch.pressed && is_draging:
 			is_draging = false
 			animation = true
 			mouse_filter = MOUSE_FILTER_STOP
