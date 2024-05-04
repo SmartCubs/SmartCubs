@@ -36,4 +36,7 @@ func _set_time(time:float):
 	time_left = time
 
 func _add_time(add:float):
-	time_left +=  add
+	if time_left + add >= max_time:
+		time_left = max_time
+	else:
+		time_left +=  add

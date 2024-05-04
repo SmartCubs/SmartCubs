@@ -3,6 +3,11 @@ extends Control
 onready var lines := $Node2D/lines
 onready var viewport:Viewport = get_parent()
 
+
+
+export (int,20,100) var width = 20
+
+
 var pressed = false
 var curent_line: Line2D
 var image:Image
@@ -12,6 +17,7 @@ signal send_img
 
 func _ready():
 	old_child = lines.get_point_count()
+	lines.width = width
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
