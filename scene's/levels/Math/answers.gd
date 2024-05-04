@@ -13,10 +13,9 @@ func _ready():
 
 
 func _on_Equations_loc_sent_vactor(full,answered,numb):
-	var drag_obj = [$Dragable_obj,$Dragable_obj2,$Dragable_obj3,$Dragable_obj4,$Dragable_obj5,$Dragable_obj6]
-	print("this is hide vector:",answered)#hide vector
-	print("this the correct vector",full)#hidden	
-
+	var drag_obj = [$drag_obj,$drag_obj2,$drag_obj3,$drag_obj4,$drag_obj5,$drag_obj6]
+	print("this is hide vector:",answered)#correct response
+	print("this the correct vector",full)#full equations	
 	for i in answered:
 		pick.append(full[i])
 	var k=0
@@ -29,4 +28,6 @@ func _on_Equations_loc_sent_vactor(full,answered,numb):
 	print(pick)
 	for i in range(pick.size()):
 		drag_obj[i].texture_normal=numb[pick[i]]
+		drag_obj[i].nbr=pick[i]
+		print(drag_obj[i].nbr)
 	pass # Replace with function body.

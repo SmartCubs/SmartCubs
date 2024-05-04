@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://asset's/img/character's/cat_idle.png" type="Texture" id=1]
 [ext_resource path="res://scene's/levels/Math/BG2_Landscape.png" type="Texture" id=2]
@@ -7,8 +7,7 @@
 [ext_resource path="res://scene's/levels/Math/board.png" type="Texture" id=5]
 [ext_resource path="res://scene's/levels/Math/operate/Block_eq.png" type="Texture" id=6]
 [ext_resource path="res://scene's/levels/Math/numbers/negative_nbr/miss.png" type="Texture" id=7]
-[ext_resource path="res://scene's/levels/Math/drag_folder/dragable_obj.gd" type="Script" id=8]
-[ext_resource path="res://scene's/levels/Math/numbers/Empty_Block.png" type="Texture" id=9]
+[ext_resource path="res://scene's/levels/Math/drag_folder/dragable_obj.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scene's/levels/Math/answers.gd" type="Script" id=10]
 
 [node name="Control" type="Control"]
@@ -188,68 +187,74 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -400.0
-margin_top = -123.0
-margin_right = 340.0
-margin_bottom = -3.0
+margin_left = -500.0
+margin_top = -140.0
+margin_right = 462.0
+margin_bottom = -2.0
 script = ExtResource( 10 )
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
-[node name="Dragable_obj" type="TextureButton" parent="answers"]
-margin_right = 120.0
-margin_bottom = 120.0
-rect_min_size = Vector2( 120, 120 )
-texture_normal = ExtResource( 9 )
-expand = true
-script = ExtResource( 8 )
+[node name="drag_obj" parent="answers" instance=ExtResource( 8 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 157.0
+margin_bottom = 138.0
 
-[node name="Dragable_obj2" type="TextureButton" parent="answers"]
-margin_left = 124.0
-margin_right = 244.0
-margin_bottom = 120.0
-rect_min_size = Vector2( 120, 120 )
-texture_normal = ExtResource( 9 )
-expand = true
-script = ExtResource( 8 )
+[node name="drag_obj2" parent="answers" instance=ExtResource( 8 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 161.0
+margin_top = 0.0
+margin_right = 318.0
+margin_bottom = 138.0
 
-[node name="Dragable_obj3" type="TextureButton" parent="answers"]
-margin_left = 248.0
-margin_right = 368.0
-margin_bottom = 120.0
-rect_min_size = Vector2( 120, 120 )
-texture_normal = ExtResource( 9 )
-expand = true
-script = ExtResource( 8 )
+[node name="drag_obj3" parent="answers" instance=ExtResource( 8 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 322.0
+margin_top = 0.0
+margin_right = 479.0
+margin_bottom = 138.0
 
-[node name="Dragable_obj4" type="TextureButton" parent="answers"]
-margin_left = 372.0
-margin_right = 492.0
-margin_bottom = 120.0
-rect_min_size = Vector2( 120, 120 )
-texture_normal = ExtResource( 9 )
-expand = true
-script = ExtResource( 8 )
+[node name="drag_obj4" parent="answers" instance=ExtResource( 8 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 483.0
+margin_top = 0.0
+margin_right = 640.0
+margin_bottom = 138.0
 
-[node name="Dragable_obj5" type="TextureButton" parent="answers"]
-margin_left = 496.0
-margin_right = 616.0
-margin_bottom = 120.0
-rect_min_size = Vector2( 120, 120 )
-texture_normal = ExtResource( 9 )
-expand = true
-script = ExtResource( 8 )
+[node name="drag_obj5" parent="answers" instance=ExtResource( 8 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 644.0
+margin_top = 0.0
+margin_right = 801.0
+margin_bottom = 138.0
 
-[node name="Dragable_obj6" type="TextureButton" parent="answers"]
-margin_left = 620.0
-margin_right = 740.0
-margin_bottom = 120.0
-rect_min_size = Vector2( 120, 120 )
-texture_normal = ExtResource( 9 )
-expand = true
-script = ExtResource( 8 )
+[node name="drag_obj6" parent="answers" instance=ExtResource( 8 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 805.0
+margin_top = 0.0
+margin_right = 962.0
+margin_bottom = 138.0
 
 [node name="CatIdle" type="Sprite" parent="."]
 position = Vector2( 1163, 490 )

@@ -14,11 +14,9 @@ signal sent_vactor
 func _ready():
 	randomize()
 	load_asset()
-	var subt= []
-	var subt2=[]
 	var subt3=[]
-	subt=one_eq()
-	subt2=one_eq()
+	subt3=one_eq()
+	subt3=one_eq()
 	subt3=one_eq()
 
 	missing()
@@ -33,10 +31,11 @@ func _ready():
 		if i%4==0:
 			if fill[i]==-1:
 				var inst:Drag_to = empty.instance()
-				inst.set_global_position(text_A[k].get_global_rect().position)
+				inst.set_global_position(text_A[k].get_global_rect().position-get_parent().rect_position)
 				inst.rect_size = text_A[k].rect_size
+				inst.index=k
 				print(inst.rect_position)
-				get_tree().get_root().call_deferred("add_child", inst)
+				get_parent().call_deferred("add_child", inst)
 			else:
 				text_A[k].texture=numb[fill[i]]
 		elif i%4==1:
@@ -44,19 +43,21 @@ func _ready():
 		elif i%4==2:
 			if fill[i]==-1:
 				var inst:Drag_to = empty.instance()
-				inst.set_global_position(text_B[k].get_global_rect().position)
+				inst.set_global_position(text_B[k].get_global_rect().position-get_parent().rect_position)
 				inst.rect_size = text_B[k].rect_size
+				inst.index=k
 				print(inst.rect_position)
-				get_tree().get_root().call_deferred("add_child", inst)
+				get_parent().call_deferred("add_child", inst)
 			else:
 				text_B[k].texture=numb[fill[i]]
 		elif i%4==3:
 			if fill[i]==-1:
 				var inst:Drag_to = empty.instance()
-				inst.set_global_position(text_C[k].get_global_rect().position)
+				inst.set_global_position(text_C[k].get_global_rect().position-get_parent().rect_position)
 				inst.rect_size = text_C[k].rect_size
+				inst.index=k
 				print(inst.rect_position)
-				get_tree().get_root().call_deferred("add_child", inst)
+				get_parent().call_deferred("add_child", inst)
 				
 			else:
 				text_C[k].texture=numb[fill[i]]
