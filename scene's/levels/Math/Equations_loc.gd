@@ -2,11 +2,14 @@ extends Control
 var numb = [] #0-100
 var neg = []
 var rng=RandomNumberGenerator.new()
-var empty=preload("res://scene's/levels/Math/Empty_Block.png")
+
+var empty=preload("res://scene\'s/levels/Math/drag_folder/drag_to.tscn")
 var oper = []
 var fill = []
 var hide=[]
 var hidden=[]
+
+signal sent_vactor
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
@@ -17,6 +20,7 @@ func _ready():
 	subt=one_eq()
 	subt2=one_eq()
 	subt3=one_eq()
+
 	missing()
 	var text_A = [$drag_A,$drag_A2,$drag_A3]
 	var text_B = [$drag_B,$drag_B2,$drag_B3]
@@ -26,20 +30,41 @@ func _ready():
 	
 	for i in range(fill.size()):
 		if i%4==0:
-			text_A[k].texture=numb[subt3[i]]
+			if fill[i]==-1:
+				var inst = empty.instance()
+				
+				inst.set_global_position(text_A[k].rect_position)
+				print("inst pos",inst.rect_position)
+				inst.rect_min_size=text_A[k].rect_size
+				print("text_k position",text_A[k].rect_position)
+				add_child(inst)
+			else:
+				text_A[k].texture=numb[fill[i]]
 		elif i%4==1:
-			text_op[k].texture=oper[subt3[i]]
+			text_op[k].texture=oper[fill[i]]
 		elif i%4==2:
-			text_B[k].texture=numb[subt3[i]]
+			if fill[i]==-1:
+				var inst = empty.instance()
+				inst.set_global_position(text_B[k].rect_position)
+				inst.rect_size=text_B[k].rect_size
+				add_child(inst)
+			else:
+				text_B[k].texture=numb[fill[i]]
 		elif i%4==3:
-			text_C[k].texture=numb[subt3[i]]
+			if fill[i]==-1:
+				var inst = empty.instance()
+				inst.set_global_position(text_C[k].rect_position)
+				inst.rect_size=text_C[k].rect_size
+				add_child(inst)
+			else:
+				text_C[k].texture=numb[fill[i]]
 			k=k+1
 		pass
 	pass
 func load_asset():
 	var temp
 	var oper_name=['+','-','x']
-	for i in range(100):
+	for i in range(101):
 		var path_img="res://scene's/levels/Math/numbers/blocked_0_100/"+str(i)+".png"
 		temp=load(path_img)
 		numb.append(temp) #fill all texture (0-100)
@@ -61,7 +86,7 @@ func one_eq():
 	var B
 	for i in range(3):
 		if i==0:
-			choice=int(rand_range(0,11)) #1-10
+			choice=int(rand_range(1,11)) #1-10
 			A=choice
 			fill.append(A)
 		elif i==1:
@@ -104,7 +129,12 @@ func missing():
 	for i in range(miss.size()):
 		hide.append(control_indices[i][miss[i]])#the value that is hidden from fill
 		print("hidden in fille index:",hide[i])
-		
+	
+	var real=fill
+	emit_signal("sent_vactor",real,hide,numb)
+	for i in range(hide.size()):
+		fill[hide[i]]=-1
+	
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

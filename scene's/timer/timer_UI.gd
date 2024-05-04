@@ -16,7 +16,7 @@ func _ready():
 
 func _process(_delta):
 	texture_progress.value = (time_left /max_time)*100
-	_add_time(200)
+	
 
 
 func _start_timer():
