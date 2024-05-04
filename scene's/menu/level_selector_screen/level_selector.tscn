@@ -9,7 +9,7 @@
 [ext_resource path="res://scene's/effect/Trail.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scene's/menu/level_selector_screen/Trail_folow.gd" type="Script" id=8]
 [ext_resource path="res://asset's/level_selector/shadow.png" type="Texture" id=9]
-[ext_resource path="res://scene's/character/character.tscn" type="PackedScene" id=10]
+[ext_resource path="res://script/btn.gd" type="Script" id=10]
 [ext_resource path="res://asset's/BG/BG2_Landscape.png" type="Texture" id=11]
 
 [node name="level_selector" type="Control"]
@@ -87,11 +87,14 @@ margin_left = -228.0
 margin_top = -92.2
 margin_right = -43.0
 margin_bottom = 92.8
+rect_pivot_offset = Vector2( 92, 92 )
 focus_mode = 0
 enabled_focus_mode = 0
 icon = ExtResource( 4 )
 flat = true
+icon_align = 1
 expand_icon = true
+script = ExtResource( 10 )
 
 [node name="go_left_btn" type="Button" parent="Button"]
 modulate = Color( 1, 1, 1, 0.980392 )
@@ -105,7 +108,9 @@ focus_mode = 0
 enabled_focus_mode = 0
 icon = ExtResource( 5 )
 flat = true
+icon_align = 1
 expand_icon = true
+script = ExtResource( 10 )
 
 [node name="right_position" type="Position2D" parent="."]
 position = Vector2( 1959, 393 )
@@ -124,10 +129,6 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="left_position"]
 texture = ExtResource( 3 )
-
-[node name="character" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1021.13, 473 )
-scale = Vector2( 0.303387, 0.293056 )
 
 [node name="background" type="CanvasLayer" parent="."]
 layer = -3
