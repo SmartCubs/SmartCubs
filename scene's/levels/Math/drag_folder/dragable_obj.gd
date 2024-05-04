@@ -7,7 +7,8 @@ var is_draging:bool
 var init_position:Vector2
 var animation:bool = false;
 var can_drop
-var nbr=0
+var nbr=-1
+var index=-1
 func _ready():
 	
 	init_position = rect_position
