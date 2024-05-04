@@ -3,7 +3,7 @@ var numb = [] #0-100
 var neg = []
 var rng=RandomNumberGenerator.new()
 
-var empty=preload("res://scene\'s/levels/Math/drag_folder/drag_to.tscn")
+var empty=load("res://scene\'s/levels/Math/drag_folder/drag_to.tscn")
 var oper = []
 var fill = []
 var hide=[]
