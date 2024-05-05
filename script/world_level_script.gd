@@ -47,8 +47,9 @@ func _on_request_sender_verify(letter_drawed:int):
 		_select_letter()
 		timer_ui._add_time(5)
 		timer_ui._add_speed(.01)
+		timer_ui.max_speed +=.01
 		draw_space._clear_all()
-		score_added += 9
+		score_added += 2
 		score += score_added
 		
 		score_ui.text = "score: "+String(score)
@@ -59,12 +60,14 @@ func _on_request_sender_verify(letter_drawed:int):
 
 ##game over
 func _on_timer_UI_time_out():
-	if hight_score == null || hight_score < score:
+	draw_space.queue_free()
+	if hight_score == null:
+		hight_score = 0
+	elif hight_score < score:
 		SaveManager._save(score)
-	if score > 200:
-		$Finish_Ui._show(3,"good job")
+		$Finish_Ui._show(2, "NEW HIGHT SCORE GOOD JOB: "+ String(score) )
 		$Finish_Ui.visible = true
 	else:
-		$Finish_Ui._show(0,"u stupid")
+		$Finish_Ui._show(1, "SCORE: "+ String(score) )
 		$Finish_Ui.visible = true
 	
