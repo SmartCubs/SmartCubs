@@ -10,8 +10,8 @@ signal time_out
 
 onready var texture_progress = $CenterContainer/TextureProgress
 
-export (float)var max_speed = 1
-export (float)var max_time = 20 
+export (float)var max_speed = 1.0
+export (float)var max_time = 20.0
 export (float, .01,1.0)var speed_rate = .01
 
 
