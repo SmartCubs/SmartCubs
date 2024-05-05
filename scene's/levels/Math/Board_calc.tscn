@@ -370,7 +370,9 @@ __meta__ = {
 mouse_filter = 2
 
 [node name="Finish_Ui" parent="." instance=ExtResource( 11 )]
+visible = false
 mouse_filter = 2
 
 [connection signal="sent_vactor" from="board/Equations_loc" to="answers" method="_on_Equations_loc_sent_vactor"]
 [connection signal="verified_answers" from="board/Equations_loc" to="answers" method="_on_Equations_loc_verified_answers"]
+[connection signal="result" from="answers" to="Finish_Ui" method="_on_answers_result"]

@@ -3,7 +3,7 @@ var pick=[]
 var original=[]
 var wrong=0
 
-#signal result
+signal result
 
 func _ready():
 	
@@ -55,6 +55,6 @@ func _on_Equations_loc_verified_answers(verify,input):
 					wrong=wrong+1
 			print("u have done: ",wrong)
 			$"../Finish_Ui"._show(1,"u have "+ String(wrong)+" mistake(s)")
-	#emit_signal("result",wrong)
+	emit_signal("result",wrong)
 	
 	pass # Replace with function body.
