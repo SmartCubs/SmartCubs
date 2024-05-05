@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Repeat.png-d8bd001c43c98dca71410b72855661eb.stex"
+path="res://.import/Arrow right.png-5325ec5e3d19d8aff8ebdde3cf9d5a8d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scene's/levels/Math/drag_folder/Repeat.png"
-dest_files=[ "res://.import/Repeat.png-d8bd001c43c98dca71410b72855661eb.stex" ]
+source_file="res://scene's/levels/Math/finish_game/Arrow right.png"
+dest_files=[ "res://.import/Arrow right.png-5325ec5e3d19d8aff8ebdde3cf9d5a8d.stex" ]
 
 [params]
 
