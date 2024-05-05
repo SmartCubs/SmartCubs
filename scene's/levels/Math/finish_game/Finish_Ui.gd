@@ -27,9 +27,11 @@ func _on_answers_result(result):
 	if wrong==0:
 		$panel/pass.visible=true
 		$panel/exit.visible=false
+		$panel/Home.visible=true
 	else:
 		$panel/pass.visible=false
 		$panel/exit.visible=true
+		$panel/Home.visible=false
 	pass # Replace with function body.
 
 
@@ -37,4 +39,9 @@ func _on_pass_pressed():
 	if wrong==0:
 		SceanTransition.change_scene(btnPath,"d")
 		visible=false
+	pass # Replace with function body.
+
+
+func _on_Home_pressed():
+	SceanTransition.change_scene("res://scene\'s/menu/mainMenu.tscn","d")
 	pass # Replace with function body.
