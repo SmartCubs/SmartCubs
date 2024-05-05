@@ -4,13 +4,16 @@ onready var draw_space = get_node("%draw space")
 onready var letter_holder = $letter_holder
 onready var character = get_node("Control/character")
 onready var timer_ui = $timer_UI
+onready var score_ui = $score
 
 
+var score:int = 0
 var letter_to_draw:int
 
 func _ready():
 	_select_letter()
 	timer_ui._start_timer()
+	score_ui.text = "score: "+String(score)
 
 
 func _notification(what):
@@ -35,7 +38,9 @@ func _on_request_sender_verify(letter_drawed:int):
 		timer_ui._add_time(5)
 		timer_ui._add_speed(.01)
 		draw_space._clear_all()
+		score += 10
 		
+		score_ui.text = "score: "+String(score)
 		yield(get_tree().create_timer(1),"timeout")
 		character._set_pose(0)
 		
@@ -43,4 +48,4 @@ func _on_request_sender_verify(letter_drawed:int):
 
 ##game over
 func _on_timer_UI_time_out():
-	pass
+	$Finish_Ui._show(0,"yanis")

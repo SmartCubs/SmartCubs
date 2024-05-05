@@ -16,6 +16,7 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
+outline_size = 1
 font_data = ExtResource( 13 )
 
 [node name="level1" type="Control"]
@@ -157,12 +158,18 @@ __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
+max_time = 0.5
 
-[node name="Label" type="Label" parent="."]
-margin_right = 137.0
-margin_bottom = 37.0
+[node name="score" type="Label" parent="."]
+margin_left = 95.0
+margin_top = 74.0
+margin_right = 250.0
+margin_bottom = 111.0
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 40
 custom_fonts/font = SubResource( 1 )
-text = "score"
+text = "score: "
 
 [node name="Finish_Ui" parent="." instance=ExtResource( 12 )]
 visible = false
