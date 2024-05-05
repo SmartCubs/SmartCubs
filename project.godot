@@ -84,6 +84,7 @@ config/quit_on_go_back=false
 SceanTransition="*res://scene's/scean_trans/scean_transition.tscn"
 TextToSpeechEngine="*res://addons/texttospeech/TextToSpeechEngine.gd"
 LetterMapping="*res://script/letter_mapping.gd"
+SaveManager="*res://script/save manager/save_manager.gd"
 
 [display]
 

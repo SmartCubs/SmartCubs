@@ -12,7 +12,7 @@ export (Array,String)var speach
 
 func _ready():
 	if not Engine.editor_hint:
-		print("test")
+		pass
 #	if !speach.empty():
 #		for text in speach:
 #			yield($TextToSpeech2D.say(text, TextToSpeechEngine.VOICE_AEW, 1), "completed")

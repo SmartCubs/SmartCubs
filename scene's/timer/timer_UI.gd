@@ -24,9 +24,10 @@ func _process(_delta):
 
 	###############time left####################
 	time_left -= speed_rate
-	print(time_left)
 	if time_left <= 0:
 		emit_signal("time_out")
+		queue_free()
+		get_tree().queue_delete(self)
 
 func _start_timer():
 	start = true

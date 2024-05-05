@@ -4,17 +4,24 @@ onready var draw_space = get_node("%draw space")
 onready var letter_holder = $letter_holder
 onready var character = get_node("Control/character")
 onready var timer_ui = $timer_UI
-onready var score_ui = $score
+onready var score_ui = $scores/score
+onready var hs = $scores/HS
 
 
 var score:int = 0
 var score_added:int =1
 var letter_to_draw:int
+var hight_score
 
 func _ready():
 	_select_letter()
 	timer_ui._start_timer()
 	score_ui.text = "score: "+String(score)
+	hight_score = SaveManager._load()
+	print(hight_score)
+	if( hight_score != null):
+		hs.text = "HS: "+str(hight_score)
+		
 
 
 func _notification(what):
@@ -33,6 +40,8 @@ func _select_letter():
 
 func _on_request_sender_verify(letter_drawed:int):
 	print("to draw: ",letter_to_draw)
+	if !is_instance_valid(timer_ui):
+		return
 	if letter_drawed == letter_to_draw:
 		character._set_pose(2)
 		_select_letter()
@@ -50,6 +59,8 @@ func _on_request_sender_verify(letter_drawed:int):
 
 ##game over
 func _on_timer_UI_time_out():
+	if hight_score == null || hight_score < score:
+		SaveManager._save(score)
 	if score > 200:
 		$Finish_Ui._show(3,"good job")
 		$Finish_Ui.visible = true

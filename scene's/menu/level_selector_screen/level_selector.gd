@@ -61,7 +61,7 @@ func _notification(what):
 
 func _ready():
 	_change_images()
-	SceanTransition
+	
 	init_position = level.rect_position
 	$right_position.position.x = get_viewport_rect().size.x + 120
 	right_position = $right_position.position
