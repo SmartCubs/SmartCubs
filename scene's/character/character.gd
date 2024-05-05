@@ -6,7 +6,7 @@ var all_pos = {
 	"idel":1,
 	"happy":2
 }
-
+export (int ,"cat","dog") var animal = 0
 export (int,"show","idel","happy")var curent_pos = 0
 export (Array,String)var speach
 
@@ -25,7 +25,11 @@ func _set_pose(pose:int ):
 func _process(_delta):
 	if curent_pos != frame:
 		frame = curent_pos
-
+	if animal == 0:
+		animation = "cat"
+	else:
+		animation = "dog"
+	
 
 func _speek(text:String,speed:float = 1.0):
 	yield($TextToSpeech2D.say(text, TextToSpeechEngine.VOICE_AEW, speed), "completed")
