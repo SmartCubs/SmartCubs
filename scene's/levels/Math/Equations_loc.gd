@@ -2,16 +2,18 @@ extends Control
 var numb = [] #0-100
 var neg = []
 var rng=RandomNumberGenerator.new()
-
+var init=0
 var empty=load("res://scene\'s/levels/Math/drag_folder/drag_to.tscn")
 var oper = []
 var fill = []
 var hide=[]
 var hidden=[]
-
+var verify=[null,null,null]
 signal sent_vactor
+signal verified_answers
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	randomize()
 	load_asset()
 	var subt3=[]
@@ -34,6 +36,7 @@ func _ready():
 				inst.set_global_position(text_A[k].get_global_rect().position-get_parent().rect_position)
 				inst.rect_size = text_A[k].rect_size
 				inst.index=k
+				inst.connect("Verify_nbr",self,"get_nbr")
 				print(inst.rect_position)
 				get_parent().call_deferred("add_child", inst)
 			else:
@@ -46,6 +49,7 @@ func _ready():
 				inst.set_global_position(text_B[k].get_global_rect().position-get_parent().rect_position)
 				inst.rect_size = text_B[k].rect_size
 				inst.index=k
+				inst.connect("Verify_nbr",self,"get_nbr")
 				print(inst.rect_position)
 				get_parent().call_deferred("add_child", inst)
 			else:
@@ -56,6 +60,7 @@ func _ready():
 				inst.set_global_position(text_C[k].get_global_rect().position-get_parent().rect_position)
 				inst.rect_size = text_C[k].rect_size
 				inst.index=k
+				inst.connect("Verify_nbr",self,"get_nbr")
 				print(inst.rect_position)
 				get_parent().call_deferred("add_child", inst)
 				
@@ -142,7 +147,16 @@ func missing():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+func get_nbr(nbr,index):
+	
+	if nbr!=null:
+		#print("I am",nbr,"FROM EQUATION",index)
+		verify[index]=nbr
+		init=init+1
+	if nbr==null:
+		#print("am free",index)
+		init=init-1
+		verify[index]=nbr
+	emit_signal("verified_answers",verify,init,index)
+	pass
 
-
-func _on_Control_resized():
-	pass # Replace with function body.
