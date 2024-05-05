@@ -8,6 +8,7 @@ onready var score_ui = $score
 
 
 var score:int = 0
+var score_added:int =1
 var letter_to_draw:int
 
 func _ready():
@@ -38,7 +39,8 @@ func _on_request_sender_verify(letter_drawed:int):
 		timer_ui._add_time(5)
 		timer_ui._add_speed(.01)
 		draw_space._clear_all()
-		score += 10
+		score_added += 9
+		score += score_added
 		
 		score_ui.text = "score: "+String(score)
 		yield(get_tree().create_timer(1),"timeout")
@@ -48,4 +50,10 @@ func _on_request_sender_verify(letter_drawed:int):
 
 ##game over
 func _on_timer_UI_time_out():
-	$Finish_Ui._show(0,"yanis")
+	if score > 200:
+		$Finish_Ui._show(3,"good job")
+		$Finish_Ui.visible = true
+	else:
+		$Finish_Ui._show(0,"u stupid")
+		$Finish_Ui.visible = true
+	
