@@ -3,7 +3,7 @@
 [ext_resource path="res://asset's/img/character's/cat_idle.png" type="Texture" id=1]
 [ext_resource path="res://scene's/levels/Math/BG2_Landscape.png" type="Texture" id=2]
 [ext_resource path="res://scene's/levels/Math/Ribbon.png" type="Texture" id=3]
-[ext_resource path="res://scene's/levels/Math/Equations_loc.gd" type="Script" id=4]
+[ext_resource path="res://scene's/levels/Math/equation.gd" type="Script" id=4]
 [ext_resource path="res://scene's/levels/Math/board.png" type="Texture" id=5]
 [ext_resource path="res://scene's/levels/Math/operate/Block_eq.png" type="Texture" id=6]
 [ext_resource path="res://scene's/levels/Math/numbers/negative_nbr/miss.png" type="Texture" id=7]
@@ -229,6 +229,13 @@ __meta__ = {
 }
 
 [node name="drag_obj" parent="answers" instance=ExtResource( 8 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 157.0
 margin_bottom = 138.0
 __meta__ = {
 "_edit_lock_": true,
@@ -236,7 +243,12 @@ __meta__ = {
 }
 
 [node name="drag_obj2" parent="answers" instance=ExtResource( 8 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 157.0
+margin_top = 0.0
 margin_right = 314.0
 margin_bottom = 138.0
 __meta__ = {
@@ -245,7 +257,12 @@ __meta__ = {
 }
 
 [node name="drag_obj3" parent="answers" instance=ExtResource( 8 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 314.0
+margin_top = 0.0
 margin_right = 471.0
 margin_bottom = 138.0
 __meta__ = {
@@ -254,7 +271,12 @@ __meta__ = {
 }
 
 [node name="drag_obj4" parent="answers" instance=ExtResource( 8 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 471.0
+margin_top = 0.0
 margin_right = 628.0
 margin_bottom = 138.0
 __meta__ = {
@@ -263,7 +285,12 @@ __meta__ = {
 }
 
 [node name="drag_obj5" parent="answers" instance=ExtResource( 8 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 628.0
+margin_top = 0.0
 margin_right = 785.0
 margin_bottom = 138.0
 __meta__ = {
@@ -272,7 +299,12 @@ __meta__ = {
 }
 
 [node name="drag_obj6" parent="answers" instance=ExtResource( 8 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 785.0
+margin_top = 0.0
 margin_right = 942.0
 margin_bottom = 138.0
 __meta__ = {
@@ -289,4 +321,3 @@ __meta__ = {
 }
 
 [connection signal="resized" from="." to="board/Equations_loc" method="_on_Control_resized"]
-[connection signal="sent_vactor" from="board/Equations_loc" to="answers" method="_on_Equations_loc_sent_vactor"]

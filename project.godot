@@ -53,11 +53,6 @@ _global_script_classes=[ {
 "class": "Trails",
 "language": "GDScript",
 "path": "res://scene's/effect/Trail.gd"
-}, {
-"base": "TextureButton",
-"class": "drag_object",
-"language": "GDScript",
-"path": "res://scene's/levels/Math/dra_obj.gd"
 } ]
 _global_script_class_icons={
 "BTN": "",
@@ -68,8 +63,7 @@ _global_script_class_icons={
 "TextToSpeech3D": "",
 "Toast": "",
 "ToastStyle": "",
-"Trails": "",
-"drag_object": ""
+"Trails": ""
 }
 
 [application]

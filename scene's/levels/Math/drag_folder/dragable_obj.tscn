@@ -7,10 +7,7 @@
 extents = Vector2( 60, 50 )
 
 [node name="drag_obj" type="TextureButton"]
-<<<<<<< HEAD
-margin_right = 157.0
-margin_bottom = 142.0
-=======
+
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -20,7 +17,6 @@ margin_top = -71.0
 margin_right = 78.5
 margin_bottom = 71.0
 rect_min_size = Vector2( 157, 138 )
->>>>>>> 78096cf0bcc6c2fa31d292205d1d1c93ffab605d
 focus_mode = 0
 mouse_filter = 1
 texture_normal = ExtResource( 1 )

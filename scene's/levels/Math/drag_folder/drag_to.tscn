@@ -7,18 +7,12 @@
 extents = Vector2( 45, 50 )
 
 [node name="drag_to" type="TextureRect"]
-<<<<<<< HEAD
 modulate = Color( 1, 0, 0, 1 )
 margin_left = -81.0
 margin_top = -61.0
 margin_right = 76.0
 margin_bottom = 77.0
-=======
-modulate = Color( 1, 1, 1, 0 )
-margin_right = 157.0
-margin_bottom = 138.0
-rect_min_size = Vector2( 157, 138 )
->>>>>>> 78096cf0bcc6c2fa31d292205d1d1c93ffab605d
+
 texture = ExtResource( 1 )
 expand = true
 script = ExtResource( 2 )
