@@ -1,13 +1,11 @@
 extends Control
 
-onready var cat = $panel/ribbon/character
-onready var dog = $panel/ribbon/character2
+onready var cat = $panel/character2
+onready var dog = $panel/character
 onready var score = $label
 
 export  var btnPath = "res://scene\'s/levels/letter/level1.tscn"
 
-func _ready():
-	visible = false
 
 func _show(pose:int , text:String):
 	visible = true

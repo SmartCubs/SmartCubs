@@ -110,6 +110,7 @@ render_target_update_mode = 3
 [node name="draw space" parent="writing_container/ViewportContainer/Viewport" instance=ExtResource( 2 )]
 unique_name_in_owner = true
 rect_min_size = Vector2( 320, 320 )
+mouse_filter = 1
 width = 30
 
 [node name="request_sender" type="Node" parent="."]
@@ -126,6 +127,7 @@ margin_left = 334.0
 margin_top = -90.0
 margin_right = 438.0
 margin_bottom = 5.0
+mouse_filter = 2
 __meta__ = {
 "_edit_group_": true
 }
@@ -184,10 +186,6 @@ text = "score: "
 margin_top = 41.0
 margin_right = 155.0
 margin_bottom = 78.0
-
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
-current = true
 
 [node name="Finish_Ui" parent="." instance=ExtResource( 12 )]
 visible = false
