@@ -16,8 +16,11 @@ margin_left = -20.0
 margin_top = -20.0
 margin_right = 20.0
 margin_bottom = 20.0
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="panel" type="TextureRect" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -28,8 +31,11 @@ margin_right = 500.0
 margin_bottom = 371.0
 texture = ExtResource( 1 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="TextureRect2" type="TextureRect" parent="TextureRect"]
+[node name="ribbon" type="TextureRect" parent="panel"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -500.0
@@ -37,12 +43,18 @@ margin_right = 500.0
 margin_bottom = 297.0
 texture = ExtResource( 2 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="LevelCleared" type="Sprite" parent="TextureRect/TextureRect2"]
+[node name="LevelCleared" type="Sprite" parent="panel/ribbon"]
 position = Vector2( 500, 85.5 )
 texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/TextureRect2"]
+[node name="cat_cheer" type="TextureRect" parent="panel/ribbon"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -53,20 +65,26 @@ margin_right = -10.0
 margin_bottom = 491.5
 texture = ExtResource( 6 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="TextureRect2" type="TextureRect" parent="TextureRect/TextureRect2"]
+[node name="Dog_cheer" type="TextureRect" parent="panel/ribbon"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 margin_left = -1000.0
-margin_top = 51.5
-margin_right = -590.0
+margin_top = 71.5
+margin_right = -610.0
 margin_bottom = 491.5
 texture = ExtResource( 5 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="TextureButton" type="TextureButton" parent="TextureRect"]
+[node name="exit" type="TextureButton" parent="panel"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -120.0
@@ -75,7 +93,6 @@ margin_right = -12.0
 margin_bottom = 128.0
 texture_normal = ExtResource( 3 )
 expand = true
-
-[node name="Label" type="Label" parent="TextureRect"]
-margin_right = 40.0
-margin_bottom = 14.0
+__meta__ = {
+"_edit_lock_": true
+}

@@ -152,10 +152,12 @@ func get_nbr(nbr,index):
 		#print("I am",nbr,"FROM EQUATION",index)
 		verify[index]=nbr
 		init=init+1
+		emit_signal("verified_answers",verify,init)
 	if nbr==null:
 		#print("am free",index)
 		init=init-1
 		verify[index]=nbr
-	emit_signal("verified_answers",verify,init)
+		emit_signal("verified_answers",verify,init)
+	
 	pass
 

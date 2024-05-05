@@ -61,6 +61,9 @@ rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 7 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="op_v" type="TextureRect" parent="board/Equations_loc"]
 margin_left = 161.0
@@ -70,6 +73,9 @@ rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 7 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="drag_B" type="TextureRect" parent="board/Equations_loc"]
 margin_left = 322.0
@@ -79,6 +85,9 @@ rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 7 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="equal" type="TextureRect" parent="board/Equations_loc"]
 margin_left = 483.0
@@ -88,6 +97,9 @@ rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 6 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="drag_C" type="TextureRect" parent="board/Equations_loc"]
 margin_left = 644.0
@@ -97,6 +109,9 @@ rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 7 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="drag_A2" type="TextureRect" parent="board/Equations_loc"]
 margin_top = 142.0
@@ -106,6 +121,9 @@ rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 7 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="op_v2" type="TextureRect" parent="board/Equations_loc"]
 margin_left = 161.0
@@ -116,6 +134,9 @@ rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 7 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="drag_B2" type="TextureRect" parent="board/Equations_loc"]
 margin_left = 322.0
@@ -126,6 +147,9 @@ rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 7 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="equal2" type="TextureRect" parent="board/Equations_loc"]
 margin_left = 483.0
@@ -136,6 +160,9 @@ rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 6 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="drag_C2" type="TextureRect" parent="board/Equations_loc"]
 margin_left = 644.0
@@ -146,6 +173,9 @@ rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 7 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="drag_A3" type="TextureRect" parent="board/Equations_loc"]
 margin_top = 284.0
@@ -155,6 +185,9 @@ rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 7 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="op_v3" type="TextureRect" parent="board/Equations_loc"]
 margin_left = 161.0
@@ -165,6 +198,9 @@ rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 7 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="drag_B3" type="TextureRect" parent="board/Equations_loc"]
 margin_left = 322.0
@@ -175,6 +211,9 @@ rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 7 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="equal3" type="TextureRect" parent="board/Equations_loc"]
 margin_left = 483.0
@@ -185,6 +224,9 @@ rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 6 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="drag_C3" type="TextureRect" parent="board/Equations_loc"]
 margin_left = 644.0
@@ -195,6 +237,9 @@ rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 7 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Ribbon_ans" type="TextureRect" parent="board"]
 anchor_left = 0.5

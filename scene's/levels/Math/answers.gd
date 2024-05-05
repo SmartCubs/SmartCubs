@@ -1,8 +1,7 @@
 extends HBoxContainer
 var pick=[]
-var itsover=[]
 var original=[]
-
+var wrong=0
 func _ready():
 	
 	pass # Replace with function body.
