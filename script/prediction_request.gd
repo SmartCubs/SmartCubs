@@ -5,7 +5,7 @@ extends Node
 signal verify
 
 # URL of the server
-const SERVER_URL = "http://192.168.1.10:5000/predict"
+const SERVER_URL = "http://192.168.114.87:5000/predict"
 
 var image:Image
 

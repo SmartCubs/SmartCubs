@@ -191,69 +191,38 @@ margin_left = -500.0
 margin_top = -140.0
 margin_right = 462.0
 margin_bottom = -2.0
+custom_constants/separation = 0
 script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="drag_obj" parent="answers" instance=ExtResource( 8 )]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 157.0
 margin_bottom = 138.0
 
 [node name="drag_obj2" parent="answers" instance=ExtResource( 8 )]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 161.0
-margin_top = 0.0
-margin_right = 318.0
+margin_left = 157.0
+margin_right = 314.0
 margin_bottom = 138.0
 
 [node name="drag_obj3" parent="answers" instance=ExtResource( 8 )]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 322.0
-margin_top = 0.0
-margin_right = 479.0
+margin_left = 314.0
+margin_right = 471.0
 margin_bottom = 138.0
 
 [node name="drag_obj4" parent="answers" instance=ExtResource( 8 )]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 483.0
-margin_top = 0.0
-margin_right = 640.0
+margin_left = 471.0
+margin_right = 628.0
 margin_bottom = 138.0
 
 [node name="drag_obj5" parent="answers" instance=ExtResource( 8 )]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 644.0
-margin_top = 0.0
-margin_right = 801.0
+margin_left = 628.0
+margin_right = 785.0
 margin_bottom = 138.0
 
 [node name="drag_obj6" parent="answers" instance=ExtResource( 8 )]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 805.0
-margin_top = 0.0
-margin_right = 962.0
+margin_left = 785.0
+margin_right = 942.0
 margin_bottom = 138.0
 
 [node name="CatIdle" type="Sprite" parent="."]

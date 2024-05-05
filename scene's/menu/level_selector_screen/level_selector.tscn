@@ -95,6 +95,7 @@ flat = true
 icon_align = 1
 expand_icon = true
 script = ExtResource( 10 )
+size_on_press = Vector2( 0.9, 0.9 )
 
 [node name="go_left_btn" type="Button" parent="Button"]
 modulate = Color( 1, 1, 1, 0.980392 )
@@ -111,6 +112,7 @@ flat = true
 icon_align = 1
 expand_icon = true
 script = ExtResource( 10 )
+size_on_press = Vector2( 0.9, 0.9 )
 
 [node name="right_position" type="Position2D" parent="."]
 position = Vector2( 1959, 393 )

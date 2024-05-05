@@ -40,3 +40,7 @@ func _add_time(add:float):
 		time_left = max_time
 	else:
 		time_left +=  add
+
+
+func _add_speed(speed:int):
+	speed_rate += speed

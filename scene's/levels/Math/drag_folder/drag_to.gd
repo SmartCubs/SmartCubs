@@ -6,14 +6,14 @@ var nbr
 var index
 var data_nbr:Dragable_obj
 var empty:bool=true
-func can_drop_data(position, data) ->bool:
+func can_drop_data(_position, data) ->bool:
 	if data is Dragable_obj:
 		can_drop = true
 	else:
 		can_drop = false
 	return can_drop
 
-func drop_data(position, data):
+func drop_data(_position, data):
 #	data.is_draging = false
 #	data.mouse_filter = Control.MOUSE_FILTER_IGNORE
 #	TODO: if not work position wise in dragto change this
