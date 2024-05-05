@@ -14,6 +14,9 @@ func _ready():
 
 
 func _on_Equations_loc_sent_vactor(full,answered,numb):
+	for i in range(answered.size()):
+		original.append(full[answered[i]])
+	print("correct answer",original)
 	var drag_obj = [$drag_obj,$drag_obj2,$drag_obj3,$drag_obj4,$drag_obj5,$drag_obj6]
 	print("this is hide vector:",answered)#correct response
 	print("this the correct vector",full)#full equations	
@@ -40,11 +43,12 @@ func _on_Equations_loc_verified_answers(verify,input):
 	if input==3:
 		print(input)
 		print("i am here: ",verify)
-		if verify == itsover:
+		if verify == original:
 			print("Correct game")
+			
 		else:
 			for i in range(verify.size()):
-				if verify[i]!=itsover[i]:
+				if verify[i]!=original[i]:
 					wrong=wrong+1
 			print("u have done: ",wrong)
 		
