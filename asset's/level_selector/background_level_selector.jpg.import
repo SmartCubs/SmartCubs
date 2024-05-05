@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/math_lvl_2.jpg-f40b00dd1e811cdb081bc488ea676c22.stex"
+path="res://.import/background_level_selector.jpg-351a017db75c493280f24d0f3939726e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset's/background_img/math_lvl_2.jpg"
-dest_files=[ "res://.import/math_lvl_2.jpg-f40b00dd1e811cdb081bc488ea676c22.stex" ]
+source_file="res://asset's/level_selector/background_level_selector.jpg"
+dest_files=[ "res://.import/background_level_selector.jpg-351a017db75c493280f24d0f3939726e.stex" ]
 
 [params]
 

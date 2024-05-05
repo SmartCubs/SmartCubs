@@ -10,7 +10,7 @@
 [ext_resource path="res://scene's/menu/level_selector_screen/Trail_folow.gd" type="Script" id=8]
 [ext_resource path="res://asset's/level_selector/shadow.png" type="Texture" id=9]
 [ext_resource path="res://script/btn.gd" type="Script" id=10]
-[ext_resource path="res://asset's/background_img/7416322.jpg" type="Texture" id=11]
+[ext_resource path="res://asset's/level_selector/background_level_selector.jpg" type="Texture" id=11]
 
 [node name="level_selector" type="Control"]
 anchor_right = 1.0
@@ -64,6 +64,7 @@ margin_left = -230.0
 margin_top = -230.0
 margin_right = 230.0
 margin_bottom = 230.0
+flat = true
 expand_icon = true
 script = ExtResource( 6 )
 __meta__ = {
@@ -71,6 +72,8 @@ __meta__ = {
 }
 
 [node name="Trail" parent="Button" instance=ExtResource( 7 )]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
 width = 300.0
 script = ExtResource( 8 )
 __meta__ = {
