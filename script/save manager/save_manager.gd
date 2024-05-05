@@ -3,7 +3,7 @@ extends Node
 
 
 
-func _save(data , path:String = "res://smart_cubs.data"):
+func _save(data , path:String = "user://smart_cubs.data"):
 	var file = File.new()
 	file.open(path,File.WRITE)
 	file.store_var(data)
@@ -11,7 +11,7 @@ func _save(data , path:String = "res://smart_cubs.data"):
 	print("saving: ",data)
 
 
-func _load(path:String = "res://smart_cubs.data"):
+func _load(path:String = "user://smart_cubs.data"):
 	var file = File.new()
 	var data = null
 	file.open(path,File.READ)

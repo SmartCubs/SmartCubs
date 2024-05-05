@@ -60,12 +60,12 @@ func _on_request_sender_verify(letter_drawed:int):
 
 ##game over
 func _on_timer_UI_time_out():
-	draw_space.queue_free()
+	$writing_container/ViewportContainer.queue_free()
 	if hight_score == null:
 		hight_score = 0
-	elif hight_score < score:
+	if hight_score < score:
 		SaveManager._save(score)
-		$Finish_Ui._show(2, "NEW HIGHT SCORE GOOD JOB: "+ String(score) )
+		$Finish_Ui._show(2, "NEW HIGHT SCORE: "+ String(score) )
 		$Finish_Ui.visible = true
 	else:
 		$Finish_Ui._show(1, "SCORE: "+ String(score) )
