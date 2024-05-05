@@ -136,10 +136,9 @@ func missing():
 	}
 	for i in range(miss.size()):
 		hide.append(control_indices[i][miss[i]])#the value that is hidden from fill
-		print("hidden in fille index:",hide[i])
-	
+		hidden.append(fill[hide[i]])
 	var real=fill
-	emit_signal("sent_vactor",real,hide,numb)
+	emit_signal("sent_vactor",real,hide,numb,hidden)
 	for i in range(hide.size()):
 		fill[hide[i]]=-1
 	
@@ -157,6 +156,6 @@ func get_nbr(nbr,index):
 		#print("am free",index)
 		init=init-1
 		verify[index]=nbr
-	emit_signal("verified_answers",verify,init,index)
+	emit_signal("verified_answers",verify,init)
 	pass
 

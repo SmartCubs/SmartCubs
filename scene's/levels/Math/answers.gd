@@ -1,9 +1,10 @@
 extends HBoxContainer
 var pick=[]
-
-
+var itsover=[]
+var original=[]
 
 func _ready():
+	
 	pass # Replace with function body.
 
 
@@ -34,8 +35,17 @@ func _on_Equations_loc_sent_vactor(full,answered,numb):
 
 
 
-func _on_Equations_loc_verified_answers(verify,input,index):
+func _on_Equations_loc_verified_answers(verify,input):
+	var wrong=0
 	if input==3:
 		print(input)
 		print("i am here: ",verify)
+		if verify == itsover:
+			print("Correct game")
+		else:
+			for i in range(verify.size()):
+				if verify[i]!=itsover[i]:
+					wrong=wrong+1
+			print("u have done: ",wrong)
+		
 	pass # Replace with function body.
