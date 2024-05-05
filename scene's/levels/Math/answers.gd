@@ -1,7 +1,9 @@
 extends HBoxContainer
 var pick=[]
-var itsover=[]
 var original=[]
+var wrong=0
+
+#signal result
 
 func _ready():
 	
@@ -45,11 +47,14 @@ func _on_Equations_loc_verified_answers(verify,input):
 		print("i am here: ",verify)
 		if verify == original:
 			print("Correct game")
+			$"../Finish_Ui"._show(2,"Great Game! 3/3")
 			
 		else:
 			for i in range(verify.size()):
 				if verify[i]!=original[i]:
 					wrong=wrong+1
 			print("u have done: ",wrong)
-		
+			$"../Finish_Ui"._show(1,"u have "+ String(wrong)+" mistake(s)")
+	#emit_signal("result",wrong)
+	
 	pass # Replace with function body.
