@@ -5,7 +5,6 @@ extends Control
 
 
 onready var Vbox = $VBoxContainer
-
 #########export variables
 
 onready var icon_img_btn1:StreamTexture = preload("res://asset\'s/icons/pause.png")

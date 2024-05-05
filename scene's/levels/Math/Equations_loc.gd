@@ -161,3 +161,8 @@ func get_nbr(nbr,index):
 	
 	pass
 
+
+
+func _on_Difficulty_manager_pressed():
+	SceanTransition.change_scene("res://scene\'s/levels/Math/hard_selector/Hard_selector.tscn","d")
+	pass # Replace with function body.
