@@ -26,13 +26,20 @@ const music_off = preload("res://asset\'s/icons/Music Off.png")
 
 var togel_music
 
+const path_config_file:String = "user://confige.save"
+var confing
 
 
 func _ready():
-	
 	if !Engine.is_editor_hint():
-		togel_music = SceanTransition._get_audio_state()
-	
+		confing = SaveManager._load(path_config_file)
+		print(confing)
+		if confing != null && confing == false:
+			togel_music = false
+		else:
+			togel_music = true
+		SceanTransition.audio_pause(togel_music)
+		
 	for i in range(btn_texture.size()):
 		var btn = Button.new()
 		if btn:
@@ -47,7 +54,6 @@ func _ready():
 			btn.focus_mode = Control.FOCUS_NONE
 			Vbox.add_child(btn)
 			nbr_btn = btn_texture.size()
-			print( nbr_btn)
 		else:
 			printerr("error :)")
 
@@ -64,6 +70,7 @@ func _on_btn_pressed(i:int,btn:Button):
 		SceanTransition.audio_pause(togel_music)
 		if togel_music == true:
 			btn.icon = music_off
+			SaveManager._save(togel_music,path_config_file)
 		else:
 			btn.icon = btn_texture[i]
-		
+			SaveManager._save(togel_music,path_config_file)
