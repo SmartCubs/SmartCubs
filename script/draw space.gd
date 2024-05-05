@@ -1,7 +1,7 @@
 extends Control
 
 onready var lines := $Node2D/lines
-onready var viewport:Viewport = get_parent()
+onready var viewport:Viewport = get_viewport()
 
 
 

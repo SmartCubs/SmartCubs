@@ -47,7 +47,8 @@ func _on_request_sender_verify(letter_drawed:int):
 		_select_letter()
 		timer_ui._add_time(5)
 		timer_ui._add_speed(.01)
-		timer_ui.max_speed +=.01
+
+
 		draw_space._clear_all()
 		score_added += 2
 		score += score_added

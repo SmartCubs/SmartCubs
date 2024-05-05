@@ -42,6 +42,7 @@ func _add_time(add:float):
 		time_left = max_time
 	else:
 		time_left +=  add
+		max_time +=.02
 
 
 func _add_speed(speed:float):
