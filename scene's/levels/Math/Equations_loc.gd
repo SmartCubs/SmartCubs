@@ -136,9 +136,9 @@ func missing():
 	}
 	for i in range(miss.size()):
 		hide.append(control_indices[i][miss[i]])#the value that is hidden from fill
-		hidden.append(fill[hide[i]])
+		
 	var real=fill
-	emit_signal("sent_vactor",real,hide,numb,hidden)
+	emit_signal("sent_vactor",real,hide,numb)
 	for i in range(hide.size()):
 		fill[hide[i]]=-1
 	
