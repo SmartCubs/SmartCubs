@@ -17,7 +17,6 @@ func _ready():
 
 
 func _on_btn_Confirm_pressed():
-	print(condition)
 	emit_signal("condition_set",condition)
 	SceanTransition.change_scene("res://scene\'s/levels/Math/Board_calc.tscn","d")
 	pass # Replace with function body.

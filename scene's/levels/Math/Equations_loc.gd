@@ -4,16 +4,15 @@ var neg = []
 var rng=RandomNumberGenerator.new()
 var init=0
 var empty=load("res://scene\'s/levels/Math/drag_folder/drag_to.tscn")
+var setting=load("res://scene\'s/levels/Math/hard_selector/Hard_selector.tscn")
 var oper = []
 var fill = []
 var hide=[]
-var hidden=[]
 var verify=[null,null,null]
 signal sent_vactor
 signal verified_answers
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	randomize()
 	load_asset()
 	var subt3=[]
@@ -37,7 +36,7 @@ func _ready():
 				inst.rect_size = text_A[k].rect_size
 				inst.index=k
 				inst.connect("Verify_nbr",self,"get_nbr")
-				print(inst.rect_position)
+				
 				get_parent().call_deferred("add_child", inst)
 			else:
 				text_A[k].texture=numb[fill[i]]
@@ -50,7 +49,7 @@ func _ready():
 				inst.rect_size = text_B[k].rect_size
 				inst.index=k
 				inst.connect("Verify_nbr",self,"get_nbr")
-				print(inst.rect_position)
+				
 				get_parent().call_deferred("add_child", inst)
 			else:
 				text_B[k].texture=numb[fill[i]]
@@ -61,7 +60,7 @@ func _ready():
 				inst.rect_size = text_C[k].rect_size
 				inst.index=k
 				inst.connect("Verify_nbr",self,"get_nbr")
-				print(inst.rect_position)
+				
 				get_parent().call_deferred("add_child", inst)
 				
 			else:
@@ -87,6 +86,7 @@ func load_asset():
 		
 	pass
 func one_eq():
+	
 	randomize()
 	var choice
 	var op
