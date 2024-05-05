@@ -10,7 +10,7 @@
 [ext_resource path="res://scene's/menu/level_selector_screen/Trail_folow.gd" type="Script" id=8]
 [ext_resource path="res://asset's/level_selector/shadow.png" type="Texture" id=9]
 [ext_resource path="res://script/btn.gd" type="Script" id=10]
-[ext_resource path="res://asset's/BG/BG2_Landscape.png" type="Texture" id=11]
+[ext_resource path="res://asset's/background_img/7416322.jpg" type="Texture" id=11]
 
 [node name="level_selector" type="Control"]
 anchor_right = 1.0
