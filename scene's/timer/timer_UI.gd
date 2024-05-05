@@ -42,5 +42,5 @@ func _add_time(add:float):
 		time_left +=  add
 
 
-func _add_speed(speed:int):
+func _add_speed(speed:float):
 	speed_rate += speed

@@ -158,7 +158,6 @@ __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
-max_time = 0.5
 
 [node name="score" type="Label" parent="."]
 margin_left = 95.0
@@ -172,7 +171,6 @@ custom_fonts/font = SubResource( 1 )
 text = "score: "
 
 [node name="Finish_Ui" parent="." instance=ExtResource( 12 )]
-visible = false
 
 [connection signal="send_img" from="writing_container/ViewportContainer/Viewport/draw space" to="request_sender" method="_on_draw_space_send_img"]
 [connection signal="verify" from="request_sender" to="." method="_on_request_sender_verify"]
