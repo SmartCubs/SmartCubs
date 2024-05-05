@@ -37,10 +37,8 @@ func _process(_delta:float):
 	elif animation:
 		mouse_filter = MOUSE_FILTER_STOP
 		rect_position = (lerp(rect_position  , init_position, acceleration))
-		if rect_position.is_equal_approx(init_position):
+		if Vector2(rect_position).is_equal_approx(init_position):
 			animation = false
-			rect_position = init_position
-		
 
 
 
