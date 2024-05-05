@@ -96,7 +96,7 @@ frame = 2
 curent_pos = 2
 
 [node name="character2" parent="TextureRect/TextureRect2" instance=ExtResource( 5 )]
-position = Vector2( 231, 388.5 )
+position = Vector2( 220, 388.5 )
 scale = Vector2( 0.366, 0.386 )
 animation = "dog"
 frame = 2
