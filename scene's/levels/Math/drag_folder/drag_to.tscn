@@ -7,9 +7,12 @@
 extents = Vector2( 45, 50 )
 
 [node name="drag_to" type="TextureRect"]
+modulate = Color( 1, 1, 1, 0 )
 margin_right = 157.0
-margin_bottom = 142.0
+margin_bottom = 138.0
+rect_min_size = Vector2( 157, 138 )
 texture = ExtResource( 1 )
+expand = true
 script = ExtResource( 2 )
 __meta__ = {
 "_editor_description_": ""

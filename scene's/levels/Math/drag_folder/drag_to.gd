@@ -34,7 +34,7 @@ func drop_data(position, data):
 func _on_Area2D_area_exited(area):
 	if area.get_parent()==data_nbr and area.get_parent() is Dragable_obj:
 		empty=true
-		nbr=-1
+		nbr=null
 		data_nbr=null
 		print(nbr)
 	pass # Replace with function body.

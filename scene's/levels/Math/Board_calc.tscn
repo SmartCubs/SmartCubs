@@ -56,115 +56,145 @@ __meta__ = {
 
 [node name="drag_A" type="TextureRect" parent="board/Equations_loc"]
 margin_right = 157.0
-margin_bottom = 142.0
+margin_bottom = 138.0
+rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 7 )
+expand = true
 
 [node name="op_v" type="TextureRect" parent="board/Equations_loc"]
 margin_left = 161.0
 margin_right = 318.0
-margin_bottom = 142.0
+margin_bottom = 138.0
+rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 7 )
+expand = true
 
 [node name="drag_B" type="TextureRect" parent="board/Equations_loc"]
 margin_left = 322.0
 margin_right = 479.0
-margin_bottom = 142.0
+margin_bottom = 138.0
+rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 7 )
+expand = true
 
 [node name="equal" type="TextureRect" parent="board/Equations_loc"]
 margin_left = 483.0
-margin_right = 615.0
-margin_bottom = 142.0
+margin_right = 640.0
+margin_bottom = 138.0
+rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 6 )
+expand = true
 
 [node name="drag_C" type="TextureRect" parent="board/Equations_loc"]
-margin_left = 619.0
-margin_right = 776.0
-margin_bottom = 142.0
+margin_left = 644.0
+margin_right = 801.0
+margin_bottom = 138.0
+rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 7 )
+expand = true
 
 [node name="drag_A2" type="TextureRect" parent="board/Equations_loc"]
-margin_top = 146.0
+margin_top = 142.0
 margin_right = 157.0
-margin_bottom = 288.0
+margin_bottom = 280.0
+rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 7 )
+expand = true
 
 [node name="op_v2" type="TextureRect" parent="board/Equations_loc"]
 margin_left = 161.0
-margin_top = 146.0
+margin_top = 142.0
 margin_right = 318.0
-margin_bottom = 288.0
+margin_bottom = 280.0
+rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 7 )
+expand = true
 
 [node name="drag_B2" type="TextureRect" parent="board/Equations_loc"]
 margin_left = 322.0
-margin_top = 146.0
+margin_top = 142.0
 margin_right = 479.0
-margin_bottom = 288.0
+margin_bottom = 280.0
+rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 7 )
+expand = true
 
 [node name="equal2" type="TextureRect" parent="board/Equations_loc"]
 margin_left = 483.0
-margin_top = 146.0
-margin_right = 615.0
-margin_bottom = 288.0
+margin_top = 142.0
+margin_right = 640.0
+margin_bottom = 280.0
+rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 6 )
+expand = true
 
 [node name="drag_C2" type="TextureRect" parent="board/Equations_loc"]
-margin_left = 619.0
-margin_top = 146.0
-margin_right = 776.0
-margin_bottom = 288.0
+margin_left = 644.0
+margin_top = 142.0
+margin_right = 801.0
+margin_bottom = 280.0
+rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 7 )
+expand = true
 
 [node name="drag_A3" type="TextureRect" parent="board/Equations_loc"]
-margin_top = 292.0
+margin_top = 284.0
 margin_right = 157.0
-margin_bottom = 434.0
+margin_bottom = 422.0
+rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 7 )
+expand = true
 
 [node name="op_v3" type="TextureRect" parent="board/Equations_loc"]
 margin_left = 161.0
-margin_top = 292.0
+margin_top = 284.0
 margin_right = 318.0
-margin_bottom = 434.0
+margin_bottom = 422.0
+rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 7 )
+expand = true
 
 [node name="drag_B3" type="TextureRect" parent="board/Equations_loc"]
 margin_left = 322.0
-margin_top = 292.0
+margin_top = 284.0
 margin_right = 479.0
-margin_bottom = 434.0
+margin_bottom = 422.0
+rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 7 )
+expand = true
 
 [node name="equal3" type="TextureRect" parent="board/Equations_loc"]
 margin_left = 483.0
-margin_top = 292.0
-margin_right = 615.0
-margin_bottom = 434.0
+margin_top = 284.0
+margin_right = 640.0
+margin_bottom = 422.0
+rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 6 )
+expand = true
 
 [node name="drag_C3" type="TextureRect" parent="board/Equations_loc"]
-margin_left = 619.0
-margin_top = 292.0
-margin_right = 776.0
-margin_bottom = 434.0
+margin_left = 644.0
+margin_top = 284.0
+margin_right = 801.0
+margin_bottom = 422.0
+rect_min_size = Vector2( 157, 138 )
 mouse_filter = 2
 texture = ExtResource( 7 )
+expand = true
 
 [node name="Ribbon_ans" type="TextureRect" parent="board"]
 anchor_left = 0.5
@@ -193,7 +223,8 @@ margin_right = 462.0
 margin_bottom = -2.0
 script = ExtResource( 10 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="drag_obj" parent="answers" instance=ExtResource( 8 )]
@@ -205,6 +236,10 @@ margin_left = 0.0
 margin_top = 0.0
 margin_right = 157.0
 margin_bottom = 138.0
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
 
 [node name="drag_obj2" parent="answers" instance=ExtResource( 8 )]
 anchor_left = 0.0
@@ -215,6 +250,10 @@ margin_left = 161.0
 margin_top = 0.0
 margin_right = 318.0
 margin_bottom = 138.0
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
 
 [node name="drag_obj3" parent="answers" instance=ExtResource( 8 )]
 anchor_left = 0.0
@@ -225,6 +264,10 @@ margin_left = 322.0
 margin_top = 0.0
 margin_right = 479.0
 margin_bottom = 138.0
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
 
 [node name="drag_obj4" parent="answers" instance=ExtResource( 8 )]
 anchor_left = 0.0
@@ -235,6 +278,10 @@ margin_left = 483.0
 margin_top = 0.0
 margin_right = 640.0
 margin_bottom = 138.0
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
 
 [node name="drag_obj5" parent="answers" instance=ExtResource( 8 )]
 anchor_left = 0.0
@@ -245,6 +292,10 @@ margin_left = 644.0
 margin_top = 0.0
 margin_right = 801.0
 margin_bottom = 138.0
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
 
 [node name="drag_obj6" parent="answers" instance=ExtResource( 8 )]
 anchor_left = 0.0
@@ -255,6 +306,10 @@ margin_left = 805.0
 margin_top = 0.0
 margin_right = 962.0
 margin_bottom = 138.0
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
 
 [node name="CatIdle" type="Sprite" parent="."]
 position = Vector2( 1163, 490 )
@@ -264,4 +319,5 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[connection signal="resized" from="." to="board/Equations_loc" method="_on_Control_resized"]
 [connection signal="sent_vactor" from="board/Equations_loc" to="answers" method="_on_Equations_loc_sent_vactor"]
