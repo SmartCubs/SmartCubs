@@ -3,9 +3,9 @@ extends Control
 
 
 
-onready var cat = $TextureRect/TextureRect2/character2
-onready var dog = $TextureRect/TextureRect2/character
-onready var score = $TextureRect/score
+onready var cat = $panel/ribbon/character
+onready var dog = $panel/ribbon/character2
+onready var score = $panel/score
 
 
 func _show(pose:int , text:String):

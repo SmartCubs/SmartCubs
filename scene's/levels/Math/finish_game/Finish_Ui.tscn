@@ -18,7 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 6 )
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="panel" type="TextureRect" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -30,7 +30,7 @@ margin_bottom = 345.5
 texture = ExtResource( 1 )
 expand = true
 
-[node name="TextureRect2" type="TextureRect" parent="TextureRect"]
+[node name="ribbon" type="TextureRect" parent="panel"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -500.0
@@ -39,16 +39,16 @@ margin_bottom = 297.0
 texture = ExtResource( 2 )
 expand = true
 
-[node name="LevelCleared" type="Sprite" parent="TextureRect/TextureRect2"]
+[node name="LevelCleared" type="Sprite" parent="panel/ribbon"]
 position = Vector2( 500, 85.5 )
 texture = ExtResource( 4 )
 
-[node name="character" parent="TextureRect/TextureRect2" instance=ExtResource( 5 )]
+[node name="character" parent="panel/ribbon" instance=ExtResource( 5 )]
 position = Vector2( 794, 435.5 )
 frame = 2
 curent_pos = 2
 
-[node name="character2" parent="TextureRect/TextureRect2" instance=ExtResource( 5 )]
+[node name="character2" parent="panel/ribbon" instance=ExtResource( 5 )]
 position = Vector2( 220, 388.5 )
 scale = Vector2( 0.366, 0.386 )
 animation = "dog"
@@ -56,7 +56,7 @@ frame = 2
 animal = 1
 curent_pos = 2
 
-[node name="TextureButton" type="TextureButton" parent="TextureRect"]
+[node name="TextureButton" type="TextureButton" parent="panel"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -120.0
@@ -66,7 +66,7 @@ margin_bottom = 128.0
 texture_normal = ExtResource( 3 )
 expand = true
 
-[node name="score" type="Label" parent="TextureRect"]
+[node name="score" type="Label" parent="panel"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
