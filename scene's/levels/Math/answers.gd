@@ -31,3 +31,11 @@ func _on_Equations_loc_sent_vactor(full,answered,numb):
 		drag_obj[i].nbr=pick[i]
 		print(drag_obj[i].nbr)
 	pass # Replace with function body.
+
+
+
+func _on_Equations_loc_verified_answers(verify,input,index):
+	if input==3:
+		print(input)
+		print("i am here: ",verify)
+	pass # Replace with function body.

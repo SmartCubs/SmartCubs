@@ -319,5 +319,5 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[connection signal="resized" from="." to="board/Equations_loc" method="_on_Control_resized"]
 [connection signal="sent_vactor" from="board/Equations_loc" to="answers" method="_on_Equations_loc_sent_vactor"]
+[connection signal="verified_answers" from="board/Equations_loc" to="answers" method="_on_Equations_loc_verified_answers"]
