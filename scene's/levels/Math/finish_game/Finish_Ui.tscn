@@ -14,6 +14,7 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 7 )
 
 [node name="Finish_Ui" type="Control"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -22,10 +23,7 @@ margin_left = -20.0
 margin_top = -20.0
 margin_right = 20.0
 margin_bottom = 20.0
-__meta__ = {
-"_edit_lock_": true
-}
-
+script = ExtResource( 6 )
 
 [node name="panel" type="TextureRect" parent="."]
 anchor_left = 0.5
@@ -38,9 +36,6 @@ margin_right = 510.0
 margin_bottom = 345.5
 texture = ExtResource( 1 )
 expand = true
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="ribbon" type="TextureRect" parent="panel"]
 anchor_left = 0.5
@@ -50,53 +45,18 @@ margin_right = 500.0
 margin_bottom = 297.0
 texture = ExtResource( 2 )
 expand = true
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="LevelCleared" type="Sprite" parent="panel/ribbon"]
 position = Vector2( 500, 85.5 )
 texture = ExtResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
 
-[node name="cat_cheer" type="TextureRect" parent="panel/ribbon"]
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = -410.0
-margin_top = 111.5
-margin_right = -10.0
-margin_bottom = 491.5
-texture = ExtResource( 6 )
-expand = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Dog_cheer" type="TextureRect" parent="panel/ribbon"]
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = -1000.0
-margin_top = 71.5
-margin_right = -610.0
-margin_bottom = 491.5
-texture = ExtResource( 5 )
-expand = true
-__meta__ = {
-"_edit_lock_": true
-}
-[node name="character" parent="TextureRect/TextureRect2" instance=ExtResource( 5 )]
-position = Vector2( 794, 435.5 )
+[node name="character" parent="panel/ribbon" instance=ExtResource( 5 )]
+position = Vector2( 817.65, 430.42 )
 frame = 2
 curent_pos = 2
 
-[node name="character2" parent="TextureRect/TextureRect2" instance=ExtResource( 5 )]
-position = Vector2( 220, 388.5 )
+[node name="character2" parent="panel/ribbon" instance=ExtResource( 5 )]
+position = Vector2( 243.65, 383.42 )
 scale = Vector2( 0.366, 0.386 )
 animation = "dog"
 frame = 2
@@ -116,7 +76,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="score" type="Label" parent="TextureRect"]
+[node name="label" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -130,3 +90,5 @@ custom_fonts/font = SubResource( 1 )
 text = "test"
 align = 1
 valign = 1
+
+[connection signal="pressed" from="panel/exit" to="." method="_on_exit_pressed"]
