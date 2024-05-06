@@ -12,7 +12,7 @@ const drawing_lvl = preload("res://asset\'s/level_selector/drawing_level.png")
 
 const levels = {
 	'level1': "res://scene\'s/levels/letter/level1.tscn",
-	'level2': "res://scene\'s/levels/Math/Board_calc.tscn",
+	'level2': "res://scene\'s/levels/Math/hard_selector/Hard_selector.tscn",
 	'level3': "res://scene\'s/levels/drawing_world/drawing_world.tscn"
 }
 #when using curent level always us it with absolute value cauz it can get negatives values

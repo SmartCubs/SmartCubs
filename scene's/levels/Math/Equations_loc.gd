@@ -11,8 +11,10 @@ var hide=[]
 var verify=[null,null,null]
 signal sent_vactor
 signal verified_answers
+signal Operator_get
 # Called when the node enters the scene tree for the first time.
 func _ready():
+
 	randomize()
 	load_asset()
 	var subt3=[]
@@ -86,20 +88,28 @@ func load_asset():
 		
 	pass
 func one_eq():
-	
+	var condition =SceanTransition._get_data()
+	emit_signal("Operator_get",condition)
+	# 0: plus,1:mins,2:multiplication
+	print("this is the conditions:",condition)
 	randomize()
 	var choice
 	var op
 	var A
 	var B
+	var count_op=[]
 	for i in range(3):
 		if i==0:
 			choice=int(rand_range(1,11)) #1-10
 			A=choice
 			fill.append(A)
 		elif i==1:
-			choice=int(rand_range(0,3)) # 3 operations
-			op=choice
+			for j in range(3):
+				if condition[j]==true:
+					count_op.append(j)
+			print("this is the operations: ",count_op)
+			choice=int(rand_range(0,count_op.size())) # 3 operations
+			op=count_op[choice]
 			fill.append(op)
 		elif i==2:
 			choice=int(rand_range(0,11))

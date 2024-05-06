@@ -1,6 +1,5 @@
 extends TextureRect
-var condition=[false,false,false,false]
-signal condition_set
+var condition=[true,false,false]
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -8,6 +7,7 @@ signal condition_set
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print(condition)
 	pass # Replace with function body.
 
 
@@ -17,8 +17,9 @@ func _ready():
 
 
 func _on_btn_Confirm_pressed():
-	emit_signal("condition_set",condition)
-	SceanTransition.change_scene("res://scene\'s/levels/Math/Board_calc.tscn","d")
+	if  condition[1]==false and condition[2]==false and condition[0]==false:
+		condition[0]=true
+	SceanTransition.change_scene("res://scene\'s/levels/Math/Board_calc.tscn","d",condition)
 	pass # Replace with function body.
 
 
@@ -26,7 +27,7 @@ func _on_addition_pressed():
 	if $GridContainer/addition/greenlit.visible==false:
 		$GridContainer/addition/greenlit.visible=true
 		condition[0]=true
-	else:
+	elif $GridContainer/addition/greenlit.visible==true:
 		$GridContainer/addition/greenlit.visible=false
 		condition[0]=false
 	pass # Replace with function body.
@@ -50,13 +51,4 @@ func _on_multiplication_pressed():
 		$GridContainer/multiplication/greenlit.visible=false
 		condition[2]=false
 	pass # Replace with function body.
-
-
-func _on_negative_pressed():
-	if $GridContainer/negative/greenlit.visible==false:
-		$GridContainer/negative/greenlit.visible=true
-		condition[3]=true
-	else:
-		$GridContainer/negative/greenlit.visible=false
-		condition[3]=false
-	pass # Replace with function body.
+ # Replace with function body.

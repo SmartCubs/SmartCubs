@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://asset's/icons/play.png" type="Texture" id=1]
 [ext_resource path="res://script/mainMenu.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scene's/menu/optionMenu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://asset's/BG/BG3_claud_with_blur.png" type="Texture" id=5]
 [ext_resource path="res://asset's/light 2d.png" type="Texture" id=6]
+[ext_resource path="res://scene's/levels/Math/hard_selector/cloud_animal/could_animal (6).png" type="Texture" id=7]
 
 [sub_resource type="Animation" id=6]
 resource_name = "Idel"
@@ -210,6 +211,10 @@ anims/option = SubResource( 4 )
 [node name="optionMenu" parent="." instance=ExtResource( 4 )]
 visible = false
 anchor_top = 1.0
+
+[node name="CouldAnimal(6)" type="Sprite" parent="."]
+position = Vector2( 1068, 235 )
+texture = ExtResource( 7 )
 
 [connection signal="button_down" from="Button/playBTN" to="." method="_on_playBTN_button_down"]
 [connection signal="button_up" from="Button/playBTN" to="." method="_on_playBTN_button_up"]
