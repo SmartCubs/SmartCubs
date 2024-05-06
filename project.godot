@@ -75,7 +75,7 @@ _global_script_class_icons={
 [application]
 
 config/name="SmartCubs"
-run/main_scene="res://scene's/menu/level_selector_screen/level_selector.tscn"
+run/main_scene="res://scene's/menu/mainMenu.tscn"
 config/icon="res://icon.png"
 config/quit_on_go_back=false
 

@@ -32,7 +32,6 @@ func _input(event: InputEvent) -> void:
 		if not event.is_pressed() :
 			emit_signal("send_img")
 			old_child = lines.get_point_count()
-			print("mouse up")
 	# Drawing lines
 	if event is InputEventMouseMotion && pressed:
 		curent_line.add_point(event.position - rect_position)
@@ -45,10 +44,19 @@ func _clear_all():
 		lines.remove_child(i)
 
 
-func _save():
+func _save(path:String = "res://captured_image.png"):
 	#saving images as png
 	# Capture Image
 	image = viewport.get_texture().get_data()
 	image.flip_y()
-	var image_path = "res://captured_image.png"
+	var image_path = path
 	image.save_png(image_path)
+
+
+
+
+
+
+
+func _on_send_color(modulate):
+	lines.default_color = modulate
