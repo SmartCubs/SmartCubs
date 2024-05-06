@@ -9,6 +9,8 @@ var menu_music = preload("res://asset\'s/audio/main-menu.mp3")
 
 func _ready():
 	audio_stream.stream = menu_music
+	
+	yield(get_tree().create_timer(2),"timeout")
 	audio_stream.play(.5)
 	
 	print("loaded")
@@ -20,7 +22,8 @@ func audio_pause(pause:bool = true) ->void:
 func _get_audio_state()->bool:
 	return audio_stream.stream_paused
 
-
+func _audio_start()->void:
+	audio_stream.play(.5)
 
 func change_audio():
 	pass
