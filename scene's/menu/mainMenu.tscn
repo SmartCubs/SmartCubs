@@ -186,6 +186,7 @@ color = Color( 0.12549, 0.494118, 0.827451, 1 )
 range_item_cull_mask = 2
 
 [node name="optBtn" type="Button" parent="Button"]
+visible = false
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
