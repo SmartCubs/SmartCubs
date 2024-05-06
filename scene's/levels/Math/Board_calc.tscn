@@ -30,10 +30,14 @@ __meta__ = {
 }
 
 [node name="board" type="TextureRect" parent="."]
-margin_left = 40.0
-margin_top = 60.0
-margin_right = 1167.0
-margin_bottom = 597.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -570.0
+margin_top = -660.0
+margin_right = 557.0
+margin_bottom = -123.0
 texture = ExtResource( 5 )
 expand = true
 __meta__ = {
@@ -244,17 +248,33 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Ribbon_ans" type="TextureRect" parent="board"]
+[node name="Ribbon_ans" type="TextureRect" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = 639.0
-margin_top = 119.0
-margin_right = 1864.0
-margin_bottom = 320.0
+margin_left = 650.0
+margin_right = 1978.0
+margin_bottom = 201.0
 rect_rotation = 180.0
+mouse_filter = 2
 texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CatIdle" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 300.0
+margin_top = -410.0
+margin_right = 780.0
+margin_bottom = 4.0
+mouse_filter = 2
+texture = ExtResource( 1 )
 expand = true
 __meta__ = {
 "_edit_lock_": true
@@ -265,10 +285,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -500.0
-margin_top = -140.0
-margin_right = 462.0
-margin_bottom = -2.0
+margin_left = -510.0
+margin_top = -130.0
+margin_right = 452.0
+margin_bottom = 8.0
 script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true,
@@ -359,30 +379,33 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Difficulty_manager" type="TextureButton" parent="."]
-margin_left = 1200.0
-margin_top = 80.0
-margin_right = 1270.0
-margin_bottom = 150.0
-rect_min_size = Vector2( 70, 70 )
-texture_normal = ExtResource( 12 )
-expand = true
-
-[node name="CatIdle" type="Sprite" parent="."]
-position = Vector2( 1163, 490 )
-scale = Vector2( 0.295806, 0.315104 )
-texture = ExtResource( 1 )
+[node name="Finish_Ui" parent="." instance=ExtResource( 11 )]
+visible = false
+mouse_filter = 2
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="control_menu_UI" parent="." instance=ExtResource( 9 )]
 mouse_filter = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Finish_Ui" parent="." instance=ExtResource( 11 )]
-visible = false
-mouse_filter = 2
+[node name="Difficulty_manager" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -315.0
+margin_right = -245.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 60, 60 )
+texture_normal = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
+[connection signal="Operator_get" from="board/Equations_loc" to="Finish_Ui" method="_on_Equations_loc_Operator_get"]
 [connection signal="sent_vactor" from="board/Equations_loc" to="answers" method="_on_Equations_loc_sent_vactor"]
 [connection signal="verified_answers" from="board/Equations_loc" to="answers" method="_on_Equations_loc_verified_answers"]
 [connection signal="result" from="answers" to="Finish_Ui" method="_on_answers_result"]

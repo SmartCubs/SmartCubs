@@ -2,7 +2,7 @@ extends Control
 var wrong
 
 
-
+var Condition
 onready var cat = $panel/ribbon/character
 onready var dog = $panel/ribbon/character2
 onready var score = $label
@@ -37,11 +37,18 @@ func _on_answers_result(result):
 
 func _on_pass_pressed():
 	if wrong==0:
-		SceanTransition.change_scene(btnPath,"d")
+		SceanTransition.change_scene(btnPath,"d",Condition)
 		visible=false
+		
 	pass # Replace with function body.
 
 
 func _on_Home_pressed():
 	SceanTransition.change_scene("res://scene\'s/menu/mainMenu.tscn","d")
+	pass # Replace with function body.
+
+
+func _on_Equations_loc_Operator_get(rule):
+	Condition=rule
+	print("the terms: ",Condition)
 	pass # Replace with function body.
