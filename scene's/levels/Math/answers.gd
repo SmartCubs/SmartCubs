@@ -3,13 +3,9 @@ var pick=[]
 var original=[]
 var wrong=0
 
-onready var equations_loc = $"../board/Equations_loc"
 
 signal result
 
-func _ready():
-	print(equations_loc)
-	pass # Replace with function body.
 
 
 func load_asset(index) :

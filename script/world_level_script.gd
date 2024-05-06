@@ -46,7 +46,7 @@ func _on_request_sender_verify(letter_drawed:int):
 		character._set_pose(2)
 		_select_letter()
 		timer_ui._add_time(5)
-		timer_ui._add_speed(.01)
+		timer_ui._add_speed(.001)
 
 
 		draw_space._clear_all()
