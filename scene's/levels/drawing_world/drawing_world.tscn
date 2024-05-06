@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scene's/menu/control_menu_UI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scene's/levels/letter/draw space.tscn" type="PackedScene" id=2]
@@ -34,6 +34,26 @@ func _notification(what):
 
 "
 
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.517647, 0.513726, 0.537255, 1 )
+border_width_left = 2
+border_width_top = 10
+border_width_right = 2
+border_width_bottom = 10
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color( 1, 1, 1, 0.6 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.972549, 0.435294, 0.352941, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.972549, 0.435294, 0.352941, 1 )
+corner_detail = 9
+
 [node name="drawing_world" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -49,22 +69,15 @@ anchor_bottom = 1.0
 margin_top = 86.0
 margin_bottom = 86.0
 
-[node name="Viewport" type="Viewport" parent="control_menu_UI/ViewportContainer"]
-size = Vector2( 1280, 720 )
-handle_input_locally = false
-render_target_update_mode = 3
-
-[node name="draw space" parent="control_menu_UI/ViewportContainer/Viewport" instance=ExtResource( 2 )]
-
-[node name="HBoxContainer" type="HBoxContainer" parent="control_menu_UI"]
+[node name="HBoxContainer" type="HBoxContainer" parent="control_menu_UI/ViewportContainer"]
 anchor_right = 1.0
 margin_left = 8.0
-margin_top = 5.0
-margin_bottom = 80.0
+margin_top = -81.0
+margin_bottom = -6.0
 mouse_filter = 2
 custom_constants/separation = 10
 
-[node name="red" type="TextureButton" parent="control_menu_UI/HBoxContainer"]
+[node name="red" type="TextureButton" parent="control_menu_UI/ViewportContainer/HBoxContainer"]
 modulate = Color( 1, 0, 0, 1 )
 margin_right = 75.0
 margin_bottom = 75.0
@@ -72,7 +85,7 @@ rect_min_size = Vector2( 75, 75 )
 texture_normal = ExtResource( 9 )
 script = ExtResource( 10 )
 
-[node name="blue" type="TextureButton" parent="control_menu_UI/HBoxContainer"]
+[node name="blue" type="TextureButton" parent="control_menu_UI/ViewportContainer/HBoxContainer"]
 modulate = Color( 0, 0.0627451, 1, 1 )
 margin_left = 85.0
 margin_right = 160.0
@@ -81,7 +94,7 @@ rect_min_size = Vector2( 75, 75 )
 texture_normal = ExtResource( 9 )
 script = ExtResource( 10 )
 
-[node name="yellow" type="TextureButton" parent="control_menu_UI/HBoxContainer"]
+[node name="yellow" type="TextureButton" parent="control_menu_UI/ViewportContainer/HBoxContainer"]
 modulate = Color( 0.968627, 1, 0, 1 )
 margin_left = 170.0
 margin_right = 245.0
@@ -90,7 +103,7 @@ rect_min_size = Vector2( 75, 75 )
 texture_normal = ExtResource( 9 )
 script = ExtResource( 10 )
 
-[node name="balck" type="TextureButton" parent="control_menu_UI/HBoxContainer"]
+[node name="balck" type="TextureButton" parent="control_menu_UI/ViewportContainer/HBoxContainer"]
 modulate = Color( 0, 0, 0, 1 )
 margin_left = 255.0
 margin_right = 330.0
@@ -99,7 +112,7 @@ rect_min_size = Vector2( 75, 75 )
 texture_normal = ExtResource( 9 )
 script = ExtResource( 10 )
 
-[node name="white" type="TextureButton" parent="control_menu_UI/HBoxContainer"]
+[node name="white" type="TextureButton" parent="control_menu_UI/ViewportContainer/HBoxContainer"]
 margin_left = 340.0
 margin_right = 415.0
 margin_bottom = 75.0
@@ -107,9 +120,29 @@ rect_min_size = Vector2( 75, 75 )
 texture_normal = ExtResource( 9 )
 script = ExtResource( 10 )
 
+[node name="HSlider" type="HSlider" parent="control_menu_UI/ViewportContainer/HBoxContainer"]
+visible = false
+margin_left = 425.0
+margin_right = 925.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 500, 75 )
+custom_styles/slider = SubResource( 2 )
+custom_styles/grabber_area_highlight = SubResource( 4 )
+custom_styles/grabber_area = SubResource( 3 )
+value = 50.0
+rounded = true
+tick_count = 10
+
+[node name="Viewport" type="Viewport" parent="control_menu_UI/ViewportContainer"]
+size = Vector2( 1280, 720 )
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="draw space" parent="control_menu_UI/ViewportContainer/Viewport" instance=ExtResource( 2 )]
+
 [connection signal="resized" from="." to="." method="_on_drawing_world_resized"]
-[connection signal="send_color" from="control_menu_UI/HBoxContainer/red" to="control_menu_UI/ViewportContainer/Viewport/draw space" method="_on_send_color"]
-[connection signal="send_color" from="control_menu_UI/HBoxContainer/blue" to="control_menu_UI/ViewportContainer/Viewport/draw space" method="_on_send_color"]
-[connection signal="send_color" from="control_menu_UI/HBoxContainer/yellow" to="control_menu_UI/ViewportContainer/Viewport/draw space" method="_on_send_color"]
-[connection signal="send_color" from="control_menu_UI/HBoxContainer/balck" to="control_menu_UI/ViewportContainer/Viewport/draw space" method="_on_send_color"]
-[connection signal="send_color" from="control_menu_UI/HBoxContainer/white" to="control_menu_UI/ViewportContainer/Viewport/draw space" method="_on_send_color"]
+[connection signal="send_color" from="control_menu_UI/ViewportContainer/HBoxContainer/red" to="control_menu_UI/ViewportContainer/Viewport/draw space" method="_on_send_color"]
+[connection signal="send_color" from="control_menu_UI/ViewportContainer/HBoxContainer/blue" to="control_menu_UI/ViewportContainer/Viewport/draw space" method="_on_send_color"]
+[connection signal="send_color" from="control_menu_UI/ViewportContainer/HBoxContainer/yellow" to="control_menu_UI/ViewportContainer/Viewport/draw space" method="_on_send_color"]
+[connection signal="send_color" from="control_menu_UI/ViewportContainer/HBoxContainer/balck" to="control_menu_UI/ViewportContainer/Viewport/draw space" method="_on_send_color"]
+[connection signal="send_color" from="control_menu_UI/ViewportContainer/HBoxContainer/white" to="control_menu_UI/ViewportContainer/Viewport/draw space" method="_on_send_color"]

@@ -1,6 +1,6 @@
 extends BTN
 
-onready var draw_space = $"../../ViewportContainer/Viewport/draw space"
+
 signal send_color
 
 func _ready():
