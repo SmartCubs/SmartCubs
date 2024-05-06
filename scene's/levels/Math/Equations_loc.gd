@@ -1,13 +1,18 @@
 extends GridContainer
 var numb = [] #0-100
 
-var init=0
+
 var empty=load("res://scene\'s/levels/Math/drag_folder/drag_to.tscn")
 var setting=load("res://scene\'s/levels/Math/hard_selector/Hard_selector.tscn")
 var oper = []
 var fill = []
 var hide=[]
+var instance = []
+
 var verify=[null,null,null]
+
+
+
 signal sent_vactor
 signal verified_answers
 signal Operator_get
@@ -36,6 +41,7 @@ func _ready():
 				inst.set_global_position(text_A[k].get_global_rect().position-get_parent().rect_position)
 				inst.rect_size = text_A[k].rect_size
 				inst.index=k
+				instance.append(inst)
 				inst.connect("Verify_nbr",self,"get_nbr")
 				
 				get_parent().call_deferred("add_child", inst)
@@ -49,6 +55,7 @@ func _ready():
 				inst.set_global_position(text_B[k].get_global_rect().position-get_parent().rect_position)
 				inst.rect_size = text_B[k].rect_size
 				inst.index=k
+				instance.append(inst)
 				inst.connect("Verify_nbr",self,"get_nbr")
 				
 				get_parent().call_deferred("add_child", inst)
@@ -60,6 +67,7 @@ func _ready():
 				inst.set_global_position(text_C[k].get_global_rect().position-get_parent().rect_position)
 				inst.rect_size = text_C[k].rect_size
 				inst.index=k
+				instance.append(inst)
 				inst.connect("Verify_nbr",self,"get_nbr")
 				
 				get_parent().call_deferred("add_child", inst)
@@ -153,18 +161,24 @@ func missing():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-func get_nbr(nbr,index):
-	
+func get_nbr(nbr,index,empty):
+
+	var init =0
+	for i in instance:
+		if !i.empty:
+			init +=1
+
 	if nbr!=null:
-		#print("I am",nbr,"FROM EQUATION",index)
+	
 		verify[index]=nbr
-		init=init+1
+			
 		emit_signal("verified_answers",verify,init)
 	if nbr==null:
-		#print("am free",index)
-		init=init-1
+
 		verify[index]=nbr
+		
 		emit_signal("verified_answers",verify,init)
+	print("init: ",init)
 	
 	pass
 

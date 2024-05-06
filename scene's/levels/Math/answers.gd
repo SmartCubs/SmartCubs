@@ -41,6 +41,8 @@ func _on_Equations_loc_sent_vactor(full,answered):
 
 func _on_Equations_loc_verified_answers(verify,input):
 	var wrong=0
+	
+	
 	if input==3:
 		#print(input)
 		#print("i am here: ",verify)
