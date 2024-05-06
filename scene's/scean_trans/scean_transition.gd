@@ -5,7 +5,7 @@ onready var audio_stream = $audio_stream
 export (String,FILE ,"*.mp3") var audio:String
 
 var menu_music = preload("res://asset\'s/audio/main-menu.mp3")
-
+var data_main
 
 func _ready():
 	audio_stream.stream = menu_music
@@ -28,8 +28,10 @@ func _audio_start()->void:
 func change_audio():
 	pass
 
+func _get_data():
+	return data_main
 
-func change_scene(target: String, type:String = "up" ) ->void:
+func change_scene(target: String, type:String = "up",data=null ) :
 	if(type == "d"):
 		$AnimationPlayer.play("dissolve")
 		yield($AnimationPlayer,"animation_finished")
@@ -40,3 +42,5 @@ func change_scene(target: String, type:String = "up" ) ->void:
 		yield($AnimationPlayer,"animation_finished")
 		get_tree().change_scene(target)
 		$AnimationPlayer.play("continue up")
+	data_main = data
+	return data
