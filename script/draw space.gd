@@ -55,7 +55,8 @@ func _save(path:String = "res://captured_image.png"):
 
 
 
-func _on_chose_color_pressed():
-	pass # Replace with function body.
 
 
+
+func _on_send_color(modulate):
+	lines.default_color = modulate
