@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Menu.png-3bce8a9953e6afbeeeb2c99e3b6eb9e8.stex"
+path="res://.import/slider_fill.png-ee7c490963d872d2e3371e791a097cc4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scene's/levels/Math/Menu.png"
-dest_files=[ "res://.import/Menu.png-3bce8a9953e6afbeeeb2c99e3b6eb9e8.stex" ]
+source_file="res://asset's/icons/slider_fill.png"
+dest_files=[ "res://.import/slider_fill.png-ee7c490963d872d2e3371e791a097cc4.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

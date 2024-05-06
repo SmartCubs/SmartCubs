@@ -50,5 +50,4 @@ func _on_Home_pressed():
 
 func _on_Equations_loc_Operator_get(rule):
 	Condition=rule
-	print("the terms: ",Condition)
 	pass # Replace with function body.

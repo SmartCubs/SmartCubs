@@ -3,19 +3,22 @@ var pick=[]
 var original=[]
 var wrong=0
 
+onready var equations_loc = $"../board/Equations_loc"
+
 signal result
 
 func _ready():
-	
+	print(equations_loc)
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func load_asset(index) :
+	var path_img="res://scene's/levels/Math/numbers/blocked_0_100/"+str(index)+".png"
+	return load(path_img)
 
 
-func _on_Equations_loc_sent_vactor(full,answered,numb):
+
+func _on_Equations_loc_sent_vactor(full,answered):
 	for i in range(answered.size()):
 		original.append(full[answered[i]])
 	#print("correct answer",original)
@@ -33,7 +36,7 @@ func _on_Equations_loc_sent_vactor(full,answered,numb):
 	pick.shuffle()
 	print(pick)
 	for i in range(pick.size()):
-		drag_obj[i].texture_normal=numb[pick[i]]
+		drag_obj[i].texture_normal =  load_asset(pick[i])
 		drag_obj[i].nbr=pick[i]
 		print(drag_obj[i].nbr)
 	pass # Replace with function body.
