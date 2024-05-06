@@ -360,13 +360,15 @@ __meta__ = {
 }
 
 [node name="Difficulty_manager" type="TextureButton" parent="."]
-margin_left = 1200.0
-margin_top = 80.0
-margin_right = 1270.0
-margin_bottom = 150.0
-rect_min_size = Vector2( 70, 70 )
+margin_left = 965.0
+margin_right = 1035.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 60, 60 )
 texture_normal = ExtResource( 12 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CatIdle" type="Sprite" parent="."]
 position = Vector2( 1163, 490 )
@@ -378,10 +380,16 @@ __meta__ = {
 
 [node name="control_menu_UI" parent="." instance=ExtResource( 9 )]
 mouse_filter = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Finish_Ui" parent="." instance=ExtResource( 11 )]
 visible = false
 mouse_filter = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
 [connection signal="sent_vactor" from="board/Equations_loc" to="answers" method="_on_Equations_loc_sent_vactor"]
 [connection signal="verified_answers" from="board/Equations_loc" to="answers" method="_on_Equations_loc_verified_answers"]
