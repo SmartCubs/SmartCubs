@@ -25,9 +25,7 @@ func _swap(obj:drag_object):
 
 
 var y = true
-func _process(_delta):
-	###############for tests####################
-	print(test,": ",queue)
+
 
 
 

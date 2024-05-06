@@ -22,7 +22,6 @@ func drop_data(position, data):
 	data.is_draging = false
 	empty=false
 	nbr=data.nbr
-	print(nbr)
 	emit_signal("Verify_nbr",nbr,index)
 	data_nbr=data
 	data.set_global_position( get_global_rect().position )
@@ -39,6 +38,6 @@ func _on_Area2D_area_exited(area):
 		nbr=null
 		emit_signal("Verify_nbr",nbr,index)
 		data_nbr=null
-		print(nbr)
+		print("am out")
 		
 	pass # Replace with function body.

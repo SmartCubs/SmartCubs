@@ -1,3 +1,4 @@
+tool
 extends "res://scene's/menu/control_menu_UI.gd"
 
 

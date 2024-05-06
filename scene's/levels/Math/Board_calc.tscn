@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://asset's/img/character's/cat_idle.png" type="Texture" id=1]
 [ext_resource path="res://scene's/levels/Math/BG2_Landscape.png" type="Texture" id=2]
@@ -11,7 +11,11 @@
 [ext_resource path="res://scene's/menu/control_menu_UI.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scene's/levels/Math/answers.gd" type="Script" id=10]
 [ext_resource path="res://scene's/levels/Math/finish_game/Finish_Ui.tscn" type="PackedScene" id=11]
-[ext_resource path="res://scene's/levels/Math/Menu.png" type="Texture" id=12]
+[ext_resource path="res://asset's/icons/Menu.png" type="Texture" id=12]
+[ext_resource path="res://scene's/menu/control_menu_UI_math_level.gd" type="Script" id=13]
+[ext_resource path="res://asset's/icons/Music On.png" type="Texture" id=14]
+[ext_resource path="res://asset's/icons/pause.png" type="Texture" id=15]
+[ext_resource path="res://asset's/icons/house.png" type="Texture" id=16]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -45,6 +49,7 @@ __meta__ = {
 }
 
 [node name="Equations_loc" type="GridContainer" parent="board"]
+unique_name_in_owner = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -388,25 +393,13 @@ __meta__ = {
 
 [node name="control_menu_UI" parent="." instance=ExtResource( 9 )]
 mouse_filter = 2
+script = ExtResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="Difficulty_manager" type="TextureButton" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -315.0
-margin_right = -245.0
-margin_bottom = 70.0
-rect_min_size = Vector2( 60, 60 )
-texture_normal = ExtResource( 12 )
-expand = true
-__meta__ = {
-"_edit_lock_": true
-}
+btn_texture = [ ExtResource( 12 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ]
 
 [connection signal="Operator_get" from="board/Equations_loc" to="Finish_Ui" method="_on_Equations_loc_Operator_get"]
 [connection signal="sent_vactor" from="board/Equations_loc" to="answers" method="_on_Equations_loc_sent_vactor"]
 [connection signal="verified_answers" from="board/Equations_loc" to="answers" method="_on_Equations_loc_verified_answers"]
 [connection signal="result" from="answers" to="Finish_Ui" method="_on_answers_result"]
-[connection signal="pressed" from="Difficulty_manager" to="board/Equations_loc" method="_on_Difficulty_manager_pressed"]

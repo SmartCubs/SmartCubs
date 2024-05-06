@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Menu.png-3bce8a9953e6afbeeeb2c99e3b6eb9e8.stex"
+path="res://.import/Menu.png-76f56480a0bcf542a3726ac9a4c1bd44.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scene's/levels/Math/Menu.png"
-dest_files=[ "res://.import/Menu.png-3bce8a9953e6afbeeeb2c99e3b6eb9e8.stex" ]
+source_file="res://asset's/icons/Menu.png"
+dest_files=[ "res://.import/Menu.png-76f56480a0bcf542a3726ac9a4c1bd44.stex" ]
 
 [params]
 

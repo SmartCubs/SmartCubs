@@ -6,11 +6,7 @@ var fill=[]
 # var b = "text"
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	for i in range(fill.size()):
-		print("this:",fill[i])
-	pass # Replace with function body.
+
 
 func one_eq():
 	randomize()

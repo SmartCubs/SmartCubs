@@ -1,7 +1,6 @@
-extends Control
+extends GridContainer
 var numb = [] #0-100
-var neg = []
-var rng=RandomNumberGenerator.new()
+
 var init=0
 var empty=load("res://scene\'s/levels/Math/drag_folder/drag_to.tscn")
 var setting=load("res://scene\'s/levels/Math/hard_selector/Hard_selector.tscn")
@@ -41,7 +40,7 @@ func _ready():
 				
 				get_parent().call_deferred("add_child", inst)
 			else:
-				text_A[k].texture=numb[fill[i]]
+				text_A[k].texture=load_asset(fill[i])
 		elif i%4==1:
 			text_op[k].texture=oper[fill[i]]
 		elif i%4==2:
@@ -54,7 +53,7 @@ func _ready():
 				
 				get_parent().call_deferred("add_child", inst)
 			else:
-				text_B[k].texture=numb[fill[i]]
+				text_B[k].texture=load_asset(fill[i])
 		elif i%4==3:
 			if fill[i]==-1:
 				var inst:Drag_to = empty.instance()
@@ -66,32 +65,31 @@ func _ready():
 				get_parent().call_deferred("add_child", inst)
 				
 			else:
-				text_C[k].texture=numb[fill[i]]
+				text_C[k].texture=load_asset(fill[i])
 			k=k+1
 		pass
 	pass
-func load_asset():
+func load_asset(index = null) :
 	var temp
 	var oper_name=['+','-','x']
-	for i in range(101):
-		var path_img="res://scene's/levels/Math/numbers/blocked_0_100/"+str(i)+".png"
-		temp=load(path_img)
-		numb.append(temp) #fill all texture (0-100)
-	for i in range(10):
-		var path_img="res://scene's/levels/Math/numbers/negative_nbr/-"+str(i+1)+".png"
-		temp=load(path_img)
-		neg.append(temp) #fill all texture (from -1 to -10)
-	for op in oper_name:
-		var path_img="res://scene's/levels/Math/operate/oper_bloc/Block_"+op+".png"
-		temp=load(path_img)
-		oper.append(temp) #fill all texture of '+' '-' 'x'
-		
-	pass
+	if index == null:
+		for op in oper_name:
+			var path_img="res://scene's/levels/Math/operate/oper_bloc/Block_"+op+".png"
+			temp=load(path_img)
+			oper.append(temp) #fill all texture of '+' '-' 'x'
+	elif index >= 0: # for all images from 0 to 100
+		var path_img="res://scene's/levels/Math/numbers/blocked_0_100/"+str(index)+".png"
+		return load(path_img)
+	elif index < 0:
+		var path_img="res://scene's/levels/Math/numbers/negative_nbr/-"+str(index+1)+".png"
+		return load(path_img)
+	
+
+
 func one_eq():
 	var condition =SceanTransition._get_data()
 	emit_signal("Operator_get",condition)
 	# 0: plus,1:mins,2:multiplication
-	print("this is the conditions:",condition)
 	randomize()
 	var choice
 	var op
@@ -107,7 +105,6 @@ func one_eq():
 			for j in range(3):
 				if condition[j]==true:
 					count_op.append(j)
-			print("this is the operations: ",count_op)
 			choice=int(rand_range(0,count_op.size())) # 3 operations
 			op=count_op[choice]
 			fill.append(op)
@@ -148,7 +145,7 @@ func missing():
 		hide.append(control_indices[i][miss[i]])#the value that is hidden from fill
 		
 	var real=fill
-	emit_signal("sent_vactor",real,hide,numb)
+	emit_signal("sent_vactor",real,hide)
 	for i in range(hide.size()):
 		fill[hide[i]]=-1
 	
@@ -173,6 +170,4 @@ func get_nbr(nbr,index):
 
 
 
-func _on_Difficulty_manager_pressed():
-	SceanTransition.change_scene("res://scene\'s/levels/Math/hard_selector/Hard_selector.tscn","d")
-	pass # Replace with function body.
+

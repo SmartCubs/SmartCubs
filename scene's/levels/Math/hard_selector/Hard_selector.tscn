@@ -15,6 +15,10 @@
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_editor_description_": "
+"
+}
 
 [node name="backrgound" type="TextureRect" parent="."]
 anchor_right = 1.0
