@@ -19,10 +19,13 @@ script/source = "extends Control
 onready var viewport = $control_menu_UI/ViewportContainer/Viewport
 var loaded = false
 
+onready var h_slider = $control_menu_UI/HSlider
+onready var draw_space = $\"control_menu_UI/ViewportContainer/Viewport/draw space\"
 
 
 func _ready():
 	viewport.size = get_viewport_rect().size
+	h_slider.value = draw_space.lines.width
 	loaded = true
 
 func _on_drawing_world_resized():

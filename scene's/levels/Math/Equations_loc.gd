@@ -162,12 +162,13 @@ func missing():
 #func _process(delta):
 #	pass
 func get_nbr(nbr,index,empty):
-
+	
+	yield(get_tree().create_timer(.2),"timeout")
 	var init =0
 	for i in instance:
 		if !i.empty:
 			init +=1
-
+	
 	if nbr!=null:
 	
 		verify[index]=nbr
