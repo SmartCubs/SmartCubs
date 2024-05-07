@@ -161,7 +161,7 @@ func missing():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-func get_nbr(nbr,index,empty):
+func get_nbr(nbr,index,empty) ->void:
 	
 	yield(get_tree().create_timer(.2),"timeout")
 	
@@ -173,14 +173,14 @@ func get_nbr(nbr,index,empty):
 	if nbr!=null:
 	
 		verify[index]=nbr
-			
 		emit_signal("verified_answers",verify,init)
 	if nbr==null:
 
 		verify[index]=nbr
-		
 		emit_signal("verified_answers",verify,init)
+	
 	print("init: ",init)
+	
 	
 
 
