@@ -164,6 +164,7 @@ func missing():
 func get_nbr(nbr,index,empty):
 	
 	yield(get_tree().create_timer(.2),"timeout")
+	
 	var init =0
 	for i in instance:
 		if !i.empty:
@@ -181,7 +182,6 @@ func get_nbr(nbr,index,empty):
 		emit_signal("verified_answers",verify,init)
 	print("init: ",init)
 	
-	pass
 
 
 
