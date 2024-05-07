@@ -11,9 +11,8 @@ func _ready():
 	audio_stream.stream = menu_music
 	
 	yield(get_tree().create_timer(2),"timeout")
-	audio_stream.play(.5)
 	
-	print("loaded")
+	print("audio on")
 
 
 func audio_pause(pause:bool = true) ->void:
@@ -32,7 +31,13 @@ func _get_data():
 	return data_main
 
 func change_scene(target: String, type:String = "up",data=null ) :
-	if(type == "d"):
+	if type == 'r':
+		randomize()
+		var random = int(rand_range(0,2))
+		match random:
+			0: type = 'd'
+			1: type = "up"
+	if type == "d":
 		$AnimationPlayer.play("dissolve")
 		yield($AnimationPlayer,"animation_finished")
 		get_tree().change_scene(target)

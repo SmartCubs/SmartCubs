@@ -29,7 +29,7 @@ func _notification(what):
 #########event button up for changing the scean##############
 func _on_playBTN_button_up() -> void:
 	playBtn.rect_scale = Vector2(1,1)
-	SceanTransition.change_scene("res://scene\'s/menu/level_selector_screen/level_selector.tscn","d")
+	SceanTransition.change_scene("res://scene\'s/menu/level_selector_screen/level_selector.tscn","r")
 	animation_player.stop(true)
 
 

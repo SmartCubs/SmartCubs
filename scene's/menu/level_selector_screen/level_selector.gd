@@ -67,17 +67,6 @@ func _ready():
 	right_position = $right_position.position
 	
 	
-##################################testing text to speach#########################
-#	var text = "Text to speech is a really neat thing."
-#	var speed = 0.9
-#	yield($TextToSpeech.say("test", TextToSpeechEngine.VOICE_AWB, speed), "completed")
-#	yield($TextToSpeech.say("you", TextToSpeechEngine.VOICE_AHW, speed), "completed")
-#	yield($TextToSpeech.say("ahhhhhhhhh", TextToSpeechEngine.VOICE_FEM, speed), "completed")
-#	yield($TextToSpeech.say(text, TextToSpeechEngine.VOICE_AEW, speed), "completed")
-#	yield($TextToSpeech.say(text, TextToSpeechEngine.VOICE_SLT, speed), "completed")
-#	yield($TextToSpeech.say(text, TextToSpeechEngine.VOICE_EEY, speed), "completed")
-#	yield($TextToSpeech.say(text, TextToSpeechEngine.VOICE_CLB, speed), "completed")
-
 
 
 func _input(event)->void:
@@ -182,7 +171,6 @@ func _level_selector()->void:
 	match int(abs(curent_level)):
 		0:
 			SceanTransition.change_scene(levels["level1"],"d")
-			SceanTransition.audio_pause()
 		1:
 			SceanTransition.change_scene(levels["level2"],"d")
 		2:
