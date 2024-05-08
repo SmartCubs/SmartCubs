@@ -23,6 +23,7 @@ func drop_data(position, data):
 #	TODO: if not work position wise in dragto change this
 	data.animation = false
 	data.is_draging = false
+	data.modulate.a = 1
 	empty=false
 	nbr=data.nbr
 	empty = false

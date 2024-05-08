@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scene's/menu/control_menu_UI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scene's/menu/level_selector_screen/level_selector.gd" type="Script" id=2]
@@ -6,8 +6,6 @@
 [ext_resource path="res://asset's/icons/arrow-right.png" type="Texture" id=4]
 [ext_resource path="res://asset's/icons/arrow-left.png" type="Texture" id=5]
 [ext_resource path="res://script/Btn_level.gd" type="Script" id=6]
-[ext_resource path="res://scene's/effect/Trail.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scene's/menu/level_selector_screen/Trail_folow.gd" type="Script" id=8]
 [ext_resource path="res://asset's/level_selector/shadow.png" type="Texture" id=9]
 [ext_resource path="res://script/btn.gd" type="Script" id=10]
 [ext_resource path="res://asset's/level_selector/background_level_selector.jpg" type="Texture" id=11]
@@ -74,15 +72,6 @@ icon = ExtResource( 15 )
 flat = true
 expand_icon = true
 script = ExtResource( 6 )
-
-[node name="Trail" parent="Button" instance=ExtResource( 7 )]
-visible = false
-modulate = Color( 1, 1, 1, 0 )
-width = 300.0
-script = ExtResource( 8 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="go_right_btn" type="Button" parent="Button"]
 modulate = Color( 1, 1, 1, 0.980392 )

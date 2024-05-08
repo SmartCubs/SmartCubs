@@ -11,7 +11,7 @@ func _ready():
 	audio_stream.stream = menu_music
 	
 	yield(get_tree().create_timer(2),"timeout")
-	
+	audio_stream.play()
 	print("audio on")
 
 

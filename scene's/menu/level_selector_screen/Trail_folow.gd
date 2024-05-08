@@ -1,19 +1,17 @@
 extends Trails
 
-
-
-
-onready var level = get_node("%level")
+onready var drag_obj = $"../.."
 
 
 
 
 
 func _ready()->void:
-	width = level.get_rect().size.y/2
-
+	texture = drag_obj.texture_normal
+	width = drag_obj.get_rect().size.y
 
 func _get_position()->Vector2:
-	return level.get_rect().position + level.get_rect().size/2
+	
+	return drag_obj.get_global_rect().position + drag_obj.get_global_rect().size/2 
 
 

@@ -36,7 +36,7 @@ onready var init_position:Vector2 =Vector2.ZERO
 onready var level = $Button/level
 onready var right_position = $right_position.position
 onready var left_position = $left_position.position
-onready var trail = get_node("Button/Trail")
+
 
 
 
@@ -67,6 +67,17 @@ func _ready():
 	right_position = $right_position.position
 	
 	
+##################################testing text to speach#########################
+#	var text = "Text to speech is a really neat thing."
+#	var speed = 0.9
+#	yield($TextToSpeech.say("test", TextToSpeechEngine.VOICE_AWB, speed), "completed")
+#	yield($TextToSpeech.say("you", TextToSpeechEngine.VOICE_AHW, speed), "completed")
+#	yield($TextToSpeech.say("ahhhhhhhhh", TextToSpeechEngine.VOICE_FEM, speed), "completed")
+#	yield($TextToSpeech.say(text, TextToSpeechEngine.VOICE_AEW, speed), "completed")
+#	yield($TextToSpeech.say(text, TextToSpeechEngine.VOICE_SLT, speed), "completed")
+#	yield($TextToSpeech.say(text, TextToSpeechEngine.VOICE_EEY, speed), "completed")
+#	yield($TextToSpeech.say(text, TextToSpeechEngine.VOICE_CLB, speed), "completed")
+
 
 
 func _input(event)->void:
@@ -78,7 +89,7 @@ func _input(event)->void:
 	if is_dragging && _screen_drag(clicked_position) && itsIn == true  :
 		acceleration = .5
 		level.rect_position.x = lerp(level.rect_position.x, event.position.x - level.rect_size.x/2 ,acceleration )
-		trail.visible = true
+
 
 
 
@@ -95,7 +106,7 @@ func _process(_delta)->void:
 	if its_animation == true:
 		level.rect_position.x = lerp(level.rect_position.x,go_to,acceleration)
 		yield(get_tree().create_timer(.3), "timeout")
-		trail._clear_all_points()
+
 		if is_equal_approx(go_to , left_position.x):
 			level.rect_position.x = right_position.x
 			its_animation = false
@@ -129,7 +140,7 @@ func _go_left()->void:
 	_change_images()
 	print("left: curent level: ",abs(curent_level))
 	go_to = left_position.x
-	trail.visible = true
+
 	its_animation = true
 ######right
 func _go_right():
@@ -137,7 +148,7 @@ func _go_right():
 	_change_images()
 	print("right: curent level: ",abs(curent_level))
 	go_to = right_position.x
-	trail.visible = true
+
 	its_animation = true
 
 
@@ -171,6 +182,7 @@ func _level_selector()->void:
 	match int(abs(curent_level)):
 		0:
 			SceanTransition.change_scene(levels["level1"],"d")
+			SceanTransition.audio_pause()
 		1:
 			SceanTransition.change_scene(levels["level2"],"d")
 		2:
