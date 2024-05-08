@@ -163,7 +163,7 @@ func missing():
 #	pass
 func get_nbr(nbr,index,empty) ->void:
 	
-	yield(get_tree().create_timer(.2),"timeout")
+	yield(get_tree().create_timer(.1),"timeout")
 	
 	var init =0
 	for i in instance:
