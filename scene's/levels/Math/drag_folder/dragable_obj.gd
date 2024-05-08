@@ -3,11 +3,11 @@ class_name Dragable_obj
 
 onready var trail = $Node/Trail
 
-var acceleration = .7
+var acceleration = .25
 var is_draging:bool
 var init_position:Vector2
 var animation:bool = false;
-var old_position:Vector2
+
 
 var can_drop
 var nbr=-1
@@ -37,27 +37,24 @@ func _input(event):
 func _process(delta:float):
 	
 	if is_draging:
-		
-		old_position = get_global_rect().position
+		modulate.a = 1
+		trail.modulate.a =0
+
 		mouse_filter = MOUSE_FILTER_IGNORE
 		set_global_position( lerp(get_global_rect().position , get_global_mouse_position() - rect_size/2  , .9 ))
 
 	elif animation:
 		modulate.a = 0
+		trail.modulate.a = 1
 		mouse_filter = MOUSE_FILTER_STOP
 		rect_position = (lerp(rect_position  , init_position, acceleration))
-		if rect_position.is_equal_approx(init_position):
+		if round(rect_position.x) == round(init_position.x) && round(rect_position.y) == round(init_position.y) :
 			animation = false
-			old_position = get_global_rect().position
 			modulate.a = 1
+			yield(get_tree().create_timer(.2),"timeout")
+			trail.modulate.a = 0
+	
 
-	if !old_position.is_equal_approx(get_global_rect().position)  :
-		
-		modulate.a = 0
-		old_position = get_global_rect().position
-
-	else:
-		modulate.a = 1
 	
 
 
