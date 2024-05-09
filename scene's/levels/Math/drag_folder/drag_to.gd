@@ -43,7 +43,7 @@ func _on_Area2D_area_exited(area):
 		nbr=null
 		data_nbr=null
 		empty = true
-		emit_signal("Verify_nbr",nbr,index,empty)
+		
 
 		
 	pass # Replace with function body.

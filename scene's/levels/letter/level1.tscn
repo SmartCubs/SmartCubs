@@ -4,7 +4,7 @@
 [ext_resource path="res://scene's/levels/letter/draw space.tscn" type="PackedScene" id=2]
 [ext_resource path="res://script/prediction_request.gd" type="Script" id=3]
 [ext_resource path="res://scene's/character/character.tscn" type="PackedScene" id=4]
-[ext_resource path="res://asset's/BG/alphabet_background.png" type="Texture" id=5]
+[ext_resource path="res://asset's/BG/BG2_Landscape.png" type="Texture" id=5]
 [ext_resource path="res://asset's/letters/Block_A.png" type="Texture" id=6]
 [ext_resource path="res://asset's/icons/Icon_Trash.png" type="Texture" id=7]
 [ext_resource path="res://script/world_level_script.gd" type="Script" id=8]
@@ -13,7 +13,7 @@
 [ext_resource path="res://script/btn.gd" type="Script" id=11]
 [ext_resource path="res://scene's/end_level/Finish_Ui.tscn" type="PackedScene" id=12]
 [ext_resource path="res://theme/grisly-beast.regular.ttf" type="DynamicFontData" id=13]
-[ext_resource path="res://asset's/light 2d2.png" type="Texture" id=14]
+[ext_resource path="res://asset's/light 2d.png" type="Texture" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -119,10 +119,18 @@ mouse_filter = 1
 width = 30
 
 [node name="Light2D" type="Light2D" parent="writing_container"]
-position = Vector2( 630, 496 )
-scale = Vector2( 3.32422, 3.04688 )
+position = Vector2( 653, 510 )
 texture = ExtResource( 14 )
-color = Color( 0.235294, 0.639216, 0.705882, 1 )
+texture_scale = 2.0
+color = Color( 1, 0, 0, 1 )
+range_item_cull_mask = 2
+
+[node name="Light2D2" type="Light2D" parent="writing_container"]
+position = Vector2( 981, 140 )
+texture = ExtResource( 14 )
+texture_scale = 1.61
+color = Color( 0, 0.623529, 1, 1 )
+energy = 0.37
 range_item_cull_mask = 2
 
 [node name="request_sender" type="Node" parent="."]

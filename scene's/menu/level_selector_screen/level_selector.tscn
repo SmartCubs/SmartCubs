@@ -51,7 +51,6 @@ margin_right = 20.0
 margin_bottom = 20.0
 
 [node name="level_btn_container" type="Sprite" parent="Button/CanvasLayer/Control"]
-modulate = Color( 0.184314, 0.533333, 0.815686, 1 )
 position = Vector2( 20, 20 )
 texture = ExtResource( 9 )
 __meta__ = {
@@ -74,6 +73,9 @@ icon = ExtResource( 15 )
 flat = true
 expand_icon = true
 script = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="go_right_btn" type="Button" parent="Button"]
 modulate = Color( 1, 1, 1, 0.980392 )
@@ -93,6 +95,9 @@ flat = true
 icon_align = 1
 expand_icon = true
 script = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="go_left_btn" type="Button" parent="Button"]
 modulate = Color( 1, 1, 1, 0.980392 )
@@ -109,6 +114,9 @@ flat = true
 icon_align = 1
 expand_icon = true
 script = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="right_position" type="Position2D" parent="."]
 position = Vector2( 1959, 393 )

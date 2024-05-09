@@ -33,7 +33,7 @@ var go_to:float = 0
 
 ####onready var
 onready var init_position:Vector2 =Vector2.ZERO
-onready var level = $Button/level
+onready var level = $"%level"
 onready var right_position = $right_position.position
 onready var left_position = $left_position.position
 
@@ -182,7 +182,6 @@ func _level_selector()->void:
 	match int(abs(curent_level)):
 		0:
 			SceanTransition.change_scene(levels["level1"],"d")
-			SceanTransition.audio_pause()
 		1:
 			SceanTransition.change_scene(levels["level2"],"d")
 		2:
