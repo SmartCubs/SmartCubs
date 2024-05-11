@@ -161,7 +161,7 @@ func missing():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-func get_nbr(nbr,index,empty) ->void:
+func get_nbr(nbr,index) ->void:
 	
 	yield(get_tree().create_timer(.1),"timeout")
 	

@@ -27,7 +27,7 @@ func drop_data(position, data):
 	empty=false
 	nbr=data.nbr
 	empty = false
-	emit_signal("Verify_nbr",nbr,index,empty)
+	emit_signal("Verify_nbr",nbr,index)
 	data_nbr=data
 	data.set_global_position( get_global_rect().position )
 	data.mouse_filter = MOUSE_FILTER_STOP

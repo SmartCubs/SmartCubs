@@ -19,6 +19,7 @@ func _ready():
 	old_child = lines.get_point_count()
 	lines.width = width
 
+
 func _input(event: InputEvent) -> void:
 	if  event is InputEventMouseButton :
 		pressed = event.pressed
@@ -44,13 +45,7 @@ func _clear_all():
 		lines.remove_child(i)
 
 
-func _save(path:String = "res://captured_image.png"):
-	#saving images as png
-	# Capture Image
-	image = viewport.get_texture().get_data()
-	image.flip_y()
-	var image_path = path
-	image.save_png(image_path)
+
 
 
 
