@@ -43,7 +43,6 @@ func _select_letter():
 	emit_signal("send_letter",letter_to_draw)
 
 func _on_request_sender_verify(letter_drawed:int):
-
 	if !is_instance_valid(timer_ui):
 		return
 	if letter_drawed == letter_to_draw:
@@ -83,3 +82,8 @@ func _on_timer_UI_time_out():
 		$Finish_Ui._show(1, "SCORE: "+ String(score) )
 		$Finish_Ui.visible = true
 	
+	
+	
+	
+
+

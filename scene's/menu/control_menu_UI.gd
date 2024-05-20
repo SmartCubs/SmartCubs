@@ -33,6 +33,7 @@ var confing
 
 
 func _ready():
+	
 	if !Engine.is_editor_hint():
 		confing = SaveManager._load(path_config_file)
 		if confing != null && confing == false:
@@ -57,6 +58,7 @@ func _ready():
 			nbr_btn = btn_texture.size()
 		else:
 			printerr("error :)")
+	
 
 func _get_index_music():
 	return index_music

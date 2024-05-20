@@ -33,6 +33,7 @@ func _input(event: InputEvent) -> void:
 		if not event.is_pressed() :
 			emit_signal("send_img")
 			old_child = lines.get_point_count()
+
 	# Drawing lines
 	if event is InputEventMouseMotion && pressed && changing_width == false :
 		curent_line.add_point(event.position - rect_position)
@@ -43,8 +44,6 @@ func _input(event: InputEvent) -> void:
 func _clear_all():
 	for i in lines.get_children():
 		lines.remove_child(i)
-
-
 
 
 

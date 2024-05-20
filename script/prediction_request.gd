@@ -51,7 +51,6 @@ func _send_request() -> void:
 func _on_request_completed(result, response_code, _headers, body):
 	if response_code == 200:
 		var json_data = JSON.parse(body.get_string_from_utf8())
-
 		var message = json_data.result["key"]
 		emit_signal("verify",message)
 	else:
