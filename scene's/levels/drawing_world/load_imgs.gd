@@ -1,7 +1,7 @@
 extends Control
 
-const path = "user://photo/"
-const path_id = "user://photo/id.data"
+const path = "res://photo/"
+const path_id = "res://photo/id.data"
 
 onready var grid = get_node("ScrollContainer/GridContainer")
 

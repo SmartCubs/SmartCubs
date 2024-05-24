@@ -7,8 +7,8 @@ onready var draw_space = $"ViewportContainer/Viewport/draw space"
 
 
 const music_index = 2
-const path = "user://photo/"
-const path_id = "user://photo/id.data"
+const path = "res://photo/"
+const path_id = "res://photo/id.data"
 
 var nbr_photo = 1
 var load_btn
