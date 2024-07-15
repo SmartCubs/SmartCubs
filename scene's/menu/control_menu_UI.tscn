@@ -1,37 +1,25 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scene's/menu/control_menu_UI.gd" type="Script" id=1]
+[ext_resource path="res://asset's/icons/house.png" type="Texture" id=2]
+[ext_resource path="res://asset's/icons/pause.png" type="Texture" id=3]
+[ext_resource path="res://asset's/icons/Music On.png" type="Texture" id=4]
 
 [node name="control_menu_UI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 script = ExtResource( 1 )
+btn_texture = [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ]
 
 [node name="VBoxContainer" type="HBoxContainer" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -176.0
-margin_top = 16.0
-margin_right = -16.0
-margin_bottom = 86.0
-custom_constants/separation = 20
+margin_left = -1280.0
+margin_bottom = 70.0
+grow_horizontal = 2
+custom_constants/separation = 10
+alignment = 2
 __meta__ = {
 "_edit_group_": true
 }
-
-[node name="btn1" type="Button" parent="VBoxContainer"]
-margin_right = 70.0
-margin_bottom = 70.0
-rect_min_size = Vector2( 70, 70 )
-mouse_default_cursor_shape = 2
-
-[node name="btn2" type="Button" parent="VBoxContainer"]
-margin_left = 90.0
-margin_right = 160.0
-margin_bottom = 70.0
-rect_min_size = Vector2( 70, 70 )
-mouse_default_cursor_shape = 2
-
-[connection signal="button_up" from="VBoxContainer/btn1" to="." method="_on_pause_button_up"]
-[connection signal="button_up" from="VBoxContainer/btn2" to="." method="_on_mainMenu_button_up"]

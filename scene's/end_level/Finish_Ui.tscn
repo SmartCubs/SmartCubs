@@ -1,0 +1,133 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scene's/levels/Math/Panel.png" type="Texture" id=1]
+[ext_resource path="res://scene's/levels/Math/Ribbon.png" type="Texture" id=2]
+[ext_resource path="res://asset's/icons/Repeat.png" type="Texture" id=3]
+[ext_resource path="res://scene's/levels/Math/finish_game/Level Cleared.png" type="Texture" id=4]
+[ext_resource path="res://scene's/character/character.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scene's/end_level/end_game.gd" type="Script" id=6]
+[ext_resource path="res://theme/grisly-beast.regular.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://scene's/levels/Math/finish_game/Exit.png" type="Texture" id=8]
+[ext_resource path="res://script/btn.gd" type="Script" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[node name="Finish_Ui" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 0.00392157, 0.403922, 0.654902, 0.901961 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="panel" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -510.0
+margin_top = -345.5
+margin_right = 510.0
+margin_bottom = 345.5
+mouse_filter = 2
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ribbon" type="TextureRect" parent="panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -500.0
+margin_right = 500.0
+margin_bottom = 297.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LevelCleared" type="Sprite" parent="panel"]
+position = Vector2( 510, 85.5 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="character" parent="panel" instance=ExtResource( 5 )]
+position = Vector2( 827.65, 430.42 )
+frame = 2
+__meta__ = {
+"_edit_lock_": true
+}
+curent_pos = 2
+
+[node name="character2" parent="panel" instance=ExtResource( 5 )]
+position = Vector2( 253.65, 383.42 )
+scale = Vector2( 0.366, 0.386 )
+animation = "dog"
+frame = 2
+__meta__ = {
+"_edit_lock_": true
+}
+animal = 1
+curent_pos = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -116.0
+margin_top = 113.0
+margin_right = 144.0
+margin_bottom = 241.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="go_to_selection_menu" type="TextureButton" parent="panel/HBoxContainer"]
+margin_right = 128.0
+margin_bottom = 128.0
+texture_normal = ExtResource( 8 )
+script = ExtResource( 9 )
+size_on_press = Vector2( 0.9, 0.9 )
+
+[node name="exit" type="TextureButton" parent="panel/HBoxContainer"]
+margin_left = 132.0
+margin_right = 260.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 3 )
+expand = true
+script = ExtResource( 9 )
+size_on_press = Vector2( 0.9, 0.9 )
+
+[node name="label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -101.0
+margin_top = -14.0
+margin_right = 101.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "test"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="panel/HBoxContainer/go_to_selection_menu" to="." method="_on_go_to_selection_menu_pressed"]
+[connection signal="pressed" from="panel/HBoxContainer/exit" to="." method="_on_exit_pressed"]

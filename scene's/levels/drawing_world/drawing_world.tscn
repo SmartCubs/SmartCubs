@@ -1,0 +1,146 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://scene's/menu/control_menu_UI.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scene's/levels/letter/draw space.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scene's/menu/control_menu_draw.gd" type="Script" id=3]
+[ext_resource path="res://asset's/icons/Music On.png" type="Texture" id=4]
+[ext_resource path="res://asset's/icons/house.png" type="Texture" id=5]
+[ext_resource path="res://asset's/icons/save.png" type="Texture" id=6]
+[ext_resource path="res://asset's/icons/pause.png" type="Texture" id=7]
+[ext_resource path="res://asset's/icons/slider_fill_handel_hold.png" type="Texture" id=8]
+[ext_resource path="res://asset's/icons/color_holder.png" type="Texture" id=9]
+[ext_resource path="res://script/btn_color.gd" type="Script" id=10]
+[ext_resource path="res://asset's/icons/slider_fill_handel.png" type="Texture" id=11]
+[ext_resource path="res://asset's/icons/slider_fill_holder.png" type="Texture" id=12]
+[ext_resource path="res://asset's/icons/load_img.png" type="Texture" id=13]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+onready var viewport = $control_menu_UI/ViewportContainer/Viewport
+var loaded = false
+
+onready var h_slider = $control_menu_UI/HSlider
+onready var draw_space = $\"control_menu_UI/ViewportContainer/Viewport/draw space\"
+
+
+func _ready():
+	viewport.size = get_viewport_rect().size
+	h_slider.value = draw_space.lines.width
+	loaded = true
+
+func _on_drawing_world_resized():
+	if loaded:
+		viewport.size = get_viewport_rect().size
+
+func _notification(what):
+	if what == NOTIFICATION_WM_GO_BACK_REQUEST:
+		SceanTransition.change_scene(\"res://scene\\'s/menu/level_selector_screen/level_selector.tscn\")
+
+
+
+"
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 12 )
+region_rect = Rect2( 10, 10, 220, 10 )
+axis_stretch_horizontal = 2
+
+[node name="drawing_world" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = SubResource( 1 )
+
+[node name="control_menu_UI" parent="." instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+btn_texture = [ ExtResource( 13 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 5 ) ]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="control_menu_UI"]
+anchor_right = 1.0
+margin_left = 8.0
+margin_top = 5.0
+margin_bottom = 80.0
+mouse_filter = 2
+custom_constants/separation = 10
+
+[node name="red" type="TextureButton" parent="control_menu_UI/HBoxContainer"]
+modulate = Color( 1, 0, 0, 1 )
+margin_right = 75.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 75, 75 )
+texture_normal = ExtResource( 9 )
+script = ExtResource( 10 )
+
+[node name="blue" type="TextureButton" parent="control_menu_UI/HBoxContainer"]
+modulate = Color( 0, 0.0627451, 1, 1 )
+margin_left = 85.0
+margin_right = 160.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 75, 75 )
+texture_normal = ExtResource( 9 )
+script = ExtResource( 10 )
+
+[node name="yellow" type="TextureButton" parent="control_menu_UI/HBoxContainer"]
+modulate = Color( 0.968627, 1, 0, 1 )
+margin_left = 170.0
+margin_right = 245.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 75, 75 )
+texture_normal = ExtResource( 9 )
+script = ExtResource( 10 )
+
+[node name="balck" type="TextureButton" parent="control_menu_UI/HBoxContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 255.0
+margin_right = 330.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 75, 75 )
+texture_normal = ExtResource( 9 )
+script = ExtResource( 10 )
+
+[node name="white" type="TextureButton" parent="control_menu_UI/HBoxContainer"]
+margin_left = 340.0
+margin_right = 415.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 75, 75 )
+texture_normal = ExtResource( 9 )
+script = ExtResource( 10 )
+
+[node name="HSlider" type="HSlider" parent="control_menu_UI"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -192.0
+margin_right = 208.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 400, 75 )
+custom_icons/grabber_disabled = ExtResource( 11 )
+custom_icons/grabber_highlight = ExtResource( 8 )
+custom_icons/grabber = ExtResource( 11 )
+custom_styles/slider = SubResource( 2 )
+min_value = 10.0
+max_value = 200.0
+value = 50.0
+rounded = true
+tick_count = 10
+
+[node name="ViewportContainer" type="ViewportContainer" parent="control_menu_UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 86.0
+margin_bottom = -9.0
+
+[node name="Viewport" type="Viewport" parent="control_menu_UI/ViewportContainer"]
+size = Vector2( 1280, 625 )
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="draw space" parent="control_menu_UI/ViewportContainer/Viewport" instance=ExtResource( 2 )]
+
+[connection signal="resized" from="." to="." method="_on_drawing_world_resized"]
+[connection signal="send_color" from="control_menu_UI/HBoxContainer/red" to="control_menu_UI/ViewportContainer/Viewport/draw space" method="_on_send_color"]
+[connection signal="send_color" from="control_menu_UI/HBoxContainer/blue" to="control_menu_UI/ViewportContainer/Viewport/draw space" method="_on_send_color"]
+[connection signal="send_color" from="control_menu_UI/HBoxContainer/yellow" to="control_menu_UI/ViewportContainer/Viewport/draw space" method="_on_send_color"]
+[connection signal="send_color" from="control_menu_UI/HBoxContainer/balck" to="control_menu_UI/ViewportContainer/Viewport/draw space" method="_on_send_color"]
+[connection signal="send_color" from="control_menu_UI/HBoxContainer/white" to="control_menu_UI/ViewportContainer/Viewport/draw space" method="_on_send_color"]
+[connection signal="drag_ended" from="control_menu_UI/HSlider" to="control_menu_UI/ViewportContainer/Viewport/draw space" method="_on_HSlider_drag_ended"]
+[connection signal="drag_started" from="control_menu_UI/HSlider" to="control_menu_UI/ViewportContainer/Viewport/draw space" method="_on_HSlider_drag_started"]

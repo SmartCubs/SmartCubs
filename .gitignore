@@ -1,4 +1,4 @@
-# Godot 4+ specific ignores
+# Godot specific ignores
 .godot/
 
 # Godot-specific ignores
@@ -11,3 +11,6 @@ android/
 
 # Imported translations (automatically generated from CSV files)
 *.translation
+########## generated files#######################
+captured_image.png
+test.png

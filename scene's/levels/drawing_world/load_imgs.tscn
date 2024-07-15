@@ -1,0 +1,27 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scene's/menu/control_menu_UI_images_load.gd" type="Script" id=1]
+[ext_resource path="res://scene's/levels/drawing_world/load_imgs.gd" type="Script" id=2]
+[ext_resource path="res://scene's/menu/control_menu_UI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://asset's/icons/pause.png" type="Texture" id=4]
+[ext_resource path="res://asset's/icons/house.png" type="Texture" id=5]
+[ext_resource path="res://asset's/icons/Music On.png" type="Texture" id=6]
+[ext_resource path="res://asset's/icons/return icon.png" type="Texture" id=7]
+
+[node name="load_imgs" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 75.0
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
+columns = 6
+
+[node name="control_menu_UI" parent="." instance=ExtResource( 3 )]
+mouse_filter = 2
+script = ExtResource( 1 )
+btn_texture = [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 5 ) ]
